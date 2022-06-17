@@ -1,0 +1,366 @@
+.Frontend .Home {
+    .banner {
+        max-height: 700px;
+        position: relative;
+        height: calc(100vh - 117px);
+
+        .banner__container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+
+        .banner__text {
+            height: 100%;
+            display: flex;
+            position: relative;
+            color: var(--white);
+            flex-direction: column;
+            justify-content: center;
+
+            .title {
+                font-weight: 700;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+            }
+
+            .subtitle {
+                padding-left: 20px;
+                margin-bottom: 20px;
+                border-left: 1px solid var(--white);
+            }
+
+            .about {
+                margin-right: 15px;
+            }
+        }
+    }
+
+    section {
+        background-color: var(--white);
+
+        .container {
+            padding-top: 40px;
+            padding-bottom: 40px;
+
+            img {
+                border-radius: var(--border-radius);
+            }
+
+            p {
+                margin-bottom: 20px;
+            }
+
+            .owl-dots {
+                .owl-dot {
+                    margin: 4px;
+
+                    span {
+                        background-color: var(--white-50);
+                    }
+
+                    &.active span {
+                        width: 22px;
+                        height: 22px;
+                        background-color: var(--blue);
+                        border: 4px solid var(--white);
+                    }
+                }
+            }
+
+            .view-all {
+                margin-top: 20px;
+                text-align: center;
+            }
+        }
+
+        &.policy,
+        &.newsletter,
+        &.subscribe,
+        &.publications {
+            background-color: var(--blue-10);
+        }
+
+        &.about {
+            img {
+                margin-bottom: 15px;
+            }
+
+            p {
+                margin-bottom: 20px;
+            }
+
+            .actions {
+
+                a,
+                button {
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        &.policy {
+            position: relative;
+            background-repeat: repeat;
+            background-position: center;
+            background-image: url('/images/bg.png');
+            
+            .img {
+                position: relative;
+
+                img {
+                    left: 0;
+                    top: -15px;
+                    z-index: 1;
+                    position: relative;
+                    width: calc(100% - 15px);
+                }
+
+                &::after {
+                    content: "";
+                    top: 0;
+                    left: 15px;
+                    z-index: 0;
+                    height: 100%;
+                    position: absolute;
+                    width: calc(100% - 15px);
+                    border-radius: var(--border-radius);
+                    border: var(--border-radius) solid var(--blue);
+                }
+            }
+
+            .PolicyBlock {
+                .title {
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: var(--blue);
+                    text-transform: uppercase;
+                }
+
+                .title,
+                .description {
+                    margin-bottom: 15px;
+                }
+            }
+
+            .owl-dots {
+                top: 50%;
+                display: flex;
+                position: absolute;
+                align-items: center;
+                flex-direction: column;
+                left: calc(110% + 15px);
+                transform: translate(-50%, -50%);
+                
+                .owl-dot {
+                    span {
+                        background-color: var(--blue-50);
+                    }
+
+                    &.active span {
+                        background-color: transparent;
+                        border: 1px solid var(--blue);
+                    }
+                }
+            }
+        }
+
+        &.newsletter {
+            background-size: cover;
+            background-position: center;
+            background-image: url('/images/cta_bg.png');
+
+            p {
+                text-align: center;
+            }
+
+            form {
+                padding: 40px;
+                color: var(--white);
+                justify-content: center;
+                background-color: var(--blue);
+                border-radius: var(--border-radius);
+
+                .submit {
+                    margin-top: 20px;
+                    text-align: center;
+                }
+            }
+        }
+
+        &.testimonies {
+            p {
+                text-align: center;
+            }
+
+            .TestimonyBlock {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                .img {
+                    opacity: .5;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    transition: all .25s;
+
+                    div {
+                        width: 75px;
+                        height: 75px;
+                        border-radius: 50%;
+                        transition: all .25s;
+                    }
+                }
+
+                .name {
+                    opacity: 0;
+                    font-weight: 700;
+                    color: var(--blue);
+                    text-transform: uppercase;
+                    transition: all .25s;
+                }
+
+                .job {
+                    opacity: 0;
+                    text-align: center;
+                    transition: all .25s;
+                }
+            }
+
+            .owl-item.active.center {
+                .TeamMemberBlock {
+                    .img {
+                        opacity: .7;
+                        margin-top: 0;
+
+                        div {
+                            width: 97.5px;
+                            height: 97.5px;
+                        }
+                    }
+
+                    .name,
+                    .job {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .owl-dots {
+                .owl-dot {
+                    span {
+                        background-color: var(--border-50);
+                    }
+
+                    &.active span {
+                        border-color: var(--border-50);
+                    }
+                }
+            }
+        }
+
+        &.subscribe {
+            background-size: cover;
+            background-position: center;
+            background-image: url('/images/quote_bg_texture.png');
+
+            form {
+                padding: 40px;
+                background-color: var(--white);
+                border-radius: var(--border-radius);
+            }
+        }
+    }
+}
+
+@media (min-width: 800px) {
+    .Frontend .Home {
+        .PolicyBlock {
+            .title {
+                font-size: 27px;
+            }
+        }
+
+        .banner {
+            .banner__text {
+                .title {
+                    margin-bottom: 20px;
+                }
+
+                .subtitle {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+
+        section {
+            &.about {
+                p {
+                    margin-bottom: 20px;
+                }
+
+                .actions {
+
+                    a,
+                    button {
+                        margin-top: 10px;
+                    }
+
+                    .donate,
+                    .join {
+                        margin-right: 15px;
+                    }
+                }
+            }
+
+            &.newsletter {
+                form {
+                    .submit {
+                        margin-top: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1280px) {
+    .Frontend .Home {
+        .PolicyBlock {
+            .title {
+                font-size: 30px;
+            }
+        }
+
+        .banner {
+            height: calc(100vh - 87px);
+
+            .banner__text {
+                .title {
+                    margin-bottom: 25px;
+                }
+
+                .subtitle {
+                    margin-bottom: 40px;
+                }
+            }
+        }
+
+        section {
+            &.about {
+                p {
+                    margin-bottom: 30px;
+                }
+            }
+
+            &.newsletter {
+                form {
+                    .submit {
+                        margin-top: 40px;
+                    }
+                }
+            }
+        }
+    }
+}

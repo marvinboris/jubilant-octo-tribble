@@ -1,0 +1,63 @@
+.Frontend .Toolbar {
+    top: -47px;
+    width: 100%;
+    z-index: 1030;
+    position: sticky;
+    background: var(--white);
+
+    .top {
+        color: var(--blue);
+        background-color: var(--blue-10);
+
+        .container {
+            height: 47px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            &>div {
+                padding: 0 10px;
+
+                i {
+                    margin-right: 10px;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: var(--blue);
+                }
+
+                &.tel {
+                    border-right: .5px solid var(--border-50);
+                }
+            }
+        }
+    }
+
+    .bottom {
+        background-color: var(--white);
+
+        .container {
+            height: 70px;
+        }
+
+        .container,
+        .container .items {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+
+// @media screen and (min-width: 800px) {
+//     .Frontend .Toolbar {
+//         height: 87px;
+//     }
+// }
+
+// @media screen and (min-width: 1900px) {
+//     .Frontend .Toolbar {
+//         height: 100px;
+//     }
+// }

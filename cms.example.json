@@ -1,0 +1,1392 @@
+{
+    "global": {
+        "app_name": "Leader Assurconseil",
+        "company_name": "Leader Assurances SARL",
+        "company_logo": "\/images\/company-logo.png",
+        "logo": {
+            "big": "\/images\/logo.png",
+            "dark": "\/images\/logo.png",
+            "default": "\/images\/logo.png",
+            "light": "\/images\/logo-light.png",
+            "named": "\/images\/logo-named.png"
+        }
+    },
+    "pages": {
+        "fr": {
+            "general": {
+                "date": "Date",
+                "time": "Heure",
+                "home": "Accueil",
+                "days": [
+                    "Dimanche",
+                    "Lundi",
+                    "Mardi",
+                    "Mercredi",
+                    "Jeudi",
+                    "Vendredi",
+                    "Samedi"
+                ],
+                "months": [
+                    "Jan",
+                    "Fev",
+                    "Mar",
+                    "Avr",
+                    "Mai",
+                    "Jui",
+                    "Jul",
+                    "Aou",
+                    "Sep",
+                    "Oct",
+                    "Nov",
+                    "D\u00e9c"
+                ]
+            },
+            "components": {
+                "form": {
+                    "save": "Sauvegarder",
+                    "save_add": "Sauvegarder & ajouter",
+                    "selected_file": "Fichier s\u00e9lectionn\u00e9",
+                    "active": "Actif",
+                    "inactive": "Inactif"
+                },
+                "list": {
+                    "action": "Action",
+                    "all": "Tous",
+                    "first": "Premi\u00e8re",
+                    "last": "Derni\u00e8re",
+                    "loading": "Chargement en cours",
+                    "print": "Imprimer",
+                    "pdf": "PDF",
+                    "csv": "CSV",
+                    "excel": "Excel",
+                    "search": "Rechercher",
+                    "see": "Voir",
+                    "show": "Afficher",
+                    "sl": "SL",
+                    "showing": "Affichant",
+                    "from": "sur",
+                    "entries": {
+                        "singular": "entr\u00e9e",
+                        "plural": "entr\u00e9es"
+                    }
+                },
+                "service_block": {
+                    "read_more": "En savoir plus"
+                },
+                "publication_block": {
+                    "read_more": "Lire la suite"
+                }
+            },
+            "auth": {
+                "footer": {
+                    "copyrights": "Copyrights",
+                    "all_rights": "Tous droits r\u00e9serv\u00e9s par"
+                },
+                "user": {
+                    "login": {
+                        "title": "Bienvenue !",
+                        "sign_in": "Se connecter",
+                        "email_address": "Adresse mail",
+                        "password": "Mot de passe"
+                    }
+                },
+                "admin": {
+                    "login": {
+                        "sign_in_to": "Se connecter au",
+                        "sign_in": "Se connecter",
+                        "admin_panel": "Panneau de l'administrateur",
+                        "email_address": "Adresse mail",
+                        "password": "Mot de passe",
+                        "sms": "SMS",
+                        "email": "Adresse mail",
+                        "otp_method": "M\u00e9thode OTP"
+                    },
+                    "verify": {
+                        "enter": "Entrer",
+                        "verification_code": "Code de v\u00e9rification",
+                        "continue": "Continuer",
+                        "didnt_receive_code": "Aucun code re\u00e7u",
+                        "resend": "Renvoyer"
+                    }
+                }
+            },
+            "messages": {
+                "auth": {
+                    "admin": {
+                        "not_found": "Informations incorrectes.",
+                        "invalid": "Code de v\u00e9rification invalide.",
+                        "sent": "Code de v\u00e9rification envoy\u00e9 avec succ\u00e8s."
+                    },
+                    "user": {
+                        "inactive": "Votre compte n'est pas actif. Veuillez appeler l'administrateur.",
+                        "unauthorized": "Non autoris\u00e9",
+                        "sent": "Lien de r\u00e9initialisation envoy\u00e9 avec succ\u00e8s.",
+                        "reset": "Mot de passe r\u00e9initialis\u00e9 avec succ\u00e8s.",
+                        "failure": "Echec."
+                    }
+                },
+                "admins": {
+                    "not_found": "Administrateur introuvable.",
+                    "created": "Administrateur cr\u00e9\u00e9 avec succ\u00e8s.",
+                    "updated": "Administrateur modifi\u00e9 avec succ\u00e8s.",
+                    "deleted": "Administrateur supprim\u00e9 avec succ\u00e8s."
+                },
+                "users": {
+                    "not_found": "Utilisateur introuvable.",
+                    "created": "Utilisateur cr\u00e9\u00e9 avec succ\u00e8s.",
+                    "updated": "Utilisateur modifi\u00e9 avec succ\u00e8s.",
+                    "deleted": "Utilisateur supprim\u00e9 avec succ\u00e8s."
+                },
+                "roles": {
+                    "not_found": "R\u00f4le introuvable.",
+                    "created": "R\u00f4le cr\u00e9\u00e9 avec succ\u00e8s.",
+                    "updated": "R\u00f4le modifi\u00e9 avec succ\u00e8s.",
+                    "deleted": "R\u00f4le supprim\u00e9 avec succ\u00e8s."
+                },
+                "features": {
+                    "not_found": "Fonctionnalit\u00e9 introuvable.",
+                    "created": "Fonctionnalit\u00e9 cr\u00e9\u00e9e avec succ\u00e8s.",
+                    "updated": "Fonctionnalit\u00e9 modifi\u00e9e avec succ\u00e8s.",
+                    "deleted": "Fonctionnalit\u00e9 supprim\u00e9e avec succ\u00e8s."
+                },
+                "languages": {
+                    "not_found": "Langue introuvable.",
+                    "created": "Langue cr\u00e9\u00e9e avec succ\u00e8s.",
+                    "updated": "Langue modifi\u00e9e avec succ\u00e8s.",
+                    "deleted": "Langue supprim\u00e9e avec succ\u00e8s."
+                },
+                "notifications": {
+                    "not_found": "Notification introuvable."
+                },
+                "cms": {
+                    "not_found": "Contenu introuvable.",
+                    "updated": "Contenu modifi\u00e9 avec succ\u00e8s."
+                },
+                "settings": {
+                    "not_found": "Param\u00e8tre introuvable.",
+                    "created": "Param\u00e8tre cr\u00e9\u00e9 avec succ\u00e8s.",
+                    "updated": "Param\u00e8tre modifi\u00e9 avec succ\u00e8s.",
+                    "deleted": "Param\u00e8tre supprim\u00e9 avec succ\u00e8s."
+                },
+                "publications": {
+                    "not_found": "Publication introuvable.",
+                    "created": "Publication cr\u00e9\u00e9e avec succ\u00e8s.",
+                    "updated": "Publication modifi\u00e9e avec succ\u00e8s.",
+                    "deleted": "Publication supprim\u00e9e avec succ\u00e8s."
+                },
+                "subscribers": {
+                    "not_found": "Souscripteur introuvable.",
+                    "created": "Souscripteur cr\u00e9\u00e9 avec succ\u00e8s.",
+                    "updated": "Souscripteur modifi\u00e9 avec succ\u00e8s.",
+                    "deleted": "Souscripteur supprim\u00e9 avec succ\u00e8s."
+                },
+                "services": {
+                    "not_found": "Service introuvable.",
+                    "created": "Service cr\u00e9\u00e9 avec succ\u00e8s.",
+                    "updated": "Service modifi\u00e9 avec succ\u00e8s.",
+                    "deleted": "Service supprim\u00e9 avec succ\u00e8s."
+                }
+            },
+            "backend": {
+                "header": {
+                    "id": "ID",
+                    "sign_out": "Se d\u00e9connecter",
+                    "no_message": "Aucun message",
+                    "no_notification": "Aucune notification",
+                    "logout": "D\u00e9connexion",
+                    "close": "Fermer",
+                    "sure_logout": "\u00cates-vous s\u00fbr de vouloir vous d\u00e9connecter",
+                    "you_have": "Vous avez",
+                    "messages": "messages",
+                    "unread_message": "message non lu",
+                    "unread_notification": "notification non lue",
+                    "unread_messages": "messages non lus",
+                    "unread_notifications": "notifications non lues",
+                    "view_all_messages": "Voir tous les messages",
+                    "view_all_notifications": "Voir toutes les notifications"
+                },
+                "footer": {
+                    "copyright": "Copyright",
+                    "all_rights": "Tous droits r\u00e9serv\u00e9s par"
+                },
+                "sidebar": {
+                    "admin": "Administrateur",
+                    "user": "Utilisateur",
+                    "menu": {
+                        "dashboard": {
+                            "icon": "home",
+                            "title": "Tableau de bord"
+                        },
+                        "admins": {
+                            "icon": "user-cog",
+                            "title": "Administrateurs",
+                            "add": "Ajouter un administrateur",
+                            "index": "Liste des administrateurs"
+                        },
+                        "users": {
+                            "icon": "user",
+                            "title": "Utilisateurs",
+                            "add": "Ajouter un utilisateur",
+                            "index": "Liste des utilisateurs"
+                        },
+                        "roles": {
+                            "icon": "user-tag",
+                            "title": "R\u00f4les",
+                            "add": "Ajouter un r\u00f4le",
+                            "index": "Liste des r\u00f4les"
+                        },
+                        "features": {
+                            "icon": "tools",
+                            "title": "Fonctionnalit\u00e9s",
+                            "add": "Ajouter une fonctionnalit\u00e9",
+                            "index": "Liste des fonctionnalit\u00e9s"
+                        },
+                        "languages": {
+                            "icon": "language",
+                            "title": "Langues",
+                            "add": "Ajouter une langue",
+                            "index": "Liste des langues"
+                        },
+                        "cms": {
+                            "icon": "wrench",
+                            "title": "CMS",
+                            "global": "Global",
+                            "general": "G\u00e9n\u00e9ral",
+                            "components": "Composants",
+                            "auth": "Authentification",
+                            "messages": "Messages",
+                            "backend": "Backend",
+                            "frontend": "Frontend"
+                        },
+                        "notifications": {
+                            "icon": "bell",
+                            "title": "Notifications"
+                        },
+                        "settings": {
+                            "icon": "sliders-h",
+                            "title": "Param\u00e8tres",
+                            "cms": "CMS",
+                            "language": "Param\u00e8tres de langue"
+                        },
+                        "publications": {
+                            "icon": "newspaper",
+                            "title": "Publications",
+                            "add": "Ajouter une publication",
+                            "index": "Liste des publications"
+                        },
+                        "subscribers": {
+                            "icon": "user",
+                            "title": "Souscripteurs",
+                            "add": "Ajouter un souscripteur",
+                            "index": "Liste des souscripteurs"
+                        },
+                        "services": {
+                            "icon": "concierge-bell",
+                            "title": "Services",
+                            "add": "Ajouter un service",
+                            "index": "Liste des services"
+                        }
+                    }
+                },
+                "pages": {
+                    "dashboard": {
+                        "admin": {
+                            "icon": "home",
+                            "title": "Panneau de l'administrateur",
+                            "subtitle": "Tableau de bord",
+                            "blocks": {
+                                "services": "Services",
+                                "publications": "Publications",
+                                "subscribers": "Souscripteurs"
+                            },
+                            "general_report": {
+                                "title": "Rapport g\u00e9n\u00e9ral",
+                                "subtitle": "Rapport g\u00e9n\u00e9ral",
+                                "services": "Services",
+                                "publications": "Publications",
+                                "total_services": "Total des services",
+                                "total_publications": "Total des publications"
+                            }
+                        },
+                        "user": {
+                            "icon": "home",
+                            "title": "Panneau de l'utilisateur",
+                            "subtitle": "Tableau de bord",
+                            "blocks": {
+                                "services": "Services",
+                                "publications": "Publications",
+                                "subscribers": "Souscripteurs"
+                            },
+                            "general_report": {
+                                "title": "Rapport g\u00e9n\u00e9ral",
+                                "subtitle": "Rapport g\u00e9n\u00e9ral",
+                                "services": "Services",
+                                "publications": "Publications",
+                                "total_services": "Total des services",
+                                "total_publications": "Total des publications"
+                            }
+                        }
+                    },
+                    "cms": {
+                        "icon": "wrench",
+                        "title": "CMS",
+                        "global": "Global",
+                        "general": "General",
+                        "messages": "Messages",
+                        "frontend": "Frontend",
+                        "components": "Components",
+                        "backend": "Backend",
+                        "auth": "Auth",
+                        "form": {
+                            "logo": "Logo",
+                            "app_name": "Nom de l'application",
+                            "company_name": "Nom de l'entreprise",
+                            "company_logo": "Logo de l'entreprise"
+                        }
+                    },
+                    "admins": {
+                        "icon": "user-cog",
+                        "title": "Administrateurs",
+                        "add": "Ajouter un administrateur",
+                        "edit": "Modifier un administrateur",
+                        "index": "Liste des administrateurs",
+                        "form": {
+                            "name": "Nom de l'administrateur",
+                            "full_name": "Nom complet",
+                            "phone": "Num\u00e9ro de t\u00e9l\u00e9phone",
+                            "password": "Mot de passe",
+                            "password_confirmation": "Confirmation de mot de passe",
+                            "email": "Adresse mail",
+                            "admin_photo": "Photo de l'administrateur",
+                            "photo": "Photo"
+                        }
+                    },
+                    "users": {
+                        "icon": "user",
+                        "title": "Utilisateurs",
+                        "add": "Ajouter un utilisateur",
+                        "edit": "Modifier un utilisateur",
+                        "index": "Liste des utilisateurs",
+                        "form": {
+                            "name": "Nom de l'utilisateur",
+                            "full_name": "Nom complet",
+                            "phone": "Num\u00e9ro de t\u00e9l\u00e9phone",
+                            "password": "Mot de passe",
+                            "password_confirmation": "Confirmation de mot de passe",
+                            "email": "Adresse mail",
+                            "role": "R\u00f4le",
+                            "select_role": "S\u00e9lectionner un r\u00f4le",
+                            "user_photo": "Photo de l'utilisateur",
+                            "photo": "Photo"
+                        }
+                    },
+                    "roles": {
+                        "icon": "user-tag",
+                        "title": "R\u00f4les",
+                        "add": "Ajouter un r\u00f4le",
+                        "edit": "Modifier un r\u00f4le",
+                        "index": "Liste des r\u00f4les",
+                        "form": {
+                            "name": "Nom",
+                            "description": "Description",
+                            "features": "Fonctionnalit\u00e9s",
+                            "created_at": "Cr\u00e9\u00e9 le",
+                            "create": "Cr\u00e9er",
+                            "update": "Modifier",
+                            "delete": "Supprimer"
+                        }
+                    },
+                    "features": {
+                        "icon": "tools",
+                        "title": "Fonctionnalit\u00e9s",
+                        "add": "Ajouter une fonctionnalit\u00e9",
+                        "edit": "Modifier une fonctionnalit\u00e9",
+                        "index": "Liste des fonctionnalit\u00e9s",
+                        "form": {
+                            "name": "Nom",
+                            "prefix": "Pr\u00e9fixe",
+                            "created_at": "Cr\u00e9\u00e9e le"
+                        }
+                    },
+                    "languages": {
+                        "icon": "language",
+                        "title": "Langues",
+                        "add": "Ajouter une langue",
+                        "edit": "Modifier une langue",
+                        "index": "Liste des langues",
+                        "form": {
+                            "name": "Nom",
+                            "abbr": "Abr\u00e9viation",
+                            "flag": "Drapeau",
+                            "select_flag": "S\u00e9lectionner un drapeau",
+                            "created_at": "Cr\u00e9\u00e9e le"
+                        }
+                    },
+                    "notifications": {
+                        "icon": "bell",
+                        "title": "Notifications",
+                        "show": "D\u00e9tails des notifications",
+                        "index": "Liste des notifications",
+                        "form": {
+                            "you_have_no_notification": "Vous n'avez pas de notification."
+                        }
+                    },
+                    "settings": {
+                        "icon": "sliders-h",
+                        "title": "Param\u00e8tres",
+                        "subtitle": "Param\u00e8tres du compte",
+                        "language": {
+                            "title": "Paramètres de languge",
+                            "form": {
+                                "select_language": "Sélectionner une langue"
+                            }
+                        }
+                    },
+                    "publications": {
+                        "icon": "newspaper",
+                        "title": "Publications",
+                        "add": "Ajouter une publication",
+                        "edit": "Modifier une publication",
+                        "index": "Liste des publications",
+                        "form": {
+                            "title": "Titre",
+                            "body": "Contenu",
+                            "slug": "Slug",
+                            "photo": "Photo",
+                            "publication_photo": "Photo de la publication",
+                            "is_active": "Statut",
+                            "select_status": "S\u00e9lectionner le statut",
+                            "language": "Langue",
+                            "created_at": "Cr\u00e9\u00e9e le"
+                        }
+                    },
+                    "subscribers": {
+                        "icon": "user",
+                        "title": "Souscripteurs",
+                        "add": "Ajouter un souscripteur",
+                        "edit": "Modifier un souscripteur",
+                        "index": "Liste des souscripteurs",
+                        "form": {
+                            "name": "Pr\u00e9nom",
+                            "email": "Adresse mail",
+                            "created_at": "Cr\u00e9\u00e9e le"
+                        }
+                    },
+                    "services": {
+                        "icon": "concierge-bell",
+                        "title": "Services",
+                        "add": "Ajouter un service",
+                        "edit": "Modifier un service",
+                        "index": "Liste des services",
+                        "form": {
+                            "title": "Titre",
+                            "body": "Contenu",
+                            "icon": "Icône",
+                            "language": "Langue",
+                            "created_at": "Cr\u00e9\u00e9 le"
+                        }
+                    }
+                }
+            },
+            "frontend": {
+                "header": {
+                    "contact": {
+                        "tel": "+237 233 42 58 14",
+                        "email": "services@leader-assurconseil.com"
+                    },
+                    "menu": {
+                        "home": "Accueil",
+                        "about": "A propos",
+                        "services": "Services",
+                        "publications": "Publications",
+                        "contact": "Contact"
+                    }
+                },
+                "footer": {
+                    "top": {
+                        "company": {
+                            "title": "Notre entreprise",
+                            "menu": {
+                                "home": "Accueil",
+                                "about": "A propos",
+                                "services": "Services",
+                                "publications": "Publications",
+                                "contact": "Contact"
+                            }
+                        },
+                        "services": {
+                            "title": "Nos services"
+                        },
+                        "contact": {
+                            "title": "Contact",
+                            "listen": "Nous sommes à l'écoute:",
+                            "address": "Douala, Akwa, rue Sylvanie, Douala",
+                            "phone": "+237 233 42 58 14",
+                            "hours": "8h-17h, Lundi à Samedi"
+                        }
+                    },
+                    "bottom": {
+                        "all_rights": "Tous droits r\u00e9serv\u00e9s par",
+                        "social_networks": [
+                            {
+                                "icon": "facebook-square",
+                                "link": "https:\/\/web.facebook.com\/equipefiducac\/?_rdc=1&_rdr"
+                            },
+                            {
+                                "icon": "linkedin",
+                                "link": "https:\/\/www.linkedin.com\/company\/fiducac\/about\/"
+                            },
+                            {
+                                "icon": "twitter-square",
+                                "link": "https:\/\/twitter.com\/fiducac?lang=fr"
+                            }
+                        ]
+                    }
+                },
+                "pages": {
+                    "home": {
+                        "banner": {
+                            "title": "LEADER ASSURANCES SARL",
+                            "about": "A propos",
+                            "services": "Nos services",
+                            "carousel": [
+                                {
+                                    "src": "\/images\/achievement-african-african-american-arms-raised-bangkok-black-1568857-pxhere.com.jpg",
+                                    "altText": "Nos dipl\u00f4m\u00e9s apr\u00e8s un forum sur les changements macro-\u00e9conomiques et leurs impacts sur l\u2019employabilit\u00e9"
+                                },
+                                {
+                                    "src": "\/images\/african-african-american-arrow-bangkok-black-bridge-1456513-pxhere.com.jpg",
+                                    "altText": "Visite du comit\u00e9 de direction de la FIDUCAC \u00e0 l\u2019UCAC-ICAM pour multiples projets"
+                                },
+                                {
+                                    "src": "\/images\/african-american-afro-american-analyzing-black-people-brainstorming-1434697-pxhere.com.jpg",
+                                    "altText": "Lancement officiel de la FIDUCAC en 2009"
+                                }
+                            ]
+                        },
+                        "about": {
+                            "title": "Leader Assurances SARL",
+                            "subtitle": "Qui sommes-nous?",
+                            "photo": "\/images\/achievement-african-african-american-bangkok-black-bridge-1567129-pxhere.com.jpg",
+                            "description": "Nous sommes un cabinet de conseil et de courtage en assurances, spécialisé dans le domaine de conseils en Assurance, de placement des risques, de l’audit des portefeuilles en assurances, de l’analyse des risques, du suivi de la gestion production et sinistres. \nNotre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance et aussi vous assister en cas de survenance d’un sinistre.",
+                            "read_more": "En savoir plus",
+                            "icon": "info-circle"
+                        },
+                        "policy": {
+                            "photo": "/images/african-african-american-amazing-awesome-bangkok-black-1567381-pxhere.com.jpg",
+                            "learn_more": "En savoir plus",
+                            "carousel": [
+                                {
+                                    "title": "Vous conduisez votre voiture. Ne devriez-vous pas également conduire votre police d'assurances?",
+                                    "description": "Notre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance  et aussi vous assister  en cas de survenance d’un sinistre"
+                                },
+                                {
+                                    "title": "Vous conduisez votre voiture.. Ne devriez-vous pas également conduire votre police d'assurances?",
+                                    "description": "Notre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance  et aussi vous assister  en cas de survenance d’un sinistre"
+                                },
+                                {
+                                    "title": "Vous conduisez votre voiture... Ne devriez-vous pas également conduire votre police d'assurances?",
+                                    "description": "Notre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance  et aussi vous assister  en cas de survenance d’un sinistre"
+                                },
+                                {
+                                    "title": "Vous conduisez votre voiture.... Ne devriez-vous pas également conduire votre police d'assurances?",
+                                    "description": "Notre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance  et aussi vous assister  en cas de survenance d’un sinistre"
+                                },
+                                {
+                                    "title": "Vous conduisez votre voiture..... Ne devriez-vous pas également conduire votre police d'assurances?",
+                                    "description": "Notre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance  et aussi vous assister  en cas de survenance d’un sinistre"
+                                }
+                            ]
+                        },
+                        "services": {
+                            "title": "Nos services",
+                            "subtitle": "Retrouvez les différents services que nous vous proposons",
+                            "centered": "true",
+                            "view_all": "Voir tous les services"
+                        },
+                        "testimonies": {
+                            "title": "Nos clients",
+                            "subtitle": "Quelques uns de nos clients",
+                            "centered": "true",
+                            "description": "Aliquam posuere gravida wolf moon retro. Hella ironic before they sold out pitchfork gastropub dreamccher. gravida vitae euismod quis felis."
+                        },
+                        "subscribe": {
+                            "title": "Prêt à économiser de l'argent?",
+                            "subtitle": "Découvrez en quelques secondes quelle(s) assurance(s) vous convient(nnent) le mieux.",
+                            "photo": "/images/quote_image.png",
+                            "name": "Nom",
+                            "email": "Adresse mail",
+                            "service": "Service",
+                            "select_service": "Sélectionner un service",
+                            "submit": "Soumettre"
+                        },
+                        "publications": {
+                            "title": "Nos publications",
+                            "subtitle": "Retrouvez nos publications r\u00e9centes",
+                            "icon": "newspaper",
+                            "view_all": "Voir toutes les publications"
+                        },
+                        "newsletter": {
+                            "title": "Restez connect\u00e9",
+                            "subtitle": "Tenez-vous inform\u00e9 en vous inscrivant \u00e0 notre newsletter",
+                            "description": "En souscrivant, vous acceptez de partager votre adresse e-mail avec la Fiducac afin de recevoir des messages de nouvelles r\u00e9centes de l'UCAC, des mises \u00e0 jour et d\u2019autres e-mails jug\u00e9s importants. Vous pouvez vous d\u00e9sabonner \u00e0 tout moment \u00e0 l\u2019aide du lien correspondant disponible dans ces e-mails.",
+                            "name": "Pr\u00e9nom",
+                            "email": "Adresse mail",
+                            "submit": "Soumettre"
+                        },
+                        "team": {
+                            "title": "Notre équipe",
+                            "subtitle": "Voici ceux grâce à qui tout ceci est possible",
+                            "centered": "true"
+                        }
+                    },
+                    "about": {
+                        "title": "A propos",
+                        "subtitle": "Qui sommes-nous?",
+                        "about": {
+                            "title": "Leader Assurances SARL",
+                            "subtitle": "Qui sommes-nous?",
+                            "photo": "\/images\/achievement-african-african-american-bangkok-black-bridge-1567129-pxhere.com.jpg",
+                            "description": "Nous sommes un cabinet de conseil et de courtage en assurances, spécialisé dans le domaine de conseils en Assurance, de placement des risques, de l’audit des portefeuilles en assurances, de l’analyse des risques, du suivi de la gestion production et sinistres. \nNotre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance et aussi vous assister en cas de survenance d’un sinistre.",
+                            "read_more": "En savoir plus"
+                        },
+                        "services": {
+                            "title": "Nos services",
+                            "subtitle": "Retrouvez les différents services que nous vous proposons",
+                            "centered": "true",
+                            "view_all": "Voir tous les services"
+                        },
+                        "team": {
+                            "title": "Notre équipe",
+                            "subtitle": "Voici ceux grâce à qui tout ceci est possible",
+                            "centered": "true"
+                        }
+
+                    },
+                    "contact": {
+                        "title": "Contact",
+                        "subtitle": "Contactez-nous",
+                        "contact": {
+                            "title": "Contactez-nous",
+                            "subtitle": "Remplissez ce formulaire pour toute information suppl\u00e9mentaire",
+                            "name": "Nom",
+                            "email": "Adresse mail",
+                            "message": "Message",
+                            "submit": "Soumettre"
+                        }
+                    },
+                    "services": {
+                        "title": "Services",
+                        "subtitle": "Nos services",
+                        "written_by": "Ecrit par",
+                        "loading": "Chargement en cours...",
+                        "services": {
+                            "title": "Nos services",
+                            "subtitle": "Retrouvez les services de Leader Assurances SARL",
+                            "icon": "concierge-bell"
+                        }
+                    },
+                    "publications": {
+                        "title": "Publications",
+                        "subtitle": "Nos publications",
+                        "written_by": "Ecrit par",
+                        "loading": "Chargement en cours...",
+                        "publications": {
+                            "title": "Nos publications",
+                            "subtitle": "Retrouvez les publications de Leader Assurances SARL",
+                            "icon": "newspaper"
+                        }
+                    }
+                }
+            }
+        },
+        "en": {
+            "general": {
+                "date": "Date",
+                "time": "Heure",
+                "home": "Accueil",
+                "days": [
+                    "Dimanche",
+                    "Lundi",
+                    "Mardi",
+                    "Mercredi",
+                    "Jeudi",
+                    "Vendredi",
+                    "Samedi"
+                ],
+                "months": [
+                    "Jan",
+                    "Fev",
+                    "Mar",
+                    "Avr",
+                    "Mai",
+                    "Jui",
+                    "Jul",
+                    "Aou",
+                    "Sep",
+                    "Oct",
+                    "Nov",
+                    "D\u00e9c"
+                ]
+            },
+            "components": {
+                "form": {
+                    "save": "Sauvegarder",
+                    "save_add": "Sauvegarder & ajouter",
+                    "selected_file": "Fichier s\u00e9lectionn\u00e9",
+                    "active": "Actif",
+                    "inactive": "Inactif"
+                },
+                "list": {
+                    "action": "Action",
+                    "all": "Tous",
+                    "first": "Premi\u00e8re",
+                    "last": "Derni\u00e8re",
+                    "loading": "Chargement en cours",
+                    "print": "Imprimer",
+                    "pdf": "PDF",
+                    "csv": "CSV",
+                    "excel": "Excel",
+                    "search": "Rechercher",
+                    "see": "Voir",
+                    "show": "Afficher",
+                    "sl": "SL",
+                    "showing": "Affichant",
+                    "from": "sur",
+                    "entries": {
+                        "singular": "entr\u00e9e",
+                        "plural": "entr\u00e9es"
+                    }
+                },
+                "service_block": {
+                    "read_more": "En savoir plus"
+                },
+                "publication_block": {
+                    "read_more": "Lire la suite"
+                }
+            },
+            "auth": {
+                "footer": {
+                    "copyrights": "Copyrights",
+                    "all_rights": "Tous droits r\u00e9serv\u00e9s par"
+                },
+                "user": {
+                    "login": {
+                        "title": "Bienvenue !",
+                        "sign_in": "Se connecter",
+                        "email_address": "Adresse mail",
+                        "password": "Mot de passe"
+                    }
+                },
+                "admin": {
+                    "login": {
+                        "sign_in_to": "Se connecter au",
+                        "sign_in": "Se connecter",
+                        "admin_panel": "Panneau de l'administrateur",
+                        "email_address": "Adresse mail",
+                        "password": "Mot de passe",
+                        "sms": "SMS",
+                        "email": "Adresse mail",
+                        "otp_method": "M\u00e9thode OTP"
+                    },
+                    "verify": {
+                        "enter": "Entrer",
+                        "verification_code": "Code de v\u00e9rification",
+                        "continue": "Continuer",
+                        "didnt_receive_code": "Aucun code re\u00e7u",
+                        "resend": "Renvoyer"
+                    }
+                }
+            },
+            "messages": {
+                "auth": {
+                    "admin": {
+                        "not_found": "Informations incorrectes.",
+                        "invalid": "Code de v\u00e9rification invalide.",
+                        "sent": "Code de v\u00e9rification envoy\u00e9 avec succ\u00e8s."
+                    },
+                    "user": {
+                        "inactive": "Votre compte n'est pas actif. Veuillez appeler l'administrateur.",
+                        "unauthorized": "Non autoris\u00e9",
+                        "sent": "Lien de r\u00e9initialisation envoy\u00e9 avec succ\u00e8s.",
+                        "reset": "Mot de passe r\u00e9initialis\u00e9 avec succ\u00e8s.",
+                        "failure": "Echec."
+                    }
+                },
+                "admins": {
+                    "not_found": "Administrateur introuvable.",
+                    "created": "Administrateur cr\u00e9\u00e9 avec succ\u00e8s.",
+                    "updated": "Administrateur modifi\u00e9 avec succ\u00e8s.",
+                    "deleted": "Administrateur supprim\u00e9 avec succ\u00e8s."
+                },
+                "users": {
+                    "not_found": "Utilisateur introuvable.",
+                    "created": "Utilisateur cr\u00e9\u00e9 avec succ\u00e8s.",
+                    "updated": "Utilisateur modifi\u00e9 avec succ\u00e8s.",
+                    "deleted": "Utilisateur supprim\u00e9 avec succ\u00e8s."
+                },
+                "roles": {
+                    "not_found": "R\u00f4le introuvable.",
+                    "created": "R\u00f4le cr\u00e9\u00e9 avec succ\u00e8s.",
+                    "updated": "R\u00f4le modifi\u00e9 avec succ\u00e8s.",
+                    "deleted": "R\u00f4le supprim\u00e9 avec succ\u00e8s."
+                },
+                "features": {
+                    "not_found": "Fonctionnalit\u00e9 introuvable.",
+                    "created": "Fonctionnalit\u00e9 cr\u00e9\u00e9e avec succ\u00e8s.",
+                    "updated": "Fonctionnalit\u00e9 modifi\u00e9e avec succ\u00e8s.",
+                    "deleted": "Fonctionnalit\u00e9 supprim\u00e9e avec succ\u00e8s."
+                },
+                "languages": {
+                    "not_found": "Langue introuvable.",
+                    "created": "Langue cr\u00e9\u00e9e avec succ\u00e8s.",
+                    "updated": "Langue modifi\u00e9e avec succ\u00e8s.",
+                    "deleted": "Langue supprim\u00e9e avec succ\u00e8s."
+                },
+                "notifications": {
+                    "not_found": "Notification introuvable."
+                },
+                "cms": {
+                    "not_found": "Contenu introuvable.",
+                    "updated": "Contenu modifi\u00e9 avec succ\u00e8s."
+                },
+                "settings": {
+                    "not_found": "Param\u00e8tre introuvable.",
+                    "created": "Param\u00e8tre cr\u00e9\u00e9 avec succ\u00e8s.",
+                    "updated": "Param\u00e8tre modifi\u00e9 avec succ\u00e8s.",
+                    "deleted": "Param\u00e8tre supprim\u00e9 avec succ\u00e8s."
+                },
+                "publications": {
+                    "not_found": "Publication introuvable.",
+                    "created": "Publication cr\u00e9\u00e9e avec succ\u00e8s.",
+                    "updated": "Publication modifi\u00e9e avec succ\u00e8s.",
+                    "deleted": "Publication supprim\u00e9e avec succ\u00e8s."
+                },
+                "subscribers": {
+                    "not_found": "Souscripteur introuvable.",
+                    "created": "Souscripteur cr\u00e9\u00e9 avec succ\u00e8s.",
+                    "updated": "Souscripteur modifi\u00e9 avec succ\u00e8s.",
+                    "deleted": "Souscripteur supprim\u00e9 avec succ\u00e8s."
+                },
+                "services": {
+                    "not_found": "Service introuvable.",
+                    "created": "Service cr\u00e9\u00e9 avec succ\u00e8s.",
+                    "updated": "Service modifi\u00e9 avec succ\u00e8s.",
+                    "deleted": "Service supprim\u00e9 avec succ\u00e8s."
+                }
+            },
+            "backend": {
+                "header": {
+                    "id": "ID",
+                    "sign_out": "Se d\u00e9connecter",
+                    "no_message": "Aucun message",
+                    "no_notification": "Aucune notification",
+                    "logout": "D\u00e9connexion",
+                    "close": "Fermer",
+                    "sure_logout": "\u00cates-vous s\u00fbr de vouloir vous d\u00e9connecter",
+                    "you_have": "Vous avez",
+                    "messages": "messages",
+                    "unread_message": "message non lu",
+                    "unread_notification": "notification non lue",
+                    "unread_messages": "messages non lus",
+                    "unread_notifications": "notifications non lues",
+                    "view_all_messages": "Voir tous les messages",
+                    "view_all_notifications": "Voir toutes les notifications"
+                },
+                "footer": {
+                    "copyright": "Copyright",
+                    "all_rights": "Tous droits r\u00e9serv\u00e9s par"
+                },
+                "sidebar": {
+                    "admin": "Administrateur",
+                    "user": "Utilisateur",
+                    "menu": {
+                        "dashboard": {
+                            "icon": "home",
+                            "title": "Tableau de bord"
+                        },
+                        "admins": {
+                            "icon": "user-cog",
+                            "title": "Administrateurs",
+                            "add": "Ajouter un administrateur",
+                            "index": "Liste des administrateurs"
+                        },
+                        "users": {
+                            "icon": "user",
+                            "title": "Utilisateurs",
+                            "add": "Ajouter un utilisateur",
+                            "index": "Liste des utilisateurs"
+                        },
+                        "roles": {
+                            "icon": "user-tag",
+                            "title": "R\u00f4les",
+                            "add": "Ajouter un r\u00f4le",
+                            "index": "Liste des r\u00f4les"
+                        },
+                        "features": {
+                            "icon": "tools",
+                            "title": "Fonctionnalit\u00e9s",
+                            "add": "Ajouter une fonctionnalit\u00e9",
+                            "index": "Liste des fonctionnalit\u00e9s"
+                        },
+                        "languages": {
+                            "icon": "language",
+                            "title": "Langues",
+                            "add": "Ajouter une langue",
+                            "index": "Liste des langues"
+                        },
+                        "cms": {
+                            "icon": "wrench",
+                            "title": "CMS",
+                            "global": "Global",
+                            "general": "G\u00e9n\u00e9ral",
+                            "components": "Composants",
+                            "auth": "Authentification",
+                            "messages": "Messages",
+                            "backend": "Backend",
+                            "frontend": "Frontend"
+                        },
+                        "notifications": {
+                            "icon": "bell",
+                            "title": "Notifications"
+                        },
+                        "settings": {
+                            "icon": "sliders-h",
+                            "title": "Param\u00e8tres",
+                            "cms": "CMS",
+                            "language": "Param\u00e8tres de langue"
+                        },
+                        "publications": {
+                            "icon": "newspaper",
+                            "title": "Publications",
+                            "add": "Ajouter une publication",
+                            "index": "Liste des publications"
+                        },
+                        "subscribers": {
+                            "icon": "user",
+                            "title": "Souscripteurs",
+                            "add": "Ajouter un souscripteur",
+                            "index": "Liste des souscripteurs"
+                        },
+                        "services": {
+                            "icon": "concierge-bell",
+                            "title": "Services",
+                            "add": "Ajouter un service",
+                            "index": "Liste des services"
+                        }
+                    }
+                },
+                "pages": {
+                    "dashboard": {
+                        "admin": {
+                            "icon": "home",
+                            "title": "Panneau de l'administrateur",
+                            "subtitle": "Tableau de bord",
+                            "blocks": {
+                                "services": "Services",
+                                "publications": "Publications",
+                                "subscribers": "Souscripteurs"
+                            },
+                            "general_report": {
+                                "title": "Rapport g\u00e9n\u00e9ral",
+                                "subtitle": "Rapport g\u00e9n\u00e9ral",
+                                "services": "Services",
+                                "publications": "Publications",
+                                "total_services": "Total des services",
+                                "total_publications": "Total des publications"
+                            }
+                        },
+                        "user": {
+                            "icon": "home",
+                            "title": "Panneau de l'utilisateur",
+                            "subtitle": "Tableau de bord",
+                            "blocks": {
+                                "services": "Services",
+                                "publications": "Publications",
+                                "subscribers": "Souscripteurs"
+                            },
+                            "general_report": {
+                                "title": "Rapport g\u00e9n\u00e9ral",
+                                "subtitle": "Rapport g\u00e9n\u00e9ral",
+                                "services": "Services",
+                                "publications": "Publications",
+                                "total_services": "Total des services",
+                                "total_publications": "Total des publications"
+                            }
+                        }
+                    },
+                    "cms": {
+                        "icon": "wrench",
+                        "title": "CMS",
+                        "global": "Global",
+                        "general": "General",
+                        "messages": "Messages",
+                        "frontend": "Frontend",
+                        "components": "Components",
+                        "backend": "Backend",
+                        "auth": "Auth",
+                        "form": {
+                            "logo": "Logo",
+                            "app_name": "Nom de l'application",
+                            "company_name": "Nom de l'entreprise",
+                            "company_logo": "Logo de l'entreprise"
+                        }
+                    },
+                    "admins": {
+                        "icon": "user-cog",
+                        "title": "Administrateurs",
+                        "add": "Ajouter un administrateur",
+                        "edit": "Modifier un administrateur",
+                        "index": "Liste des administrateurs",
+                        "form": {
+                            "name": "Nom de l'administrateur",
+                            "full_name": "Nom complet",
+                            "phone": "Num\u00e9ro de t\u00e9l\u00e9phone",
+                            "password": "Mot de passe",
+                            "password_confirmation": "Confirmation de mot de passe",
+                            "email": "Adresse mail",
+                            "admin_photo": "Photo de l'administrateur",
+                            "photo": "Photo"
+                        }
+                    },
+                    "users": {
+                        "icon": "user",
+                        "title": "Utilisateurs",
+                        "add": "Ajouter un utilisateur",
+                        "edit": "Modifier un utilisateur",
+                        "index": "Liste des utilisateurs",
+                        "form": {
+                            "name": "Nom de l'utilisateur",
+                            "full_name": "Nom complet",
+                            "phone": "Num\u00e9ro de t\u00e9l\u00e9phone",
+                            "password": "Mot de passe",
+                            "password_confirmation": "Confirmation de mot de passe",
+                            "email": "Adresse mail",
+                            "role": "R\u00f4le",
+                            "select_role": "S\u00e9lectionner un r\u00f4le",
+                            "user_photo": "Photo de l'utilisateur",
+                            "photo": "Photo"
+                        }
+                    },
+                    "roles": {
+                        "icon": "user-tag",
+                        "title": "R\u00f4les",
+                        "add": "Ajouter un r\u00f4le",
+                        "edit": "Modifier un r\u00f4le",
+                        "index": "Liste des r\u00f4les",
+                        "form": {
+                            "name": "Nom",
+                            "description": "Description",
+                            "features": "Fonctionnalit\u00e9s",
+                            "created_at": "Cr\u00e9\u00e9 le",
+                            "create": "Cr\u00e9er",
+                            "update": "Modifier",
+                            "delete": "Supprimer"
+                        }
+                    },
+                    "features": {
+                        "icon": "tools",
+                        "title": "Fonctionnalit\u00e9s",
+                        "add": "Ajouter une fonctionnalit\u00e9",
+                        "edit": "Modifier une fonctionnalit\u00e9",
+                        "index": "Liste des fonctionnalit\u00e9s",
+                        "form": {
+                            "name": "Nom",
+                            "prefix": "Pr\u00e9fixe",
+                            "created_at": "Cr\u00e9\u00e9e le"
+                        }
+                    },
+                    "languages": {
+                        "icon": "language",
+                        "title": "Langues",
+                        "add": "Ajouter une langue",
+                        "edit": "Modifier une langue",
+                        "index": "Liste des langues",
+                        "form": {
+                            "name": "Nom",
+                            "abbr": "Abr\u00e9viation",
+                            "flag": "Drapeau",
+                            "select_flag": "S\u00e9lectionner un drapeau",
+                            "created_at": "Cr\u00e9\u00e9e le"
+                        }
+                    },
+                    "notifications": {
+                        "icon": "bell",
+                        "title": "Notifications",
+                        "show": "D\u00e9tails des notifications",
+                        "index": "Liste des notifications",
+                        "form": {
+                            "you_have_no_notification": "Vous n'avez pas de notification."
+                        }
+                    },
+                    "settings": {
+                        "icon": "sliders-h",
+                        "title": "Param\u00e8tres",
+                        "subtitle": "Param\u00e8tres du compte",
+                        "language": {
+                            "title": "Paramètres de languge",
+                            "form": {
+                                "select_language": "Sélectionner une langue"
+                            }
+                        }
+                    },
+                    "publications": {
+                        "icon": "newspaper",
+                        "title": "Publications",
+                        "add": "Ajouter une publication",
+                        "edit": "Modifier une publication",
+                        "index": "Liste des publications",
+                        "form": {
+                            "title": "Titre",
+                            "body": "Contenu",
+                            "slug": "Slug",
+                            "photo": "Photo",
+                            "publication_photo": "Photo de la publication",
+                            "is_active": "Statut",
+                            "select_status": "S\u00e9lectionner le statut",
+                            "language": "Langue",
+                            "created_at": "Cr\u00e9\u00e9e le"
+                        }
+                    },
+                    "subscribers": {
+                        "icon": "user",
+                        "title": "Souscripteurs",
+                        "add": "Ajouter un souscripteur",
+                        "edit": "Modifier un souscripteur",
+                        "index": "Liste des souscripteurs",
+                        "form": {
+                            "name": "Pr\u00e9nom",
+                            "email": "Adresse mail",
+                            "created_at": "Cr\u00e9\u00e9e le"
+                        }
+                    },
+                    "services": {
+                        "icon": "concierge-bell",
+                        "title": "Services",
+                        "add": "Ajouter un service",
+                        "edit": "Modifier un service",
+                        "index": "Liste des services",
+                        "form": {
+                            "title": "Titre",
+                            "body": "Contenu",
+                            "icon": "Icône",
+                            "language": "Langue",
+                            "created_at": "Cr\u00e9\u00e9 le"
+                        }
+                    }
+                }
+            },
+            "frontend": {
+                "header": {
+                    "contact": {
+                        "tel": "+237 233 42 58 14",
+                        "email": "services@leader-assurconseil.com"
+                    },
+                    "menu": {
+                        "home": "Accueil",
+                        "about": "A propos",
+                        "services": "Services",
+                        "publications": "Publications",
+                        "contact": "Contact"
+                    }
+                },
+                "footer": {
+                    "top": {
+                        "company": {
+                            "title": "Notre entreprise",
+                            "menu": {
+                                "home": "Accueil",
+                                "about": "A propos",
+                                "services": "Services",
+                                "publications": "Publications",
+                                "contact": "Contact"
+                            }
+                        },
+                        "services": {
+                            "title": "Nos services"
+                        },
+                        "contact": {
+                            "title": "Contact",
+                            "listen": "Nous sommes à l'écoute:",
+                            "address": "Douala, Akwa, rue Sylvanie, Douala",
+                            "phone": "+237 233 42 58 14",
+                            "hours": "8h-17h, Lundi à Samedi"
+                        }
+                    },
+                    "bottom": {
+                        "all_rights": "Tous droits r\u00e9serv\u00e9s par",
+                        "social_networks": [
+                            {
+                                "icon": "facebook-square",
+                                "link": "https:\/\/web.facebook.com\/equipefiducac\/?_rdc=1&_rdr"
+                            },
+                            {
+                                "icon": "linkedin",
+                                "link": "https:\/\/www.linkedin.com\/company\/fiducac\/about\/"
+                            },
+                            {
+                                "icon": "twitter-square",
+                                "link": "https:\/\/twitter.com\/fiducac?lang=fr"
+                            }
+                        ]
+                    }
+                },
+                "pages": {
+                    "home": {
+                        "banner": {
+                            "title": "LEADER ASSURANCES SARL",
+                            "about": "A propos",
+                            "services": "Nos services",
+                            "carousel": [
+                                {
+                                    "src": "\/images\/achievement-african-african-american-arms-raised-bangkok-black-1568857-pxhere.com.jpg",
+                                    "altText": "Nos dipl\u00f4m\u00e9s apr\u00e8s un forum sur les changements macro-\u00e9conomiques et leurs impacts sur l\u2019employabilit\u00e9"
+                                },
+                                {
+                                    "src": "\/images\/african-african-american-arrow-bangkok-black-bridge-1456513-pxhere.com.jpg",
+                                    "altText": "Visite du comit\u00e9 de direction de la FIDUCAC \u00e0 l\u2019UCAC-ICAM pour multiples projets"
+                                },
+                                {
+                                    "src": "\/images\/african-american-afro-american-analyzing-black-people-brainstorming-1434697-pxhere.com.jpg",
+                                    "altText": "Lancement officiel de la FIDUCAC en 2009"
+                                }
+                            ]
+                        },
+                        "about": {
+                            "title": "Leader Assurances SARL",
+                            "subtitle": "Qui sommes-nous?",
+                            "photo": "\/images\/achievement-african-african-american-bangkok-black-bridge-1567129-pxhere.com.jpg",
+                            "description": "Nous sommes un cabinet de conseil et de courtage en assurances, spécialisé dans le domaine de conseils en Assurance, de placement des risques, de l’audit des portefeuilles en assurances, de l’analyse des risques, du suivi de la gestion production et sinistres. \nNotre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance et aussi vous assister en cas de survenance d’un sinistre.",
+                            "read_more": "En savoir plus",
+                            "icon": "info-circle"
+                        },
+                        "policy": {
+                            "photo": "/images/african-african-american-amazing-awesome-bangkok-black-1567381-pxhere.com.jpg",
+                            "learn_more": "En savoir plus",
+                            "carousel": [
+                                {
+                                    "title": "Vous conduisez votre voiture. Ne devriez-vous pas également conduire votre police d'assurances?",
+                                    "description": "Notre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance  et aussi vous assister  en cas de survenance d’un sinistre"
+                                },
+                                {
+                                    "title": "Vous conduisez votre voiture.. Ne devriez-vous pas également conduire votre police d'assurances?",
+                                    "description": "Notre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance  et aussi vous assister  en cas de survenance d’un sinistre"
+                                },
+                                {
+                                    "title": "Vous conduisez votre voiture... Ne devriez-vous pas également conduire votre police d'assurances?",
+                                    "description": "Notre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance  et aussi vous assister  en cas de survenance d’un sinistre"
+                                },
+                                {
+                                    "title": "Vous conduisez votre voiture.... Ne devriez-vous pas également conduire votre police d'assurances?",
+                                    "description": "Notre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance  et aussi vous assister  en cas de survenance d’un sinistre"
+                                },
+                                {
+                                    "title": "Vous conduisez votre voiture..... Ne devriez-vous pas également conduire votre police d'assurances?",
+                                    "description": "Notre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance  et aussi vous assister  en cas de survenance d’un sinistre"
+                                }
+                            ]
+                        },
+                        "services": {
+                            "title": "Nos services",
+                            "subtitle": "Retrouvez les différents services que nous vous proposons",
+                            "centered": "true",
+                            "view_all": "Voir tous les services"
+                        },
+                        "testimonies": {
+                            "title": "Nos clients",
+                            "subtitle": "Quelques uns de nos clients",
+                            "centered": "true",
+                            "description": "Aliquam posuere gravida wolf moon retro. Hella ironic before they sold out pitchfork gastropub dreamccher. gravida vitae euismod quis felis."
+                        },
+                        "subscribe": {
+                            "title": "Prêt à économiser de l'argent?",
+                            "subtitle": "Découvrez en quelques secondes quelle(s) assurance(s) vous convient(nnent) le mieux.",
+                            "photo": "/images/quote_image.png",
+                            "name": "Nom",
+                            "email": "Adresse mail",
+                            "service": "Service",
+                            "select_service": "Sélectionner un service",
+                            "submit": "Soumettre"
+                        },
+                        "publications": {
+                            "title": "Nos publications",
+                            "subtitle": "Retrouvez nos publications r\u00e9centes",
+                            "icon": "newspaper",
+                            "view_all": "Voir toutes les publications"
+                        },
+                        "newsletter": {
+                            "title": "Restez connect\u00e9",
+                            "subtitle": "Tenez-vous inform\u00e9 en vous inscrivant \u00e0 notre newsletter",
+                            "description": "En souscrivant, vous acceptez de partager votre adresse e-mail avec la Fiducac afin de recevoir des messages de nouvelles r\u00e9centes de l'UCAC, des mises \u00e0 jour et d\u2019autres e-mails jug\u00e9s importants. Vous pouvez vous d\u00e9sabonner \u00e0 tout moment \u00e0 l\u2019aide du lien correspondant disponible dans ces e-mails.",
+                            "name": "Pr\u00e9nom",
+                            "email": "Adresse mail",
+                            "submit": "Soumettre"
+                        },
+                        "team": {
+                            "title": "Notre équipe",
+                            "subtitle": "Voici ceux grâce à qui tout ceci est possible",
+                            "centered": "true"
+                        }
+                    },
+                    "about": {
+                        "title": "A propos",
+                        "subtitle": "Qui sommes-nous?",
+                        "about": {
+                            "title": "Leader Assurances SARL",
+                            "subtitle": "Qui sommes-nous?",
+                            "photo": "\/images\/achievement-african-african-american-bangkok-black-bridge-1567129-pxhere.com.jpg",
+                            "description": "Nous sommes un cabinet de conseil et de courtage en assurances, spécialisé dans le domaine de conseils en Assurance, de placement des risques, de l’audit des portefeuilles en assurances, de l’analyse des risques, du suivi de la gestion production et sinistres. \nNotre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance et aussi vous assister en cas de survenance d’un sinistre.",
+                            "read_more": "En savoir plus"
+                        },
+                        "services": {
+                            "title": "Nos services",
+                            "subtitle": "Retrouvez les différents services que nous vous proposons",
+                            "centered": "true",
+                            "view_all": "Voir tous les services"
+                        },
+                        "team": {
+                            "title": "Notre équipe",
+                            "subtitle": "Voici ceux grâce à qui tout ceci est possible",
+                            "centered": "true"
+                        }
+
+                    },
+                    "contact": {
+                        "title": "Contact",
+                        "subtitle": "Contactez-nous",
+                        "contact": {
+                            "title": "Contactez-nous",
+                            "subtitle": "Remplissez ce formulaire pour toute information suppl\u00e9mentaire",
+                            "name": "Nom",
+                            "email": "Adresse mail",
+                            "message": "Message",
+                            "submit": "Soumettre"
+                        }
+                    },
+                    "services": {
+                        "title": "Services",
+                        "subtitle": "Nos services",
+                        "written_by": "Ecrit par",
+                        "loading": "Chargement en cours...",
+                        "services": {
+                            "title": "Nos services",
+                            "subtitle": "Retrouvez les services de Leader Assurances SARL",
+                            "icon": "concierge-bell"
+                        }
+                    },
+                    "publications": {
+                        "title": "Publications",
+                        "subtitle": "Nos publications",
+                        "written_by": "Ecrit par",
+                        "loading": "Chargement en cours...",
+                        "publications": {
+                            "title": "Nos publications",
+                            "subtitle": "Retrouvez les publications de Leader Assurances SARL",
+                            "icon": "newspaper"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

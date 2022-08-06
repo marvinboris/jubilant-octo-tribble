@@ -40,6 +40,7 @@ class Index extends Component {
             { name: form.title, key: 'title' },
             { name: form.body, key: 'body' },
             { name: form.icon, key: 'icon' },
+            { name: form.is_active, key: 'is_active' },
             { name: action, key: 'action', fixed: true }
         ]} />;
     }

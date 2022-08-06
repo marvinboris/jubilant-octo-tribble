@@ -1355,6 +1355,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var initialState = {
   name: '',
   email: '',
+  is_active: '1',
   add: false
 };
 
@@ -1415,11 +1416,16 @@ var Add = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       var _this$props = this.props,
-          form = _this$props.content.cms.pages.backend.pages.subscribers.form,
+          _this$props$content$c = _this$props.content.cms.pages,
+          _this$props$content$c2 = _this$props$content$c.components.form,
+          active = _this$props$content$c2.active,
+          inactive = _this$props$content$c2.inactive,
+          form = _this$props$content$c.backend.pages.subscribers.form,
           loading = _this$props.backend.subscribers.loading;
       var _this$state = this.state,
           name = _this$state.name,
-          email = _this$state.email;
+          email = _this$state.email,
+          is_active = _this$state.is_active;
       var content;
       if (loading) content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "col-12",
@@ -1451,6 +1457,25 @@ var Add = /*#__PURE__*/function (_Component) {
                 name: "email",
                 required: true,
                 label: form.email
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "col-lg-3",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              type: "select",
+              label: form.is_active,
+              onChange: this.inputChangeHandler,
+              value: is_active,
+              name: "is_active",
+              required: true,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+                children: form.select_status
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+                value: 1,
+                children: active
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+                value: 0,
+                children: inactive
               })]
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Backend_UI_Form_Save__WEBPACK_IMPORTED_MODULE_2__["default"], {

@@ -54,6 +54,18 @@ const asyncManagerServices = asyncComponent(() => import('./containers/Backend/M
 const asyncManagerServicesAdd = asyncComponent(() => import('./containers/Backend/Manager/Services/Add'));
 const asyncManagerServicesEdit = asyncComponent(() => import('./containers/Backend/Manager/Services/Edit'));
 
+const asyncManagerTestimonies = asyncComponent(() => import('./containers/Backend/Manager/Testimonies'));
+const asyncManagerTestimoniesAdd = asyncComponent(() => import('./containers/Backend/Manager/Testimonies/Add'));
+const asyncManagerTestimoniesEdit = asyncComponent(() => import('./containers/Backend/Manager/Testimonies/Edit'));
+
+const asyncManagerTeamMembers = asyncComponent(() => import('./containers/Backend/Manager/TeamMembers'));
+const asyncManagerTeamMembersAdd = asyncComponent(() => import('./containers/Backend/Manager/TeamMembers/Add'));
+const asyncManagerTeamMembersEdit = asyncComponent(() => import('./containers/Backend/Manager/TeamMembers/Edit'));
+
+const asyncManagerPartners = asyncComponent(() => import('./containers/Backend/Manager/Partners'));
+const asyncManagerPartnersAdd = asyncComponent(() => import('./containers/Backend/Manager/Partners/Add'));
+const asyncManagerPartnersEdit = asyncComponent(() => import('./containers/Backend/Manager/Partners/Edit'));
+
 const asyncManagerUsers = asyncComponent(() => import('./containers/Backend/Manager/Users'));
 const asyncManagerUsersAdd = asyncComponent(() => import('./containers/Backend/Manager/Users/Add'));
 const asyncManagerUsersEdit = asyncComponent(() => import('./containers/Backend/Manager/Users/Edit'));
@@ -140,6 +152,18 @@ class App extends Component {
                             <Route path="/admin/admins/add" component={asyncAdminAdminsAdd} />
                             <Route path="/admin/admins" component={asyncAdminAdmins} />
 
+                            <Route path="/:manager/partners/:id/edit" component={asyncManagerPartnersEdit} />
+                            <Route path="/:manager/partners/add" component={asyncManagerPartnersAdd} />
+                            <Route path="/:manager/partners" component={asyncManagerPartners} />
+
+                            <Route path="/:manager/team-members/:id/edit" component={asyncManagerTeamMembersEdit} />
+                            <Route path="/:manager/team-members/add" component={asyncManagerTeamMembersAdd} />
+                            <Route path="/:manager/team-members" component={asyncManagerTeamMembers} />
+
+                            <Route path="/:manager/testimonies/:id/edit" component={asyncManagerTestimoniesEdit} />
+                            <Route path="/:manager/testimonies/add" component={asyncManagerTestimoniesAdd} />
+                            <Route path="/:manager/testimonies" component={asyncManagerTestimonies} />
+
                             <Route path="/:manager/services/:id/edit" component={asyncManagerServicesEdit} />
                             <Route path="/:manager/services/add" component={asyncManagerServicesAdd} />
                             <Route path="/:manager/services" component={asyncManagerServices} />
@@ -156,8 +180,8 @@ class App extends Component {
                             <Route path="/:manager/cms/general" component={asyncManagerCmsGeneral} />
                             <Route path="/:manager/cms/messages" component={asyncManagerCmsMessages} />
                             <Route path="/:manager/cms/components" component={asyncManagerCmsComponents} />
-                            <Route path="/:manager/cms/auth" component={asyncManagerCmsAuth} />
-                            <Route path="/:manager/cms/backend" component={asyncManagerCmsBackend} />
+                            {/* <Route path="/:manager/cms/auth" component={asyncManagerCmsAuth} /> */}
+                            {/* <Route path="/:manager/cms/backend" component={asyncManagerCmsBackend} /> */}
                             <Route path="/:manager/cms/frontend" component={asyncManagerCmsFrontend} />
 
                             <Route path="/:manager/dashboard" component={asyncManagerDashboard} />

@@ -8257,6 +8257,9 @@ var Index = /*#__PURE__*/function (_Component) {
           name: form.icon,
           key: 'icon'
         }, {
+          name: form.is_active,
+          key: 'is_active'
+        }, {
           name: action,
           key: 'action',
           fixed: true

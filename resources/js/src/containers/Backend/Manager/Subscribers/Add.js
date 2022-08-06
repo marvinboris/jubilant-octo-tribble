@@ -14,6 +14,7 @@ import * as utility from '../utility';
 const initialState = {
     name: '',
     email: '',
+    is_active: '1',
 
     add: false,
 }
@@ -35,12 +36,12 @@ class Add extends Component {
         const {
             content: {
                 cms: {
-                    pages: { backend: { pages: { subscribers: { form } } } }
+                    pages: { components: { form: { active, inactive } }, backend: { pages: { subscribers: { form } } } }
                 }
             },
             backend: { subscribers: { loading } },
         } = this.props;
-        const { name, email } = this.state;
+        const { name, email, is_active } = this.state;
         let content;
 
         if (loading) content = <div className='col-12'>
@@ -55,6 +56,14 @@ class Add extends Component {
                         <Input type="text" className="col-md-6" onChange={this.inputChangeHandler} value={name} name="name" required label={form.name} />
                         <Input type="text" className="col-md-6" onChange={this.inputChangeHandler} value={email} name="email" required label={form.email} />
                     </div>
+                </div>
+
+                <div className="col-lg-3">
+                    <Input type="select" label={form.is_active} onChange={this.inputChangeHandler} value={is_active} name="is_active" required>
+                        <option>{form.select_status}</option>
+                        <option value={1}>{active}</option>
+                        <option value={0}>{inactive}</option>
+                    </Input>
                 </div>
 
                 <Save edit={this.props.edit} saveAddHandler={this.saveAddHandler} />

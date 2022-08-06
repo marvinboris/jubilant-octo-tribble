@@ -16,34 +16,24 @@ class ServiceSeeder extends Seeder
     {
         $services = [
             [
-                'title' => json_encode(['fr' => 'Assurance auto']),
-                'body' => json_encode(['fr' => 'Aliquam posuere gravida wolf moon retro. Hella ironic before they sold out pitchfork gastropub dreamccher. gravida vitae euismod quis felis.']),
-                'icon' => 'car',
+                'title' => json_encode(['fr' => 'Assurance dommages']),
+                'body' => json_encode(['fr' => '<strong>Entreprises</strong>: Tous Risques Chantier - Tous Risques Montage Essais  - Multirisque Dommages  - Marchandises en Stocks - Marchandises en cours de transport - Pertes d’Exploitation.<br /><br /><strong>Particuliers</strong>: Multirisque habitation - Individuelle accidents - Assurance Automobile - Individuelle Aviation - Bateaux de Plaisance.']),
+                'icon' => 'car-crash',
             ],
             [
-                'title' => json_encode(['fr' => 'Assurance vie']),
-                'body' => json_encode(['fr' => 'Aliquam posuere gravida wolf moon retro. Hella ironic before they sold out pitchfork gastropub dreamccher. gravida vitae euismod quis felis.']),
+                'title' => json_encode(['fr' => 'Assurance de responsabilité']),
+                'body' => json_encode(['fr' => '<strong>Entreprises</strong>: Responsabilité Civile Chef d’Entreprise - Responsabilisé Civile avant et après livraison - Garantie Défense et Recours - Responsabilité Civile Diverses.<br /><br /><strong>Particuliers</strong>: Responsabilité Civile Chef de Famille - Garantie Défense et Recours']),
+                'icon' => 'user-tie',
+            ],
+            [
+                'title' => json_encode(['fr' => 'Assurance de personnes']),
+                'body' => json_encode(['fr' => 'Maladie Groupe - Assistance et /ou Evacuation Sanitaire - Complément d’Avis Médical -Individuelle Accident - Crédit Banque - Temporaire Décès - Frais Funéraires - Assurance Voyage.']),
                 'icon' => 'users',
             ],
             [
-                'title' => json_encode(['fr' => 'Assurance santé']),
-                'body' => json_encode(['fr' => 'Aliquam posuere gravida wolf moon retro. Hella ironic before they sold out pitchfork gastropub dreamccher. gravida vitae euismod quis felis.']),
-                'icon' => 'medkit',
-            ],
-            [
-                'title' => json_encode(['fr' => 'Assurance habitation']),
-                'body' => json_encode(['fr' => 'Aliquam posuere gravida wolf moon retro. Hella ironic before they sold out pitchfork gastropub dreamccher. gravida vitae euismod quis felis.']),
-                'icon' => 'home',
-            ],
-            [
-                'title' => json_encode(['fr' => 'Assurance entreprise']),
-                'body' => json_encode(['fr' => 'Aliquam posuere gravida wolf moon retro. Hella ironic before they sold out pitchfork gastropub dreamccher. gravida vitae euismod quis felis.']),
-                'icon' => 'building',
-            ],
-            [
-                'title' => json_encode(['fr' => 'Assurance voyage']),
-                'body' => json_encode(['fr' => 'Aliquam posuere gravida wolf moon retro. Hella ironic before they sold out pitchfork gastropub dreamccher. gravida vitae euismod quis felis.']),
-                'icon' => 'plane',
+                'title' => json_encode(['fr' => 'Capitalisation']),
+                'body' => json_encode(['fr' => 'Retraite Individuelle - Retraite Education - Retraite Entreprise – Assurance-Crédit – Assurance Vie.']),
+                'icon' => 'user',
             ],
         ];
 

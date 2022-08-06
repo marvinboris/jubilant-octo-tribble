@@ -8240,6 +8240,9 @@ var Index = /*#__PURE__*/function (_Component) {
           name: form.email,
           key: 'email'
         }, {
+          name: form.is_active,
+          key: 'is_active'
+        }, {
           name: form.created_at,
           key: 'created_at'
         }, {

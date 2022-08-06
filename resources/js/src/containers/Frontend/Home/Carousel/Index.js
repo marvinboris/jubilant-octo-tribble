@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Carousel, CarouselItem, CarouselIndicators } from 'reactstrap';
 
-import './BannerCarousel.scss';
+import './Carousel.scss';
 
 export default ({ children, items }) => {
     const [activeIndex, setActiveIndex] = useState(0);

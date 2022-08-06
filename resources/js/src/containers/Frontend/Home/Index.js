@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 import OwlCarousel from 'react-owl-carousel2';
 
-import BannerCarousel from './BannerCarousel';
+import Carousel from './Carousel';
+import Quote from './Quote';
 
 import Error from '../../../components/Messages/Error';
 import Feedback from '../../../components/Messages/Feedback';
@@ -12,6 +13,8 @@ import SectionTitle from '../../../components/Frontend/UI/Title/SectionTitle';
 import ServiceBlock from '../../../components/Frontend/UI/Blocks/ServiceBlock';
 import PublicationBlock from '../../../components/Frontend/UI/Blocks/PublicationBlock';
 import TeamMemberBlock from '../../../components/Frontend/UI/Blocks/TeamMemberBlock';
+
+import View from '../../../components/Backend/UI/List/Photo/View';
 
 import Input from '../../../components/UI/Input';
 
@@ -86,14 +89,15 @@ class Home extends Component {
                     pages: { frontend: { pages: { home: cms } } }
                 }, services
             },
-            frontend: { home: { loading, error, message, testimonies = [], publications = [], team = [] } }
+            frontend: { home: { loading, error, message, testimonies = [], partners = [], publications = [], team = [] } }
         } = this.props;
         const { name, email, service_id } = this.state;
         const lang = localStorage.getItem('lang');
 
         const policiesContent = cms.policy.carousel.map(policy => <PolicyBlock key={JSON.stringify(policy)} {...policy} cms={cms.policy} />);
         const servicesContent = services.map(service => <div key={JSON.stringify(service)} className='col-md-6 col-xxl-4'><ServiceBlock {...service} /></div>);
-        const testimoniesContent = testimonies.map(testimony => <TestimonyBlock key={JSON.stringify(testimony)} {...{ ...testimony, job: testimony.job[lang] }} />);
+        // const testimoniesContent = testimonies.map(testimony => <TestimonyBlock key={JSON.stringify(testimony)} {...{ ...testimony, job: testimony.job[lang] }} />);
+        const partnersContent = partners.map(partner => <div key={JSON.stringify(partner)}><img src={partner.photo} alt={partner.name} /></div>);
         const publicationsContent = publications.map(publication => <div key={JSON.stringify(publication)} className='col-md-4'><PublicationBlock {...publication} /></div>);
         const teamContent = team.map(member => <TeamMemberBlock key={JSON.stringify(member)} {...{ ...member, job: member.job[lang] }} />);
 
@@ -114,7 +118,7 @@ class Home extends Component {
                     </div>
                 </div>
 
-                <BannerCarousel items={cms.banner.carousel} />
+                <Carousel items={cms.banner.carousel} />
             </div>
 
             <section className='about'>
@@ -185,7 +189,7 @@ class Home extends Component {
                 </div>
             </section>
 
-            <section className='testimonies'>
+            {/* <section className='testimonies'>
                 <div className='container'>
                     <SectionTitle {...cms.testimonies} />
                     <div className='row justify-content-center'>
@@ -196,34 +200,20 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
+            </section> */}
+
+            <section className='partners'>
+                <div className='container'>
+                    {partners.length > 0 && <OwlCarousel ref="partners-carousel" options={{ responsive: { 0: { items: 2 }, 600: { items: 3 }, 900: { items: 4 }, 1200: { items: 5 } }, dots: false, margin: 20 }}>{partnersContent}</OwlCarousel>}
+                </div>
             </section>
 
-            <section className='subscribe'>
+            <section className='quote'>
                 <div className='container'>
-                    <div className='row'>
-                        <div className='col-md-6'>
-                            <form onSubmit={this.subscribeHandler}>
-                                <Error err={error} />
-                                <Feedback message={message} />
+                    <SectionTitle {...cms.quote} />
 
-                                <Input type='text' name='name' onChange={this.inputChangeHandler} value={name} icon="user" placeholder={cms.subscribe.name} required disabled={loading} />
-                                <Input type='email' name='email' onChange={this.inputChangeHandler} value={email} icon="envelope" placeholder={cms.subscribe.email} required disabled={loading} />
-                                <Input type='select' name='service_id' onChange={this.inputChangeHandler} value={service_id} icon="concierge-bell" placeholder={cms.subscribe.service} required disabled={loading}>
-                                    <option value="">{cms.subscribe.select_service}</option>
-                                    {services.sort((a, b) => a.title[lang].localeCompare(b.title[lang])).map(service => <option key={JSON.stringify(service)} value={service.id}>{service.title[lang]}</option>)}
-                                </Input>
-
-                                <div className='submit'>
-                                    <button className={'btn btn-blue btn-block' + (loading ? ' btn-disabled' : '')}>{cms.subscribe.submit}</button>
-                                </div>
-                            </form>
-                        </div>
-
-                        <div className='col-md-6'>
-                            <SectionTitle {...cms.subscribe} />
-
-                            <img src={cms.subscribe.photo} className="img-fluid" />
-                        </div>
+                    <div>
+                        <View title={cms.quote.form.title} content={<Quote />}><button className='btn btn-white'>{cms.quote.get}</button></View>
                     </div>
                 </div>
             </section>

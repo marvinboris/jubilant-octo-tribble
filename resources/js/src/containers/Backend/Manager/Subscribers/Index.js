@@ -38,6 +38,7 @@ class Index extends Component {
         return <utility.index.lifecycle.render className='Subscribers' props={this.props} resource='subscribers' data={data} fields={[
             { name: form.name, key: 'name' },
             { name: form.email, key: 'email' },
+            { name: form.is_active, key: 'is_active' },
             { name: form.created_at, key: 'created_at' },
             { name: action, key: 'action', fixed: true }
         ]} />;

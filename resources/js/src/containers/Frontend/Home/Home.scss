@@ -260,6 +260,50 @@
             }
         }
 
+        &.partners {
+            .container {
+                div {
+                    text-align: center;
+
+                    img {
+                        width: auto;
+                        margin: auto;
+                        height: 60px;
+                    }
+                }
+            }
+        }
+
+        &.quote {
+            background-size: cover;
+            background-position: center;
+            background-color: var(--blue);
+            background-image: url('/images/quote_bg_texture.png');
+
+            .container {
+                display: flex;
+                text-align: center;
+                align-items: center;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .SectionTitle {
+                    margin-bottom: 20px;
+
+                    .text {
+                        .title {
+                            font-size: 36px;
+                            color: var(--white);
+                        }
+                    }
+                }
+
+                button {
+                    white-space: nowrap;
+                }
+            }
+        }
+
         &.subscribe {
             background-size: cover;
             background-position: center;

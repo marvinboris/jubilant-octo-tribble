@@ -1316,6 +1316,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -1389,7 +1409,57 @@ var Add = /*#__PURE__*/function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "inputChangeHandler", function (e) {
-      return _utility__WEBPACK_IMPORTED_MODULE_6__.add.component.inputChangeHandler(_this.state, _this.setState.bind(_assertThisInitialized(_this)))(e);
+      var _e$target = e.target,
+          id = _e$target.id,
+          name = _e$target.name,
+          value = _e$target.value,
+          checked = _e$target.checked,
+          files = _e$target.files;
+
+      if (name.includes('features')) {
+        var features = _toConsumableArray(_this.state.features);
+
+        if (name.includes('id')) {
+          var _id$split = id.split('-'),
+              _id$split2 = _slicedToArray(_id$split, 2),
+              feature_id = _id$split2[1];
+
+          var feature = features.find(function (f) {
+            return +f.id === +feature_id;
+          });
+          if (checked && !feature) features.push({
+            id: feature_id,
+            permissions: []
+          });else features = features.filter(function (f) {
+            return +f.id !== +feature_id;
+          });
+        } else if (name.includes('permissions')) {
+          var _id$split3 = id.split('-'),
+              _id$split4 = _slicedToArray(_id$split3, 3),
+              _feature_id = _id$split4[1],
+              abbr = _id$split4[2];
+
+          var featureIndex = features.findIndex(function (f) {
+            return +f.id === +_feature_id;
+          });
+          var _feature = features[featureIndex];
+
+          var permissions = _toConsumableArray(_feature.permissions);
+
+          var found = permissions.includes(abbr);
+          if (checked && !found) permissions.push(abbr);else permissions = permissions.filter(function (p) {
+            return p !== abbr;
+          });
+          _feature.permissions = permissions;
+          features[featureIndex] = _feature;
+        }
+
+        return _this.setState({
+          features: features
+        });
+      }
+
+      _this.setState(_defineProperty({}, name, files ? files[0] : value));
     });
 
     _defineProperty(_assertThisInitialized(_this), "fileUpload", function (id) {

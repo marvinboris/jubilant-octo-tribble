@@ -12,6 +12,7 @@ class SubscriberController extends Controller
     private $rules = [
         'name' => 'required|string',
         'email' => 'required|email',
+        'is_active' => 'required|integer',
     ];
 
 

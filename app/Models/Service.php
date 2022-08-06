@@ -21,7 +21,7 @@ class Service extends Model
     }
 
     protected $fillable = [
-        'title', 'body', 'icon', 'slug',
+        'title', 'body', 'icon', 'slug', 'is_active',
     ];
 
     protected $appends = [

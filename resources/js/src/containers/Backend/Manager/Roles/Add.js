@@ -26,7 +26,35 @@ class Add extends Component {
     // Component methods
     resetState = () => this.setState({ ...initialState })
     saveAddHandler = () => utility.add.component.saveAddHandler(this.setState.bind(this), this.props)
-    inputChangeHandler = e => utility.add.component.inputChangeHandler(this.state, this.setState.bind(this))(e)
+    inputChangeHandler = e => {
+        const { id, name, value, checked, files } = e.target;
+        if (name.includes('features')) {
+            let features = [...this.state.features];
+
+            if (name.includes('id')) {
+                const [, feature_id] = id.split('-');
+                const feature = features.find(f => +f.id === +feature_id);
+
+                if (checked && !feature) features.push({ id: feature_id, permissions: [] });
+                else features = features.filter(f => +f.id !== +feature_id);
+            } else if (name.includes('permissions')) {
+                const [, feature_id, abbr] = id.split('-');
+                const featureIndex = features.findIndex(f => +f.id === +feature_id);
+                const feature = features[featureIndex];
+                let permissions = [...feature.permissions];
+                const found = permissions.includes(abbr);
+
+                if (checked && !found) permissions.push(abbr);
+                else permissions = permissions.filter(p => p !== abbr);
+
+                feature.permissions = permissions;
+                features[featureIndex] = feature;
+            }
+
+            return this.setState({ features });
+        }
+        this.setState({ [name]: files ? files[0] : value });
+    }
     fileUpload = id => utility.add.component.fileUpload(id)
 
     // Lifecycle methods

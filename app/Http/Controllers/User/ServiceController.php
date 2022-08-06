@@ -16,6 +16,7 @@ class ServiceController extends Controller
         'title' => 'array|required',
         'body' => 'array|required',
         'icon' => 'required|string',
+        'is_active' => 'required|integer',
     ];
 
 

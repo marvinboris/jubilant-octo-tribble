@@ -1370,19 +1370,44 @@
             },
             "frontend": {
                 "header": {
+                    "contact": {
+                        "tel": "+237 233 42 58 14",
+                        "email": "services@leader-assurconseil.com"
+                    },
                     "menu": {
-                        "home": "The FIDUCAC",
-                        "alumni_call": "Alumni Call",
-                        "committee": "The committee",
-                        "opportunities": "Opportunities",
+                        "home": "Home",
+                        "about": "About us",
+                        "services": "Services",
+                        "publications": "Publications",
                         "contact": "Contact"
                     }
                 },
                 "footer": {
-                    "fiducac": "International Federation of UCAC Alumni",
-                    "social_networks": {
-                        "title": "Social networks",
-                        "list": [
+                    "top": {
+                        "company": {
+                            "title": "Our company",
+                            "menu": {
+                                "home": "Home",
+                                "about": "About us",
+                                "services": "Services",
+                                "publications": "Publications",
+                                "contact": "Contact"
+                            }
+                        },
+                        "services": {
+                            "title": "Our services"
+                        },
+                        "contact": {
+                            "title": "Contact",
+                            "listen": "We listen to you:",
+                            "address": "Douala, Akwa, Sylvanie street",
+                            "phone": "+237 233 42 58 14",
+                            "hours": "8h-17h, Monday to Saturday"
+                        }
+                    },
+                    "bottom": {
+                        "all_rights": "All rights reserved by",
+                        "social_networks": [
                             {
                                 "icon": "facebook-square",
                                 "link": "https:\/\/web.facebook.com\/equipefiducac\/?_rdc=1&_rdr"
@@ -1396,137 +1421,134 @@
                                 "link": "https:\/\/twitter.com\/fiducac?lang=fr"
                             }
                         ]
-                    },
-                    "schools": {
-                        "title": "UCAC schools"
                     }
                 },
                 "pages": {
                     "home": {
                         "banner": {
-                            "title": "International Federation of UCAC Alumni",
-                            "alumni_call": "Alumni Call",
-                            "opportunities": "Opportunities",
+                            "title": "LEADER ASSURANCE SARL",
+                            "about": "About us",
+                            "services": "Our services",
                             "carousel": [
                                 {
-                                    "src": "\/images\/Photo-Amphi-1-1.jpg",
-                                    "altText": "Our graduates after a forum on macroeconomic changes and their impacts on employability"
+                                    "src": "\/images\/achievement-african-african-american-arms-raised-bangkok-black-1568857-pxhere.com.jpg",
+                                    "altText": "We are an insurance brokerage company, specializing in the field of insurance advice, risk placement, auditing of insurance portfolios, risk analysis, setting up calls for tenders, follow-up of production and claims management."
                                 },
                                 {
-                                    "src": "\/images\/Devanture-Institut-UCAC-ICAM-1.jpg",
-                                    "altText": "Visit of the FIDUCAC management committee to UCAC-ICAM for multiple projects"
+                                    "src": "\/images\/african-african-american-arrow-bangkok-black-bridge-1456513-pxhere.com.jpg",
+                                    "altText": "We strive to provide the best insurance advice to our clients, enabling them to better cover risks through value propositions and optimal solutions."
                                 },
                                 {
-                                    "src": "\/images\/Defile-Catho-en-marche-1.jpg",
-                                    "altText": "Official launch of FIDUCAC in 2009"
+                                    "src": "\/images\/african-american-afro-american-analyzing-black-people-brainstorming-1434697-pxhere.com.jpg",
+                                    "altText": "Our goal is to support our clients in the selection of potential insurers and in the implementation of your insurance contracts."
                                 }
                             ]
                         },
-                        "events": {
-                            "title": "Upcoming event",
-                            "join": "Join"
-                        },
                         "about": {
-                            "title": "The Fiducac",
+                            "title": "Leader Assurance SARL",
                             "subtitle": "Who are we?",
-                            "photo": "\/images\/Equipe-2.jpg",
-                            "description": "At Fiducac, we define our future while embracing a tradition that has been in the making for more than 35 years. Our student mission shapes our vision. But our alumni and friends \u2014 our one-of-a-kind community \u2014 make this vision a reality. They ensure the success of young foals. They are helping to forge a bold new chapter in UCAC\u2019s extraordinary history. Together, we will keep FIDUCAC thriving and prepare a new generation to lead the way.",
-                            "donate": "Donate",
-                            "icon": "info-circle",
-                            "join": {
-                                "title": "Join",
-                                "subtitle": "Join the Fiducac",
-                                "form": {
-                                    "title": "Place of duty and position held",
-                                    "name": "Your name",
-                                    "email": "Your e-mail address",
-                                    "photo": "Your photo",
-                                    "upload": "Upload",
-                                    "payment": "Payment proof",
-                                    "school": "School",
-                                    "select_school": "Select school",
-                                    "promotion": "Promotion",
-                                    "submit": "Submit",
-                                    "language": "Language",
-                                    "all_languages": "Be sure to fill in the information in all languages before submitting the form.",
-                                    "payment_details": "In order to confirm your membership in Fiducac, please make a payment and send the proof in image (a screenshot of the transfer or deposit message, for example)."
+                            "photo": "\/images\/achievement-african-african-american-bangkok-black-bridge-1567129-pxhere.com.jpg",
+                            "description": "We are an insurance consulting and brokerage firm, specializing in the field of insurance consulting, risk placement, auditing of insurance portfolios, risk analysis, monitoring of production and claims management. .<br /><br />Our goal is to assist you in setting up your insurance contracts, to provide you with the necessary information before subscription or during renewals, to provide you with advice before and during the life of your insurance contracts and also assist you in the event of a claim.",
+                            "read_more": "Read more",
+                            "icon": "info-circle"
+                        },
+                        "policy": {
+                            "photo": "/images/african-african-american-amazing-awesome-bangkok-black-1567381-pxhere.com.jpg",
+                            "learn_more": "Learn more",
+                            "carousel": [
+                                {
+                                    "title": "You drive your car. Shouldn't you also conduct your insurance policy?",
+                                    "description": "Our goal is to support you in setting up your insurance contracts, to provide you with the necessary information before subscription or during renewals, to provide you with advice before and during the life of your insurance contracts and also assist you in the event of a claim"
+                                },
+                                {
+                                    "title": "You drive your car.. Shouldn't you also drive your insurance policy?",
+                                    "description": "Our goal is to support you in setting up your insurance contracts, to provide you with the necessary information before subscription or during renewals, to provide you with advice before and during the life of your insurance contracts and also assist you in the event of a claim"
+                                },
+                                {
+                                    "title": "You drive your car... Shouldn't you also drive your insurance policy?",
+                                    "description": "Our goal is to support you in setting up your insurance contracts, to provide you with the necessary information before subscription or during renewals, to provide you with advice before and during the life of your insurance contracts and also assist you in the event of a claim"
+                                },
+                                {
+                                    "title": "You drive your car.... Shouldn't you also drive your insurance policy?",
+                                    "description": "Our goal is to support you in setting up your insurance contracts, to provide you with the necessary information before subscription or during renewals, to provide you with advice before and during the life of your insurance contracts and also assist you in the event of a claim"
+                                },
+                                {
+                                    "title": "You drive your car..... Shouldn't you also drive your insurance policy?",
+                                    "description": "Our goal is to support you in setting up your insurance contracts, to provide you with the necessary information before subscription or during renewals, to provide you with advice before and during the life of your insurance contracts and also assist you in the event of a claim"
                                 }
-                            },
-                            "pay": {
-                                "title": "Annual contribution",
-                                "subtitle": "Pay your annual dues",
-                                "form": {
-                                    "email": "Your e-mail address",
-                                    "year": "Year contributed",
-                                    "payment": "Payment proof",
-                                    "submit": "Submit",
-                                    "payment_details": "In order to confirm your membership in Fiducac, please make a payment and send the proof in image (a screenshot of the transfer or deposit message, for example)."
-                                }
+                            ]
+                        },
+                        "services": {
+                            "title": "Our services",
+                            "subtitle": "Find out about the different services we offer",
+                            "centered": "true",
+                            "view_all": "View all services"
+                        },
+                        "testimonies": {
+                            "title": "Our customers",
+                            "subtitle": "Some of our clients",
+                            "centered": "true",
+                            "description": "Aliquam posuere gravida wolf moon retro. Hella ironic before they sold out pitchfork gastropub dreamccher. gravida vitae euismod quis felis."
+                        },
+                        "quote": {
+                            "title": "Be accompanied by our experts.",
+                            "get": "Obtenir un devis gratuit",
+                            "form": {
+                                "title": "Risk pricing",
+                                "subtitle": "Please complete the form.",
+                                "services_title": "De quel(s) service(s) aimeriez-vous bénéficier?",
+                                "submit": "Submit",
+                                "first_name": "First name",
+                                "last_name": "Last name",
+                                "email": "E-mail address",
+                                "phone": "Phone number",
+                                "location": "Location",
+                                "address": "Address",
+                                "message": "Specify your need, the period (deadline), your location and any other information necessary to understand the task"
                             }
-                        },
-                        "activities": {
-                            "title": "Our activities",
-                            "subtitle": "Fiducac's activities",
-                            "description": "The aims of the Fiducac are similar to those of many alumni. We want to create a community that can be useful to all of us.",
-                            "icon": "chart-line",
-                            "view_all": "View all activities"
-                        },
-                        "stats": {
-                            "members": {
-                                "icon": "users",
-                                "text": "Members"
-                            },
-                            "photos": {
-                                "icon": "file-image",
-                                "text": "Photos"
-                            },
-                            "events": {
-                                "icon": "calendar-alt",
-                                "text": "Events"
-                            },
-                            "awards": {
-                                "icon": "award",
-                                "text": "Awards"
-                            }
-                        },
-                        "elders": {
-                            "title": "Our elders",
-                            "subtitle": "Our alumni share their experience with us",
-                            "icon": "users",
-                            "view_all": "View all elders"
                         },
                         "publications": {
                             "title": "Our publications",
-                            "subtitle": "Find the recent publications of Fiducac",
+                            "subtitle": "Find our recent publications",
                             "icon": "newspaper",
                             "view_all": "View all publications"
                         },
                         "newsletter": {
-                            "title": "Stay connected",
+                            "title": "Stay Connected",
                             "subtitle": "Stay informed by subscribing to our newsletter",
                             "description": "By subscribing, you agree to share your email address with Fiducac in order to receive recent UCAC news messages, updates and other emails deemed important. You can unsubscribe at any time using the unsubscribe link available in these emails.",
-                            "email": "E-mail address",
                             "name": "First name",
+                            "email": "E-mail address",
                             "submit": "Submit"
                         },
-                        "contact": []
-                    },
-                    "alumni_call": {
-                        "title": "Alumni Call",
-                        "subtitle": "Our alumni share their experience with us",
-                        "elders": {
-                            "title": "Our elders",
-                            "subtitle": "Our alumni share their experience with us",
-                            "icon": "users"
+                        "team": {
+                            "title": "Our team",
+                            "subtitle": "Here are the people who made all this possible",
+                            "centered": "true"
                         }
                     },
-                    "committee": {
-                        "title": "The committee",
-                        "subtitle": "The executive committee of Fiducac"
-                    },
-                    "opportunities": {
-                        "title": "Opportunities",
-                        "subtitle": "The opportunities for everyone"
+                    "about": {
+                        "title": "A propos",
+                        "subtitle": "Who are we?",
+                        "about": {
+                            "title": "Leader Assurance SARL",
+                            "subtitle": "Who are we?",
+                            "photo": "\/images\/achievement-african-african-american-bangkok-black-bridge-1567129-pxhere.com.jpg",
+                            "description": "We are an insurance brokerage company, specializing in the field of insurance advice, risk placement, insurance portfolio auditing, risk analysis, setting up calls for tenders, monitoring production and claims management.<br /><br />We strive to provide the best insurance advice to our clients, enabling them to better cover risks through value propositions and optimal solutions.< br /><br />LEADER ASSURANCE SARL operates by providing the best possible intellectual property and service to clients, doing business transparently and ethically to ensure compliant solutions. Our philosophy is built on integrity and respect for our clients.<br /><br />We understand that managing risk is very different from managing strategy, and our nuanced expertise allows us to see what you still might not see. Fortunately, we can identify potential risks, analyze them and take all necessary precautionary measures to minimize or mitigate the risk.<br /><br /><strong>Our goal is to support our customers in the selection of potential insurers and in setting up your insurance contracts. We give you necessary information before subscription or during renewals. We also provide you with advice before and during the life of your insurance contracts and also assist you in the event of a claim as well as support during risk visits alongside the insurance company.</ strong>",
+                            "read_more": "Read more"
+                        },
+                        "services": {
+                            "title": "Our services",
+                            "subtitle": "Retrouvez les différents services que nous vous proposons",
+                            "centered": "true",
+                            "view_all": "View all services"
+                        },
+                        "team": {
+                            "title": "Our team",
+                            "subtitle": "Here are the people who made all this possible",
+                            "centered": "true"
+                        }
+
                     },
                     "contact": {
                         "title": "Contact",
@@ -1540,6 +1562,17 @@
                             "submit": "Submit"
                         }
                     },
+                    "services": {
+                        "title": "Services",
+                        "subtitle": "Our services",
+                        "written_by": "Written by",
+                        "loading": "Loading...",
+                        "services": {
+                            "title": "Our services",
+                            "subtitle": "Find the services of Leader Assurance SARL",
+                            "icon": "concierge-bell"
+                        }
+                    },
                     "publications": {
                         "title": "Publications",
                         "subtitle": "Our publications",
@@ -1547,28 +1580,8 @@
                         "loading": "Loading...",
                         "publications": {
                             "title": "Our publications",
-                            "subtitle": "Find the publications of the Fiducac",
+                            "subtitle": "Find the publications of Leader Assurance SARL",
                             "icon": "newspaper"
-                        }
-                    },
-                    "activities": {
-                        "title": "Activities",
-                        "subtitle": "Our activities",
-                        "loading": "Loading...",
-                        "activities": {
-                            "title": "Our activities",
-                            "subtitle": "Find the activities of the Fiducac",
-                            "icon": "chart-line"
-                        }
-                    },
-                    "events": {
-                        "title": "Events",
-                        "subtitle": "Our events",
-                        "loading": "Loading...",
-                        "activities": {
-                            "title": "Our events",
-                            "subtitle": "Find the events of the Fiducac",
-                            "icon": "calendar-alt"
                         }
                     }
                 }

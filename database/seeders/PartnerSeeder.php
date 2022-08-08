@@ -16,24 +16,60 @@ class PartnerSeeder extends Seeder
     {
         $partners = [
             [
-                'name' => '',
-                'photo' => 'logo-minsante.png',
+                'name' => 'Activa',
+                'photo' => 'Logo-ACTIVA-min-p1jxtcsr7xgt0wlaeg417vmjwz4ema4plle4jpbqio.png',
             ],
             [
-                'name' => '',
-                'photo' => 'HPP_A.png',
+                'name' => 'AGC',
+                'photo' => 'agc.png',
             ],
             [
-                'name' => '',
-                'photo' => 'Arysta-LifeScience-Logo-1024x278-1.png',
+                'name' => 'Allianz',
+                'photo' => 'allianz-logo.svg',
             ],
             [
-                'name' => '',
-                'photo' => 'Logo-minader-1.jpg',
+                'name' => 'AREA',
+                'photo' => 'area.jpg',
             ],
             [
-                'name' => '',
-                'photo' => 'logo-solevo.png',
+                'name' => 'GMC',
+                'photo' => 'Logo-officiel-GMC.png',
+            ],
+            [
+                'name' => 'Chanas Assurances SA',
+                'photo' => 'Logo-administration_chanas-assurances_Cameroun.png',
+            ],
+            [
+                'name' => 'AXA',
+                'photo' => 'footer_axa.jpg',
+            ],
+            [
+                'name' => 'NSIA Assurances',
+                'photo' => 'logo245x125.png',
+            ],
+            [
+                'name' => 'Pro Assur',
+                'photo' => 'PAS-Logo-1.png',
+            ],
+            [
+                'name' => 'Prudential Beneficial',
+                'photo' => 'PB-Life-Insurnance-CMYK.jpg',
+            ],
+            [
+                'name' => 'Royal Onyx Insurance',
+                'photo' => '1536349237134.jpg',
+            ],
+            [
+                'name' => 'Sanlam',
+                'photo' => '45451740-36700966.jpg',
+            ],
+            [
+                'name' => 'SUNU Assurances',
+                'photo' => 'Logo_SUNU.jpg',
+            ],
+            [
+                'name' => 'Zenithe Insurance SARL',
+                'photo' => 'logo.png',
             ],
         ];
 

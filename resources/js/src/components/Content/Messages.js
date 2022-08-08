@@ -56,25 +56,6 @@ export default {
         "updated": "Param\u00e8tre modifi\u00e9 avec succ\u00e8s.",
         "deleted": "Param\u00e8tre supprim\u00e9 avec succ\u00e8s."
     },
-    "events": {
-        "not_found": "Ev\u00e8nement introuvable.",
-        "created": "Ev\u00e8nement cr\u00e9\u00e9 avec succ\u00e8s.",
-        "updated": "Ev\u00e8nement modifi\u00e9 avec succ\u00e8s.",
-        "deleted": "Ev\u00e8nement supprim\u00e9 avec succ\u00e8s."
-    },
-    "activities": {
-        "not_found": "Activit\u00e9 introuvable.",
-        "created": "Activit\u00e9 cr\u00e9\u00e9e avec succ\u00e8s.",
-        "updated": "Activit\u00e9 modifi\u00e9e avec succ\u00e8s.",
-        "deleted": "Activit\u00e9 supprim\u00e9e avec succ\u00e8s."
-    },
-    "elders": {
-        "not_found": "Ancien introuvable.",
-        "created": "Ancien cr\u00e9\u00e9 avec succ\u00e8s.",
-        "updated": "Ancien modifi\u00e9 avec succ\u00e8s.",
-        "deleted": "Ancien supprim\u00e9 avec succ\u00e8s.",
-        "application": "Candidature d'adh\u00e9sion rejet\u00e9e avec succ\u00e8s."
-    },
     "publications": {
         "not_found": "Publication introuvable.",
         "created": "Publication cr\u00e9\u00e9e avec succ\u00e8s.",
@@ -87,16 +68,28 @@ export default {
         "updated": "Souscripteur modifi\u00e9 avec succ\u00e8s.",
         "deleted": "Souscripteur supprim\u00e9 avec succ\u00e8s."
     },
-    "contributions": {
-        "not_found": "Cotisation introuvable.",
-        "created": "Cotisation cr\u00e9\u00e9e avec succ\u00e8s.",
-        "updated": "Cotisation modifi\u00e9e avec succ\u00e8s.",
-        "deleted": "Cotisation supprim\u00e9e avec succ\u00e8s."
+    "services": {
+        "not_found": "Service introuvable.",
+        "created": "Service cr\u00e9\u00e9 avec succ\u00e8s.",
+        "updated": "Service modifi\u00e9 avec succ\u00e8s.",
+        "deleted": "Service supprim\u00e9 avec succ\u00e8s."
     },
-    "schools": {
-        "not_found": "Ecole introuvable.",
-        "created": "Ecole cr\u00e9\u00e9e avec succ\u00e8s.",
-        "updated": "Ecole modifi\u00e9e avec succ\u00e8s.",
-        "deleted": "Ecole supprim\u00e9e avec succ\u00e8s."
+    "testimonies": {
+        "not_found": "Témoignage introuvable.",
+        "created": "Témoignage cr\u00e9\u00e9 avec succ\u00e8s.",
+        "updated": "Témoignage modifi\u00e9 avec succ\u00e8s.",
+        "deleted": "Témoignage supprim\u00e9 avec succ\u00e8s."
+    },
+    "team_members": {
+        "not_found": "Membre d'équipe introuvable.",
+        "created": "Membre d'équipe cr\u00e9\u00e9 avec succ\u00e8s.",
+        "updated": "Membre d'équipe modifi\u00e9 avec succ\u00e8s.",
+        "deleted": "Membre d'équipe supprim\u00e9 avec succ\u00e8s."
+    },
+    "partners": {
+        "not_found": "Partenaire introuvable.",
+        "created": "Partenaire cr\u00e9\u00e9 avec succ\u00e8s.",
+        "updated": "Partenaire modifi\u00e9 avec succ\u00e8s.",
+        "deleted": "Partenaire supprim\u00e9 avec succ\u00e8s."
     }
 };

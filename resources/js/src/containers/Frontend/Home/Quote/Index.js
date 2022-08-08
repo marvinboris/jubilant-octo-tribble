@@ -111,7 +111,7 @@ class Quote extends Component {
             </div>
 
             <div className='submit'>
-                <button className='btn btn-green'>{cms.form.submit}<i className='fas fa-paper-plane' /></button>
+                <button className='btn btn-blue'>{cms.form.submit}<i className='fas fa-paper-plane' /></button>
             </div>
         </div>;
 

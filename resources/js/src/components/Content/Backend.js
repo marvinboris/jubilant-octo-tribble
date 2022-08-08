@@ -79,24 +79,6 @@ export default {
                 "cms": "CMS",
                 "language": "Param\u00e8tres de langue"
             },
-            "events": {
-                "icon": "calendar-alt",
-                "title": "Ev\u00e8nements",
-                "add": "Ajouter un \u00e9v\u00e8nement",
-                "index": "Liste des \u00e9v\u00e8nements"
-            },
-            "activities": {
-                "icon": "chart-line",
-                "title": "Activit\u00e9s",
-                "add": "Ajouter une activit\u00e9",
-                "index": "Liste des activit\u00e9s"
-            },
-            "elders": {
-                "icon": "users",
-                "title": "Anciens",
-                "add": "Ajouter un ancien",
-                "index": "Liste des anciens"
-            },
             "publications": {
                 "icon": "newspaper",
                 "title": "Publications",
@@ -109,17 +91,29 @@ export default {
                 "add": "Ajouter un souscripteur",
                 "index": "Liste des souscripteurs"
             },
-            "contributions": {
-                "icon": "wallet",
-                "title": "Cotisations",
-                "add": "Ajouter une cotisation",
-                "index": "Liste des cotisations"
+            "services": {
+                "icon": "concierge-bell",
+                "title": "Services",
+                "add": "Ajouter un service",
+                "index": "Liste des services"
             },
-            "schools": {
-                "icon": "school",
-                "title": "Ecoles",
-                "add": "Ajouter une \u00e9cole",
-                "index": "Liste des \u00e9coles"
+            "testimonies": {
+                "icon": "comments",
+                "title": "Témoignages",
+                "add": "Ajouter un témoignage",
+                "index": "Liste des témoignages"
+            },
+            "team_members": {
+                "icon": "user-tie",
+                "title": "Membres d'équipe",
+                "add": "Ajouter un membre",
+                "index": "Liste des membres"
+            },
+            "partners": {
+                "icon": "handshake",
+                "title": "Partenaires",
+                "add": "Ajouter un partenaire",
+                "index": "Liste des partenaires"
             }
         }
     },
@@ -130,11 +124,17 @@ export default {
                 "title": "Panneau de l'administrateur",
                 "subtitle": "Tableau de bord",
                 "blocks": {
-                    "events": "Ev\u00e8nements",
-                    "activities": "Activit\u00e9s",
-                    "elders": "Anciens",
+                    "services": "Services",
                     "publications": "Publications",
                     "subscribers": "Souscripteurs"
+                },
+                "general_report": {
+                    "title": "Rapport g\u00e9n\u00e9ral",
+                    "subtitle": "Rapport g\u00e9n\u00e9ral",
+                    "services": "Services",
+                    "publications": "Publications",
+                    "total_services": "Total des services",
+                    "total_publications": "Total des publications"
                 }
             },
             "user": {
@@ -142,18 +142,16 @@ export default {
                 "title": "Panneau de l'utilisateur",
                 "subtitle": "Tableau de bord",
                 "blocks": {
-                    "events": "Ev\u00e8nements",
-                    "activities": "Activit\u00e9s",
-                    "elders": "Anciens",
+                    "services": "Services",
                     "publications": "Publications",
                     "subscribers": "Souscripteurs"
                 },
                 "general_report": {
                     "title": "Rapport g\u00e9n\u00e9ral",
                     "subtitle": "Rapport g\u00e9n\u00e9ral",
-                    "elders": "Anciens",
+                    "services": "Services",
                     "publications": "Publications",
-                    "total_elders": "Total des anciens",
+                    "total_services": "Total des services",
                     "total_publications": "Total des publications"
                 }
             }
@@ -273,65 +271,6 @@ export default {
                 }
             }
         },
-        "events": {
-            "icon": "calendar-alt",
-            "title": "Ev\u00e8nements",
-            "add": "Ajouter un \u00e9v\u00e8nement",
-            "edit": "Modifier un \u00e9v\u00e8nement",
-            "index": "Liste des \u00e9v\u00e8nements",
-            "form": {
-                "title": "Titre",
-                "description": "Description",
-                "body": "Contenu",
-                "date": "Date",
-                "photo": "Photo",
-                "event_photo": "Photo de l'\u00e9v\u00e8nement",
-                "language": "Langue",
-                "created_at": "Cr\u00e9\u00e9 le"
-            }
-        },
-        "activities": {
-            "icon": "chart-line",
-            "title": "Activit\u00e9s",
-            "add": "Ajouter une activit\u00e9",
-            "edit": "Modifier une activit\u00e9",
-            "index": "Liste des activit\u00e9s",
-            "form": {
-                "title": "Titre",
-                "body": "Contenu",
-                "slug": "Slug",
-                "photo": "Photo",
-                "activity_photo": "Photo de l'activit\u00e9",
-                "language": "Langue",
-                "is_active": "Statut",
-                "created_at": "Cr\u00e9\u00e9e le"
-            }
-        },
-        "elders": {
-            "icon": "users",
-            "title": "Anciens",
-            "add": "Ajouter un ancien",
-            "edit": "Modifier un ancien",
-            "index": "Liste des anciens",
-            "form": {
-                "name": "Nom",
-                "title": "Titre du poste",
-                "photo": "Photo",
-                "school": "Ecole",
-                "select_school": "S\u00e9lectionner une \u00e9cole",
-                "promotion": "Promotion",
-                "email": "Adresse mail",
-                "elder_photo": "Photo de l'ancien",
-                "paid": "Statut de paiement",
-                "payment": "Preuve de paiement",
-                "language": "Langue",
-                "select_status": "S\u00e9lectionner le statut",
-                "paid_status": "Pay\u00e9e",
-                "unpaid_status": "Impay\u00e9e",
-                "errors": "Corrections \u00e0 effectuer",
-                "created_at": "Cr\u00e9\u00e9e le"
-            }
-        },
         "publications": {
             "icon": "newspaper",
             "title": "Publications",
@@ -359,38 +298,76 @@ export default {
             "form": {
                 "name": "Pr\u00e9nom",
                 "email": "Adresse mail",
-                "created_at": "Cr\u00e9\u00e9e le"
-            }
-        },
-        "contributions": {
-            "icon": "wallet",
-            "title": "Cotisations",
-            "add": "Ajouter une cotisation",
-            "edit": "Modifier une cotisation",
-            "index": "Liste des cotisations",
-            "form": {
-                "elder": "Ancien",
-                "select_elder": "S\u00e9lectionner un ancien",
-                "year": "Ann\u00e9e cotis\u00e9e",
-                "payment": "Preuve de paiement",
-                "paid": "Statut de paiement",
+                "is_active": "Statut",
                 "select_status": "S\u00e9lectionner le statut",
-                "paid_status": "Pay\u00e9e",
-                "unpaid_status": "Impay\u00e9e",
                 "created_at": "Cr\u00e9\u00e9e le"
             }
         },
-        "schools": {
-            "icon": "school",
-            "title": "Ecoles",
-            "add": "Ajouter une \u00e9cole",
-            "edit": "Modifier une \u00e9cole",
-            "index": "Liste des \u00e9coles",
+        "services": {
+            "icon": "concierge-bell",
+            "title": "Services",
+            "add": "Ajouter un service",
+            "edit": "Modifier un service",
+            "index": "Liste des services",
+            "form": {
+                "title": "Titre",
+                "body": "Contenu",
+                "icon": "Icône",
+                "language": "Langue",
+                "is_active": "Statut",
+                "select_status": "S\u00e9lectionner le statut",
+                "created_at": "Cr\u00e9\u00e9 le"
+            }
+        },
+        "testimonies": {
+            "icon": "comments",
+            "title": "Témoignages",
+            "add": "Ajouter un témoignage",
+            "edit": "Modifier un témoignage",
+            "index": "Liste des témoignages",
             "form": {
                 "name": "Nom",
-                "abbr": "Abr\u00e9vation",
-                "link": "Site web",
-                "created_at": "Cr\u00e9\u00e9e le"
+                "company": "Entreprise",
+                "title": "Titre",
+                "body": "Contenu",
+                "language": "Langue",
+                "photo": "Photo",
+                "testimony_photo": "Photo du témoignage",
+                "is_active": "Statut",
+                "select_status": "S\u00e9lectionner le statut",
+                "created_at": "Cr\u00e9\u00e9 le"
+            }
+        },
+        "team_members": {
+            "icon": "user-tie",
+            "title": "Membres d'équipe",
+            "add": "Ajouter un membre",
+            "edit": "Modifier un membre",
+            "index": "Liste des membres",
+            "form": {
+                "name": "Nom",
+                "job": "Poste",
+                "language": "Langue",
+                "photo": "Photo",
+                "team_member_photo": "Photo du membre",
+                "is_active": "Statut",
+                "select_status": "S\u00e9lectionner le statut",
+                "created_at": "Cr\u00e9\u00e9 le"
+            }
+        },
+        "partners": {
+            "icon": "handshake",
+            "title": "Partenaires",
+            "add": "Ajouter un partenaire",
+            "edit": "Modifier un partenaire",
+            "index": "Liste des partenaires",
+            "form": {
+                "name": "Nom",
+                "language": "Langue",
+                "photo": "Photo",
+                "partner_photo": "Photo du partenaire",
+                "is_active": "Statut",
+                "created_at": "Cr\u00e9\u00e9 le"
             }
         }
     }

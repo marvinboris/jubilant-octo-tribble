@@ -1,18 +1,43 @@
 export default {
     "header": {
+        "contact": {
+            "tel": "+237 233 42 58 14",
+            "email": "services@leader-assurconseil.com"
+        },
         "menu": {
-            "home": "La FIDUCAC",
-            "alumni_call": "Alumni Call",
-            "committee": "Le comit\u00e9",
-            "opportunities": "Opportunit\u00e9s",
+            "home": "Accueil",
+            "about": "A propos",
+            "services": "Services",
+            "publications": "Publications",
             "contact": "Contact"
         }
     },
     "footer": {
-        "fiducac": "F\u00e9d\u00e9ration Internationale Des Dipl\u00f4m\u00e9s De L'UCAC",
-        "social_networks": {
-            "title": "R\u00e9seaux sociaux",
-            "list": [
+        "top": {
+            "company": {
+                "title": "Notre entreprise",
+                "menu": {
+                    "home": "Accueil",
+                    "about": "A propos",
+                    "services": "Services",
+                    "publications": "Publications",
+                    "contact": "Contact"
+                }
+            },
+            "services": {
+                "title": "Nos services"
+            },
+            "contact": {
+                "title": "Contact",
+                "listen": "Nous sommes à l'écoute:",
+                "address": "Douala, Akwa, rue Sylvanie, Douala",
+                "phone": "+237 233 42 58 14",
+                "hours": "8h-17h, Lundi à Samedi"
+            }
+        },
+        "bottom": {
+            "all_rights": "Tous droits r\u00e9serv\u00e9s par",
+            "social_networks": [
                 {
                     "icon": "facebook-square",
                     "link": "https:\/\/web.facebook.com\/equipefiducac\/?_rdc=1&_rdr"
@@ -26,108 +51,95 @@ export default {
                     "link": "https:\/\/twitter.com\/fiducac?lang=fr"
                 }
             ]
-        },
-        "schools": {
-            "title": "Les \u00e9coles de l'UCAC"
         }
     },
     "pages": {
         "home": {
             "banner": {
-                "title": "F\u00e9d\u00e9ration Internationale Des Dipl\u00f4m\u00e9s De L'UCAC",
-                "alumni_call": "Alumni Call",
-                "opportunities": "Opportunit\u00e9s",
+                "title": "LEADER ASSURANCE SARL",
+                "about": "A propos",
+                "services": "Nos services",
                 "carousel": [
                     {
-                        "src": "\/images\/Photo-Amphi-1-1.jpg",
-                        "altText": "Nos dipl\u00f4m\u00e9s apr\u00e8s un forum sur les changements macro-\u00e9conomiques et leurs impacts sur l\u2019employabilit\u00e9"
+                        "src": "\/images\/achievement-african-african-american-arms-raised-bangkok-black-1568857-pxhere.com.jpg",
+                        "altText": "Nous sommes une société de courtage en assurances, spécialisée dans le domaine de conseils en assurance, du placement des risques, de l’audit des portefeuilles en assurance, de l’analyse des risques, du montage des appels d’offres, du suivi de la gestion production et sinistres."
                     },
                     {
-                        "src": "\/images\/Devanture-Institut-UCAC-ICAM-1.jpg",
-                        "altText": "Visite du comit\u00e9 de direction de la FIDUCAC \u00e0 l\u2019UCAC-ICAM pour multiples projets"
+                        "src": "\/images\/african-african-american-arrow-bangkok-black-bridge-1456513-pxhere.com.jpg",
+                        "altText": "Nous nous efforçons de fournir les meilleurs conseils en matière d’assurances à nos clients, leur permettant une meilleure couverture des risques grâce à des propositions de valeur et des solutions optimales."
                     },
                     {
-                        "src": "\/images\/Defile-Catho-en-marche-1.jpg",
-                        "altText": "Lancement officiel de la FIDUCAC en 2009"
+                        "src": "\/images\/african-american-afro-american-analyzing-black-people-brainstorming-1434697-pxhere.com.jpg",
+                        "altText": "Notre but est d’accompagner nos clients dans la sélection des potentiels assureurs et dans la mise en place de vos contrats d’assurance."
                     }
                 ]
             },
-            "events": {
-                "title": "Ev\u00e8nement \u00e0 venir",
-                "join": "Rejoindre"
-            },
             "about": {
-                "title": "La Fiducac",
-                "subtitle": "Qui sommes-nous ?",
-                "photo": "\/images\/Equipe-2.jpg",
-                "description": "A la Fiducac, nous d\u00e9finissons notre avenir tout en embrassant une tradition en devenir depuis plus de 35 ans. Notre mission estudiantine fa\u00e7onne notre vision. Mais nos anciens et amis \u2014 notre communaut\u00e9 unique en son genre \u2014 font de cette vision une r\u00e9alit\u00e9. Ils assurent la r\u00e9ussite des jeunes poulains. Ils aident \u00e0 forger un nouveau chapitre audacieux dans l\u2019histoire extraordinaire de l\u2019UCAC. Ensemble, nous garderons la FIDUCAC prosp\u00e8re et pr\u00e9parerons une nouvelle g\u00e9n\u00e9ration pour montrer la voie.",
-                "donate": "Faire un don",
-                "icon": "info-circle",
-                "join": {
-                    "title": "Adh\u00e9rer",
-                    "subtitle": "Rejoindre la Fiducac",
-                    "form": {
-                        "title": "Lieu de service et poste occup\u00e9",
-                        "name": "Votre nom",
-                        "email": "Votre adresse mail",
-                        "photo": "Votre photo",
-                        "upload": "Envoyer",
-                        "payment": "Preuve de paiement",
-                        "school": "Ecole",
-                        "select_school": "S\u00e9lectionner une \u00e9cole",
-                        "promotion": "Promotion",
-                        "submit": "Soumettre",
-                        "language": "Langue",
-                        "all_languages": "Assurez-vous de renseigner les informations dans toutes les langues avant de soumettre le formulaire.",
-                        "payment_details": "Afin de confirmer votre adh\u00e9sion \u00e0 la Fiducac, veuillez effectuer un paiement et en envoyer la preuve en image (une capture d'\u00e9cran du message de transfert ou de d\u00e9p\u00f4t, par exemple)."
+                "title": "Leader Assurance SARL",
+                "subtitle": "Qui sommes-nous?",
+                "photo": "\/images\/achievement-african-african-american-bangkok-black-bridge-1567129-pxhere.com.jpg",
+                "description": "Nous sommes un cabinet de conseil et de courtage en assurances, spécialisé dans le domaine de conseils en Assurance, de placement des risques, de l’audit des portefeuilles en assurances, de l’analyse des risques, du suivi de la gestion production et sinistres.<br /><br />Notre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance et aussi vous assister en cas de survenance d’un sinistre.",
+                "read_more": "En savoir plus",
+                "icon": "info-circle"
+            },
+            "policy": {
+                "photo": "/images/african-african-american-amazing-awesome-bangkok-black-1567381-pxhere.com.jpg",
+                "learn_more": "En savoir plus",
+                "carousel": [
+                    {
+                        "title": "Vous conduisez votre voiture. Ne devriez-vous pas également conduire votre police d'assurances?",
+                        "description": "Notre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance  et aussi vous assister  en cas de survenance d’un sinistre"
+                    },
+                    {
+                        "title": "Vous conduisez votre voiture.. Ne devriez-vous pas également conduire votre police d'assurances?",
+                        "description": "Notre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance  et aussi vous assister  en cas de survenance d’un sinistre"
+                    },
+                    {
+                        "title": "Vous conduisez votre voiture... Ne devriez-vous pas également conduire votre police d'assurances?",
+                        "description": "Notre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance  et aussi vous assister  en cas de survenance d’un sinistre"
+                    },
+                    {
+                        "title": "Vous conduisez votre voiture.... Ne devriez-vous pas également conduire votre police d'assurances?",
+                        "description": "Notre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance  et aussi vous assister  en cas de survenance d’un sinistre"
+                    },
+                    {
+                        "title": "Vous conduisez votre voiture..... Ne devriez-vous pas également conduire votre police d'assurances?",
+                        "description": "Notre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance  et aussi vous assister  en cas de survenance d’un sinistre"
                     }
-                },
-                "pay": {
-                    "title": "Cotisation annuelle",
-                    "subtitle": "R\u00e9gler sa cotisation annuelle",
-                    "form": {
-                        "email": "Votre adresse mail",
-                        "year": "Ann\u00e9e cotis\u00e9e",
-                        "payment": "Preuve de paiement",
-                        "submit": "Soumettre",
-                        "payment_details": "Afin de confirmer votre adh\u00e9sion \u00e0 la Fiducac, veuillez effectuer un paiement et en envoyer la preuve en image (une capture d'\u00e9cran du message de transfert ou de d\u00e9p\u00f4t, par exemple)."
-                    }
+                ]
+            },
+            "services": {
+                "title": "Nos services",
+                "subtitle": "Retrouvez les différents services que nous vous proposons",
+                "centered": "true",
+                "view_all": "Voir tous les services"
+            },
+            "testimonies": {
+                "title": "Nos clients",
+                "subtitle": "Quelques uns de nos clients",
+                "centered": "true",
+                "description": "Aliquam posuere gravida wolf moon retro. Hella ironic before they sold out pitchfork gastropub dreamccher. gravida vitae euismod quis felis."
+            },
+            "quote": {
+                "title": "Faites-vous accompagner par nos experts.",
+                "get": "Obtenir un devis gratuit",
+                "form": {
+                    "title": "Tarification des risques",
+                    "subtitle": "Veuillez remplir le formulaire.",
+                    "services_title": "De quel(s) service(s) aimeriez-vous bénéficier?",
+                    "submit": "Soumettre",
+                    "first_name": "Prénom(s)",
+                    "last_name": "Nom(s)",
+                    "email": "Adresse mail",
+                    "phone": "Numéro de téléphone",
+                    "location": "Localisation",
+                    "address": "Adresse",
+                    "message": "Précisez votre besoin, la période (date limite), votre emplacement et toute autre information nécessaire à la compréhension de la tâche"
                 }
-            },
-            "activities": {
-                "title": "Nos activit\u00e9s",
-                "subtitle": "Les activit\u00e9s de la Fiducac",
-                "description": "Les desseins de la Fiducac sont semblables \u00e0 ceux de bien des alumnis. Nous souhaitons cr\u00e9er une communaut\u00e9 qui puisse \u00eatre utile \u00e0 chacun d'entre nous.",
-                "icon": "chart-line",
-                "view_all": "Voir toutes les activit\u00e9s"
-            },
-            "stats": {
-                "members": {
-                    "icon": "users",
-                    "text": "Membres"
-                },
-                "photos": {
-                    "icon": "file-image",
-                    "text": "Photos"
-                },
-                "events": {
-                    "icon": "calendar-alt",
-                    "text": "Ev\u00e8nements"
-                },
-                "awards": {
-                    "icon": "award",
-                    "text": "R\u00e9compenses"
-                }
-            },
-            "elders": {
-                "title": "Nos anciens",
-                "subtitle": "Nos anciens partagent avec nous leur exp\u00e9rience",
-                "icon": "users",
-                "view_all": "Voir tous les anciens"
             },
             "publications": {
                 "title": "Nos publications",
-                "subtitle": "Retrouvez les publications r\u00e9centes de la Fiducac",
+                "subtitle": "Retrouvez nos publications r\u00e9centes",
                 "icon": "newspaper",
                 "view_all": "Voir toutes les publications"
             },
@@ -135,28 +147,38 @@ export default {
                 "title": "Restez connect\u00e9",
                 "subtitle": "Tenez-vous inform\u00e9 en vous inscrivant \u00e0 notre newsletter",
                 "description": "En souscrivant, vous acceptez de partager votre adresse e-mail avec la Fiducac afin de recevoir des messages de nouvelles r\u00e9centes de l'UCAC, des mises \u00e0 jour et d\u2019autres e-mails jug\u00e9s importants. Vous pouvez vous d\u00e9sabonner \u00e0 tout moment \u00e0 l\u2019aide du lien correspondant disponible dans ces e-mails.",
-                "email": "Adresse mail",
                 "name": "Pr\u00e9nom",
+                "email": "Adresse mail",
                 "submit": "Soumettre"
             },
-            "contact": []
-        },
-        "alumni_call": {
-            "title": "Alumni Call",
-            "subtitle": "Nos anciens nous partagent leur exp\u00e9rience",
-            "elders": {
-                "title": "Nos anciens",
-                "subtitle": "Nos anciens partagent avec nous leur exp\u00e9rience",
-                "icon": "users"
+            "team": {
+                "title": "Notre équipe",
+                "subtitle": "Voici ceux grâce à qui tout ceci est possible",
+                "centered": "true"
             }
         },
-        "committee": {
-            "title": "Le comit\u00e9",
-            "subtitle": "Le comit\u00e9 dirigeant de la Fiducac"
-        },
-        "opportunities": {
-            "title": "Opportunit\u00e9s",
-            "subtitle": "Les opportunit\u00e9s \u00e0 saisir pour tout un chacun"
+        "about": {
+            "title": "A propos",
+            "subtitle": "Qui sommes-nous?",
+            "about": {
+                "title": "Leader Assurance SARL",
+                "subtitle": "Qui sommes-nous?",
+                "photo": "\/images\/achievement-african-african-american-bangkok-black-bridge-1567129-pxhere.com.jpg",
+                "description": "Nous sommes une société de courtage en assurances, spécialisée dans le domaine de conseils en assurance, du placement des risques, de l’audit des portefeuilles en assurance, de l’analyse des risques, du montage des appels d’offres, du suivi de la gestion production et sinistres.<br /><br />Nous nous efforçons de fournir les meilleurs conseils en matière d’assurances à nos clients, leur permettant une meilleure couverture des risques grâce à des propositions de valeur et des solutions optimales.<br /><br />LEADER ASSURANCE SARL opère en fournissant la meilleure propriété intellectuelle et le meilleur service possible aux clients, faisant des affaires de manière transparente et d’éthique pour assurer des solutions conformes. Notre philosophie repose sur l’intégrité et le respect de nos clients.<br /><br />Nous comprenons que la gestion des risques est très différente de la gestion de la stratégie, et notre expertise nuancée nous permet de voir ce que vous pourriez toujours ne pas voir. Heureusement, nous pouvons identifier les risques potentiels, les analyser et prendre toutes les mesures de précaution nécessaires pour minimiser ou atténuer le risque.<br /><br /><strong>Notre but est d’accompagner nos clients dans la sélection des potentiels assureurs et dans la mise en place de vos contrats d’assurance. Nous vous donnons des informations nécessaires avant la souscription ou pendant les renouvellements.  Nous vous prodiguons également des conseils avant et pendant la vie de vos contrats d’assurance et aussi vous assister en cas de survenance d’un sinistre ainsi que l’accompagnement lors des visites de risques au côté de la Compagnie d’assurance.</strong>",
+                "read_more": "En savoir plus"
+            },
+            "services": {
+                "title": "Nos services",
+                "subtitle": "Retrouvez les différents services que nous vous proposons",
+                "centered": "true",
+                "view_all": "Voir tous les services"
+            },
+            "team": {
+                "title": "Notre équipe",
+                "subtitle": "Voici ceux grâce à qui tout ceci est possible",
+                "centered": "true"
+            }
+
         },
         "contact": {
             "title": "Contact",
@@ -170,6 +192,17 @@ export default {
                 "submit": "Soumettre"
             }
         },
+        "services": {
+            "title": "Services",
+            "subtitle": "Nos services",
+            "written_by": "Ecrit par",
+            "loading": "Chargement en cours...",
+            "services": {
+                "title": "Nos services",
+                "subtitle": "Retrouvez les services de Leader Assurance SARL",
+                "icon": "concierge-bell"
+            }
+        },
         "publications": {
             "title": "Publications",
             "subtitle": "Nos publications",
@@ -177,28 +210,8 @@ export default {
             "loading": "Chargement en cours...",
             "publications": {
                 "title": "Nos publications",
-                "subtitle": "Retrouvez les publications de la Fiducac",
+                "subtitle": "Retrouvez les publications de Leader Assurance SARL",
                 "icon": "newspaper"
-            }
-        },
-        "activities": {
-            "title": "Activit\u00e9s",
-            "subtitle": "Nos activit\u00e9s",
-            "loading": "Chargement en cours...",
-            "activities": {
-                "title": "Nos activit\u00e9s",
-                "subtitle": "Retrouvez les activit\u00e9s de la Fiducac",
-                "icon": "chart-line"
-            }
-        },
-        "events": {
-            "title": "Ev\u00e8nements",
-            "subtitle": "Nos \u00e9v\u00e8nements",
-            "loading": "Chargement en cours...",
-            "activities": {
-                "title": "Nos \u00e9v\u00e8nements",
-                "subtitle": "Retrouvez les \u00e9v\u00e8nements de la Fiducac",
-                "icon": "calendar-alt"
             }
         }
     }

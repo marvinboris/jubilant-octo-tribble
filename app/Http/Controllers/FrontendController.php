@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Partner;
 use App\Models\Publication;
 use App\Models\Service;
 use App\Models\Subscriber;
+use App\Models\TeamMember;
+use App\Models\Testimony;
 use App\Models\User;
 use App\Notifications\ContactNotification;
 use Carbon\Carbon;
@@ -15,61 +18,23 @@ class FrontendController extends Controller
 {
     public function home()
     {
-        $testimonies = [
-            [
-                'name' => 'Charlie Harrison',
-                'job' => ['fr' => 'General Manager'],
-                'photo' => '/images/testimonial1.jpg'
-            ],
-            [
-                'name' => 'Max Harvey',
-                'job' => ['fr' => 'Marketing Ex'],
-                'photo' => '/images/testimonial5.jpg'
-            ],
-            [
-                'name' => 'Kit Harington',
-                'job' => ['fr' => 'Insurance Agent'],
-                'photo' => '/images/testimonial4.jpg'
-            ],
-            [
-                'name' => 'Maria Marlin D',
-                'job' => ['fr' => 'Retired Govt Officer, ON, Canada'],
-                'photo' => '/images/testimonial3.jpg'
-            ],
-            [
-                'name' => 'Alfie Allen',
-                'job' => ['fr' => 'Insurance Agent'],
-                'photo' => '/images/testimonial2.jpg'
-            ],
-        ];
-        $publications = Publication::orderBy('id', 'DESC')->take(3)->get();
-        $team = [
-            [
-                'name' => 'Leo Alexander',
-                'job' => ['fr' => 'Marketing Ex.'],
-                'photo' => '/images/team_image2.jpg',
-            ],
-            [
-                'name' => 'Levi Hudson',
-                'job' => ['fr' => 'Marketing Ex.'],
-                'photo' => '/images/team_image4.jpg',
-            ],
-            [
-                'name' => 'Charlie Harrison',
-                'job' => ['fr' => 'Marketing Ex.'],
-                'photo' => '/images/team_image3.jpg',
-            ],
-            [
-                'name' => 'Max Harvey',
-                'job' => ['fr' => 'Marketing Ex.'],
-                'photo' => '/images/team_image1.jpg',
-            ],
-        ];
+        $testimonies = Testimony::orderBy('id', 'DESC')->whereIsActive(1)->take(5)->get();
+        $publications = [];
+        foreach (Publication::orderBy('id', 'DESC')->whereIsActive(1)->take(3)->get() as $publication) {
+            $publications[] = array_merge($publication->toArray(), [
+                'author' => $publication->author->name,
+            ]);
+        }
+        $partners = Partner::orderBy('id', 'ASC')->whereIsActive(1)->get();
+        $team = TeamMember::orderBy('id', 'DESC')->whereIsActive(1)->get();
+        $all_services = Service::all();
 
         return response()->json([
             'testimonies' => $testimonies,
             'publications' => $publications,
+            'partners' => $partners,
             'team' => $team,
+            'all_services' => $all_services,
         ]);
     }
 

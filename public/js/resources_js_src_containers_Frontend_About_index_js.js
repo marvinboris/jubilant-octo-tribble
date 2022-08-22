@@ -258,23 +258,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/node_modules/react-router/esm/react-router.js");
 /* harmony import */ var react_owl_carousel2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-owl-carousel2 */ "./node_modules/react-owl-carousel2/lib/OwlCarousel.js");
 /* harmony import */ var react_owl_carousel2__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_owl_carousel2__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_Frontend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Frontend/UI/Title/PageTitle */ "./resources/js/src/components/Frontend/UI/Title/PageTitle/index.js");
-/* harmony import */ var _components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Frontend/UI/Title/SectionTitle */ "./resources/js/src/components/Frontend/UI/Title/SectionTitle/index.js");
-/* harmony import */ var _components_Frontend_UI_Blocks_ServiceBlock__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/Frontend/UI/Blocks/ServiceBlock */ "./resources/js/src/components/Frontend/UI/Blocks/ServiceBlock/index.js");
-/* harmony import */ var _components_Frontend_UI_Blocks_TeamMemberBlock__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/Frontend/UI/Blocks/TeamMemberBlock */ "./resources/js/src/components/Frontend/UI/Blocks/TeamMemberBlock/index.js");
-/* harmony import */ var _store_actions_frontend_about__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../store/actions/frontend/about */ "./resources/js/src/store/actions/frontend/about.js");
-/* harmony import */ var _About_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./About.scss */ "./resources/js/src/containers/Frontend/About/About.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_UI_Preloaders_Loading__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/UI/Preloaders/Loading */ "./resources/js/src/components/UI/Preloaders/Loading/index.js");
+/* harmony import */ var _components_Frontend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Frontend/UI/Title/PageTitle */ "./resources/js/src/components/Frontend/UI/Title/PageTitle/index.js");
+/* harmony import */ var _components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/Frontend/UI/Title/SectionTitle */ "./resources/js/src/components/Frontend/UI/Title/SectionTitle/index.js");
+/* harmony import */ var _components_Frontend_UI_Blocks_ServiceBlock__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/Frontend/UI/Blocks/ServiceBlock */ "./resources/js/src/components/Frontend/UI/Blocks/ServiceBlock/index.js");
+/* harmony import */ var _components_Frontend_UI_Blocks_TeamMemberBlock__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../components/Frontend/UI/Blocks/TeamMemberBlock */ "./resources/js/src/components/Frontend/UI/Blocks/TeamMemberBlock/index.js");
+/* harmony import */ var _store_actions_frontend_about__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../store/actions/frontend/about */ "./resources/js/src/store/actions/frontend/about.js");
+/* harmony import */ var _About_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./About.scss */ "./resources/js/src/containers/Frontend/About/About.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -296,6 +295,9 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -315,9 +317,21 @@ var About = /*#__PURE__*/function (_Component) {
   var _super = _createSuper(About);
 
   function About() {
+    var _this;
+
     _classCallCheck(this, About);
 
-    return _super.apply(this, arguments);
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      isMounted: false
+    });
+
+    return _this;
   }
 
   _createClass(About, [{
@@ -325,6 +339,9 @@ var About = /*#__PURE__*/function (_Component) {
     value: // Lifecycle methods
     function componentDidMount() {
       this.props.get();
+      this.setState({
+        isMounted: true
+      });
     }
   }, {
     key: "componentWillUnmount",
@@ -338,87 +355,92 @@ var About = /*#__PURE__*/function (_Component) {
           _this$props$content = _this$props.content,
           cms = _this$props$content.cms.pages.frontend.pages.about,
           services = _this$props$content.services,
-          _this$props$frontend$ = _this$props.frontend.about.team,
-          team = _this$props$frontend$ === void 0 ? [] : _this$props$frontend$;
+          _this$props$frontend$ = _this$props.frontend.about,
+          loading = _this$props$frontend$.loading,
+          _this$props$frontend$2 = _this$props$frontend$.team,
+          team = _this$props$frontend$2 === void 0 ? [] : _this$props$frontend$2;
       var lang = localStorage.getItem('frontend_lang');
       var servicesContent = services.map(function (service) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
           className: "col-md-6 col-xxl-4",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Frontend_UI_Blocks_ServiceBlock__WEBPACK_IMPORTED_MODULE_5__["default"], _objectSpread({}, service))
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_Frontend_UI_Blocks_ServiceBlock__WEBPACK_IMPORTED_MODULE_6__["default"], _objectSpread({}, service))
         }, JSON.stringify(service));
       });
       var teamContent = team.map(function (member) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Frontend_UI_Blocks_TeamMemberBlock__WEBPACK_IMPORTED_MODULE_6__["default"], _objectSpread({}, _objectSpread(_objectSpread({}, member), {}, {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_Frontend_UI_Blocks_TeamMemberBlock__WEBPACK_IMPORTED_MODULE_7__["default"], _objectSpread({}, _objectSpread(_objectSpread({}, member), {}, {
           job: member.job[lang]
         })), JSON.stringify(member));
       });
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-        className: "About",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Frontend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_3__["default"], _objectSpread({}, cms)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("section", {
-          className: "about",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            className: "container",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_4__["default"], _objectSpread(_objectSpread({}, cms.about), {}, {
-              centered: true
-            })), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-              className: "row",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                className: "col-md-5 col-lg-4",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
-                  src: cms.about.photo,
-                  className: "img-fluid"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                className: "col-md-7 col-lg-8",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
-                  dangerouslySetInnerHTML: {
-                    __html: cms.about.description
-                  }
-                })
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_UI_Preloaders_Loading__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        loading: this.state.isMounted && loading,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+          className: "About",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_Frontend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_4__["default"], _objectSpread({}, cms)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("section", {
+            className: "about",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+              className: "container",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_5__["default"], _objectSpread(_objectSpread({}, cms.about), {}, {
+                centered: true
+              })), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+                className: "row",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+                  className: "col-md-5 col-lg-4",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("img", {
+                    src: cms.about.photo,
+                    className: "img-fluid"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+                  className: "col-md-7 col-lg-8",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("p", {
+                    dangerouslySetInnerHTML: {
+                      __html: cms.about.description
+                    }
+                  })
+                })]
               })]
-            })]
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("section", {
-          className: "services",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            className: "container",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_4__["default"], _objectSpread(_objectSpread({}, cms.services), {}, {
-              centered: true
-            })), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-              className: "row",
-              children: servicesContent
-            })]
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("section", {
-          className: "team",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-            className: "container",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_4__["default"], _objectSpread(_objectSpread({}, cms.team), {}, {
-              centered: true
-            })), team.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)((react_owl_carousel2__WEBPACK_IMPORTED_MODULE_2___default()), {
-              ref: "team-carousel",
-              options: {
-                responsive: {
-                  0: {
-                    items: 1
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("section", {
+            className: "services",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+              className: "container",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_5__["default"], _objectSpread(_objectSpread({}, cms.services), {}, {
+                centered: true
+              })), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+                className: "row",
+                children: servicesContent
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("section", {
+            className: "team",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+              className: "container",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_5__["default"], _objectSpread(_objectSpread({}, cms.team), {}, {
+                centered: true
+              })), team.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)((react_owl_carousel2__WEBPACK_IMPORTED_MODULE_2___default()), {
+                ref: "team-carousel",
+                options: {
+                  responsive: {
+                    0: {
+                      items: 1
+                    },
+                    600: {
+                      items: 2
+                    },
+                    900: {
+                      items: 3
+                    },
+                    1200: {
+                      items: 4
+                    }
                   },
-                  600: {
-                    items: 2
-                  },
-                  900: {
-                    items: 3
-                  },
-                  1200: {
-                    items: 4
-                  }
+                  dots: false,
+                  margin: 20
                 },
-                dots: false,
-                margin: 20
-              },
-              children: teamContent
-            })]
-          })
-        })]
+                children: teamContent
+              })]
+            })
+          })]
+        })
       });
     }
   }]);
@@ -433,15 +455,15 @@ var mapStateToProps = function mapStateToProps(state) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     get: function get() {
-      return dispatch((0,_store_actions_frontend_about__WEBPACK_IMPORTED_MODULE_7__.getAbout)());
+      return dispatch((0,_store_actions_frontend_about__WEBPACK_IMPORTED_MODULE_8__.getAbout)());
     },
     reset: function reset() {
-      return dispatch((0,_store_actions_frontend_about__WEBPACK_IMPORTED_MODULE_7__.resetAbout)());
+      return dispatch((0,_store_actions_frontend_about__WEBPACK_IMPORTED_MODULE_8__.resetAbout)());
     }
   };
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_10__.withRouter)((0,react_redux__WEBPACK_IMPORTED_MODULE_1__.connect)(mapStateToProps, mapDispatchToProps)(About)));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_11__.withRouter)((0,react_redux__WEBPACK_IMPORTED_MODULE_1__.connect)(mapStateToProps, mapDispatchToProps)(About)));
 
 /***/ }),
 

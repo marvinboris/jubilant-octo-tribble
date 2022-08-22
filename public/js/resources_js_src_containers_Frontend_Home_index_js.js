@@ -519,7 +519,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (_ref) {
+
+var Input = function Input(_ref) {
   var id = _ref.id,
       onChange = _ref.onChange,
       onClick = _ref.onClick,
@@ -530,6 +531,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       size = _ref$size === void 0 ? '' : _ref$size,
       _ref$className = _ref.className,
       className = _ref$className === void 0 ? '' : _ref$className,
+      _ref$inputClassName = _ref.inputClassName,
+      inputClassName = _ref$inputClassName === void 0 ? '' : _ref$inputClassName,
       name = _ref.name,
       _ref$type = _ref.type,
       type = _ref$type === void 0 ? 'text' : _ref$type,
@@ -538,16 +541,16 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       disabled = _ref.disabled,
       placeholder = _ref.placeholder,
       label = _ref.label,
-      _ref$value = _ref.value,
-      value = _ref$value === void 0 ? undefined : _ref$value,
-      _ref$defaultValue = _ref.defaultValue,
-      defaultValue = _ref$defaultValue === void 0 ? undefined : _ref$defaultValue,
+      value = _ref.value,
+      defaultValue = _ref.defaultValue,
       _ref$validation = _ref.validation,
       validation = _ref$validation === void 0 ? {} : _ref$validation,
       children = _ref.children,
       bonus = _ref.bonus,
       icon = _ref.icon,
       addon = _ref.addon,
+      max = _ref.max,
+      min = _ref.min,
       append = _ref.append;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
@@ -557,26 +560,31 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
   var inputChangedHandler = function inputChangedHandler(e) {
     setTouched(true);
-    onChange(e);
+    if (onChange) onChange(e);
   };
 
-  if (required) validation.required = true;
-  var valid = touched && !!value && (0,_shared_utility__WEBPACK_IMPORTED_MODULE_2__.checkValidity)(value, validation),
-      invalid = touched && !(0,_shared_utility__WEBPACK_IMPORTED_MODULE_2__.checkValidity)(value, validation);
   var data = {
     name: name,
-    valid: valid,
-    invalid: invalid,
     type: type,
     required: required,
     disabled: disabled,
+    min: min,
+    max: max,
     defaultValue: defaultValue,
-    value: !value ? '' : value,
+    value: value,
     placeholder: placeholder,
-    onChange: inputChangedHandler,
+    onChange: defaultValue ? undefined : inputChangedHandler,
     id: id ? id : name,
-    readOnly: readonly
+    readOnly: readonly,
+    className: inputClassName
   };
+
+  if (validation) {
+    if (required) validation.required = true;
+    data.valid = touched && !!value && (0,_shared_utility__WEBPACK_IMPORTED_MODULE_2__.checkValidity)(value, validation);
+    data.invalid = touched && !(0,_shared_utility__WEBPACK_IMPORTED_MODULE_2__.checkValidity)(value, validation);
+  }
+
   var content;
 
   if (type === 'image') {
@@ -656,7 +664,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       children: content
     }), bonus]
   });
-});
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Input);
 
 /***/ }),
 
@@ -1243,17 +1253,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_owl_carousel2__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_owl_carousel2__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Carousel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Carousel */ "./resources/js/src/containers/Frontend/Home/Carousel/index.js");
 /* harmony import */ var _Quote__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Quote */ "./resources/js/src/containers/Frontend/Home/Quote/index.js");
-/* harmony import */ var _components_Messages_Error__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/Messages/Error */ "./resources/js/src/components/Messages/Error/index.js");
-/* harmony import */ var _components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/Messages/Feedback */ "./resources/js/src/components/Messages/Feedback/index.js");
-/* harmony import */ var _components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../components/Frontend/UI/Title/SectionTitle */ "./resources/js/src/components/Frontend/UI/Title/SectionTitle/index.js");
-/* harmony import */ var _components_Frontend_UI_Blocks_ServiceBlock__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../components/Frontend/UI/Blocks/ServiceBlock */ "./resources/js/src/components/Frontend/UI/Blocks/ServiceBlock/index.js");
-/* harmony import */ var _components_Frontend_UI_Blocks_PublicationBlock__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../components/Frontend/UI/Blocks/PublicationBlock */ "./resources/js/src/components/Frontend/UI/Blocks/PublicationBlock/index.js");
-/* harmony import */ var _components_Frontend_UI_Blocks_TeamMemberBlock__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../components/Frontend/UI/Blocks/TeamMemberBlock */ "./resources/js/src/components/Frontend/UI/Blocks/TeamMemberBlock/index.js");
-/* harmony import */ var _components_Backend_UI_List_Photo_View__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../components/Backend/UI/List/Photo/View */ "./resources/js/src/components/Backend/UI/List/Photo/View/index.js");
-/* harmony import */ var _components_UI_Input__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../components/UI/Input */ "./resources/js/src/components/UI/Input/index.js");
-/* harmony import */ var _store_actions_frontend_home__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../store/actions/frontend/home */ "./resources/js/src/store/actions/frontend/home.js");
-/* harmony import */ var _Home_scss__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Home.scss */ "./resources/js/src/containers/Frontend/Home/Home.scss");
-/* harmony import */ var _components_UI_Preloaders_Loading__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../../components/UI/Preloaders/Loading */ "./resources/js/src/components/UI/Preloaders/Loading/index.js");
+/* harmony import */ var _components_UI_Preloaders_Loading__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/UI/Preloaders/Loading */ "./resources/js/src/components/UI/Preloaders/Loading/index.js");
+/* harmony import */ var _components_Messages_Error__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/Messages/Error */ "./resources/js/src/components/Messages/Error/index.js");
+/* harmony import */ var _components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../components/Messages/Feedback */ "./resources/js/src/components/Messages/Feedback/index.js");
+/* harmony import */ var _components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../components/Frontend/UI/Title/SectionTitle */ "./resources/js/src/components/Frontend/UI/Title/SectionTitle/index.js");
+/* harmony import */ var _components_Frontend_UI_Blocks_ServiceBlock__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../components/Frontend/UI/Blocks/ServiceBlock */ "./resources/js/src/components/Frontend/UI/Blocks/ServiceBlock/index.js");
+/* harmony import */ var _components_Frontend_UI_Blocks_PublicationBlock__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../components/Frontend/UI/Blocks/PublicationBlock */ "./resources/js/src/components/Frontend/UI/Blocks/PublicationBlock/index.js");
+/* harmony import */ var _components_Frontend_UI_Blocks_TeamMemberBlock__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../components/Frontend/UI/Blocks/TeamMemberBlock */ "./resources/js/src/components/Frontend/UI/Blocks/TeamMemberBlock/index.js");
+/* harmony import */ var _components_Backend_UI_List_Photo_View__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../components/Backend/UI/List/Photo/View */ "./resources/js/src/components/Backend/UI/List/Photo/View/index.js");
+/* harmony import */ var _components_UI_Input__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../components/UI/Input */ "./resources/js/src/components/UI/Input/index.js");
+/* harmony import */ var _store_actions_frontend_home__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../../store/actions/frontend/home */ "./resources/js/src/store/actions/frontend/home.js");
+/* harmony import */ var _Home_scss__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Home.scss */ "./resources/js/src/containers/Frontend/Home/Home.scss");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
@@ -1447,7 +1457,7 @@ var Home = /*#__PURE__*/function (_Component) {
       var servicesContent = services.map(function (service) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
           className: "col-md-6 col-xxl-4",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Frontend_UI_Blocks_ServiceBlock__WEBPACK_IMPORTED_MODULE_8__["default"], _objectSpread({}, service))
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Frontend_UI_Blocks_ServiceBlock__WEBPACK_IMPORTED_MODULE_9__["default"], _objectSpread({}, service))
         }, JSON.stringify(service));
       }); // const testimoniesContent = testimonies.map(testimony => <TestimonyBlock key={JSON.stringify(testimony)} {...{ ...testimony, job: testimony.job[lang] }} />);
 
@@ -1462,15 +1472,15 @@ var Home = /*#__PURE__*/function (_Component) {
       var publicationsContent = publications.map(function (publication) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
           className: "col-md-4",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Frontend_UI_Blocks_PublicationBlock__WEBPACK_IMPORTED_MODULE_9__["default"], _objectSpread({}, publication))
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Frontend_UI_Blocks_PublicationBlock__WEBPACK_IMPORTED_MODULE_10__["default"], _objectSpread({}, publication))
         }, JSON.stringify(publication));
       });
       var teamContent = team.map(function (member) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Frontend_UI_Blocks_TeamMemberBlock__WEBPACK_IMPORTED_MODULE_10__["default"], _objectSpread({}, _objectSpread(_objectSpread({}, member), {}, {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Frontend_UI_Blocks_TeamMemberBlock__WEBPACK_IMPORTED_MODULE_11__["default"], _objectSpread({}, _objectSpread(_objectSpread({}, member), {}, {
           job: member.job[lang]
         })), JSON.stringify(member));
       });
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_UI_Preloaders_Loading__WEBPACK_IMPORTED_MODULE_15__["default"], {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_UI_Preloaders_Loading__WEBPACK_IMPORTED_MODULE_5__["default"], {
         loading: this.state.isMounted && loading,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
           className: "Home",
@@ -1529,7 +1539,7 @@ var Home = /*#__PURE__*/function (_Component) {
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
                   className: "col-md-7 col-lg-8",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_7__["default"], _objectSpread({}, cms.about)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_8__["default"], _objectSpread({}, cms.about)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
                     dangerouslySetInnerHTML: {
                       __html: cms.about.description
                     }
@@ -1578,7 +1588,7 @@ var Home = /*#__PURE__*/function (_Component) {
             className: "services",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
               className: "container",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_7__["default"], _objectSpread({}, cms.services)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_8__["default"], _objectSpread({}, cms.services)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
                 className: "row",
                 children: servicesContent
               })]
@@ -1587,7 +1597,7 @@ var Home = /*#__PURE__*/function (_Component) {
             className: "newsletter",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
               className: "container",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_7__["default"], _objectSpread(_objectSpread({}, cms.newsletter), {}, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_8__["default"], _objectSpread(_objectSpread({}, cms.newsletter), {}, {
                 centered: true
               })), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
                 className: "row justify-content-center",
@@ -1595,11 +1605,11 @@ var Home = /*#__PURE__*/function (_Component) {
                   className: "col-lg-7",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("form", {
                     onSubmit: this.newsletterHandler,
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Messages_Error__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Messages_Error__WEBPACK_IMPORTED_MODULE_6__["default"], {
                       err: error
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_7__["default"], {
                       message: message
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_13__["default"], {
                       type: "text",
                       name: "name",
                       onChange: this.inputChangeHandler,
@@ -1607,7 +1617,7 @@ var Home = /*#__PURE__*/function (_Component) {
                       label: cms.newsletter.name,
                       required: true,
                       disabled: loading
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_13__["default"], {
                       type: "email",
                       name: "email",
                       onChange: this.inputChangeHandler,
@@ -1659,8 +1669,8 @@ var Home = /*#__PURE__*/function (_Component) {
             className: "quote",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
               className: "container",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_7__["default"], _objectSpread({}, cms.quote)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Backend_UI_List_Photo_View__WEBPACK_IMPORTED_MODULE_11__["default"], {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_8__["default"], _objectSpread({}, cms.quote)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Backend_UI_List_Photo_View__WEBPACK_IMPORTED_MODULE_12__["default"], {
                   title: cms.quote.form.title,
                   content: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Quote__WEBPACK_IMPORTED_MODULE_4__["default"], {}),
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("button", {
@@ -1674,7 +1684,7 @@ var Home = /*#__PURE__*/function (_Component) {
             className: "team",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
               className: "container",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_7__["default"], _objectSpread(_objectSpread({}, cms.team), {}, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_8__["default"], _objectSpread(_objectSpread({}, cms.team), {}, {
                 centered: true
               })), team.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)((react_owl_carousel2__WEBPACK_IMPORTED_MODULE_2___default()), {
                 ref: "team-carousel",
@@ -1724,16 +1734,16 @@ var mapStateToProps = function mapStateToProps(state) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     get: function get() {
-      return dispatch((0,_store_actions_frontend_home__WEBPACK_IMPORTED_MODULE_13__.getHome)());
+      return dispatch((0,_store_actions_frontend_home__WEBPACK_IMPORTED_MODULE_14__.getHome)());
     },
     newsletter: function newsletter(data) {
-      return dispatch((0,_store_actions_frontend_home__WEBPACK_IMPORTED_MODULE_13__.postNewsletter)(data));
+      return dispatch((0,_store_actions_frontend_home__WEBPACK_IMPORTED_MODULE_14__.postNewsletter)(data));
     },
     subscribe: function subscribe(data) {
-      return dispatch((0,_store_actions_frontend_home__WEBPACK_IMPORTED_MODULE_13__.postSubscribe)(data));
+      return dispatch((0,_store_actions_frontend_home__WEBPACK_IMPORTED_MODULE_14__.postSubscribe)(data));
     },
     reset: function reset() {
-      return dispatch((0,_store_actions_frontend_home__WEBPACK_IMPORTED_MODULE_13__.resetHome)());
+      return dispatch((0,_store_actions_frontend_home__WEBPACK_IMPORTED_MODULE_14__.resetHome)());
     }
   };
 };
@@ -2109,7 +2119,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".UI.Input {\n  position: relative;\n}\n.UI.Input ::-moz-placeholder {\n  color: var(--border-50);\n  opacity: 1;\n}\n.UI.Input :-ms-input-placeholder {\n  color: var(--border-50);\n  opacity: 1;\n}\n.UI.Input ::placeholder {\n  color: var(--border-50);\n  opacity: 1;\n}\n.UI.Input label:not(.control-label) {\n  position: absolute;\n  left: 75px;\n  top: 0.75rem;\n  z-index: 1;\n  max-width: calc(100% - 76px - 0.75rem);\n}\n.UI.Input .form-control[required] + label:not(.control-label)::after {\n  content: \"*\";\n  color: red;\n}\n.UI.Input .form-control[readonly] + label:not(.control-label),\n.UI.Input .form-control[disabled] + label:not(.control-label),\n.UI.Input .form-control[required]:valid + label:not(.control-label),\n.UI.Input input:not([value=\"\"]) + label:not(.control-label),\n.UI.Input textarea:not(:invalid) + label:not(.control-label) {\n  display: none;\n}\n.UI.Input .input-group {\n  border: none;\n  display: flex;\n  overflow: hidden;\n  border-radius: var(--border-radius);\n  align-items: center;\n  background-color: var(--white);\n  box-shadow: 0 0 0 1px var(--border-10);\n}\n.UI.Input .input-group-prepend {\n  z-index: 10;\n  height: 45px;\n  position: relative;\n}\n.UI.Input .input-group-prepend .input-group-text {\n  width: 57px;\n  border: none;\n  display: block;\n  padding: 3px 18px;\n  position: relative;\n  color: var(--border-30);\n  background-color: transparent;\n}\n.UI.Input .input-group-prepend .input-group-text .icon {\n  top: 50%;\n  left: 50%;\n  margin: 0 3px;\n  position: absolute;\n  color: var(--blue);\n  transform: translate(-50%, -50%);\n}\n.UI.Input .input-group-prepend .input-group-text .addon {\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  position: absolute;\n  align-items: center;\n  justify-content: center;\n}\n.UI.Input .input-group-prepend .input-group-text .circle {\n  top: 50%;\n  left: 100%;\n  width: 10px;\n  height: 10px;\n  overflow: hidden;\n  position: absolute;\n  border-radius: 50%;\n  background-color: var(--white);\n  transform: translate(-50%, calc(-50% - 2px));\n}\n.UI.Input .input-group-prepend .input-group-text .circle::after {\n  top: 0;\n  left: 0;\n  content: \"\";\n  width: 100%;\n  z-index: -1;\n  height: 100%;\n  position: absolute;\n  background-color: var(--border-10);\n}\n.UI.Input .form-control,\n.UI.Input select {\n  border: none;\n  height: 45px;\n  color: inherit;\n  box-shadow: none;\n  padding-left: 15px;\n  padding-right: 15px;\n}\n.UI.Input textarea {\n  min-height: 112px;\n}\n.UI.Input .embed-responsive {\n  display: flex;\n  cursor: pointer;\n  overflow: visible;\n  position: relative;\n  align-items: center;\n  justify-content: center;\n  background-color: var(--border-10);\n  border-radius: var(--border-radius);\n  box-shadow: 0 0 0 1px var(--border-10);\n}\n.UI.Input .embed-responsive .image-selected {\n  width: 100%;\n  text-align: center;\n  color: var(--green);\n}\n.UI.Input .embed-responsive .image-selected .check-circle {\n  top: 0;\n  right: 0;\n  position: absolute;\n  transform: translate(50%, -50%);\n}\n.UI.Input .embed-responsive .image-selected .file-selected {\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  padding: 8px 15px;\n  position: absolute;\n  color: var(--white);\n  background-color: var(--black-70);\n  border-bottom-left-radius: var(--border-radius);\n  border-bottom-right-radius: var(--border-radius);\n}\n.UI.Input .embed-responsive .select-image {\n  width: 100%;\n  padding: 0 16px;\n  overflow: hidden;\n  text-align: center;\n  color: var(--border-50);\n}\n.UI.Input .embed-responsive .select-image .upload {\n  margin-top: 16px;\n  margin-bottom: 4px;\n  text-align: center;\n}\n.UI.Input .control-label {\n  font-weight: 500;\n}\n.UI.Input .input-group-append .input-group-text {\n  border: none;\n  padding: 0 24px;\n  color: var(--border);\n  background-color: transparent;\n}\n.UI.Input.lg .input-group {\n  border-radius: calc(var(--border-radius) * 2);\n}\n.UI.Input.lg .input-group-prepend {\n  height: 82px;\n}\n.UI.Input.lg .input-group-prepend .input-group-text {\n  padding-left: 39px;\n  padding-right: 28px;\n}\n.UI.Input.lg .form-control,\n.UI.Input.lg select {\n  height: 82px;\n  font-size: 18px;\n  padding-left: 40px;\n  padding-right: 40px;\n}\n.UI.Input.inactive .input-group-prepend .input-group-text .addon {\n  background-color: var(--readonly);\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".UI.Input {\n  position: relative;\n  font-family: var(--title-font-family);\n}\n.UI.Input ::-moz-placeholder {\n  color: var(--app-text-color);\n  opacity: 0.5;\n}\n.UI.Input :-ms-input-placeholder {\n  color: var(--app-text-color);\n  opacity: 0.5;\n}\n.UI.Input ::placeholder {\n  color: var(--app-text-color);\n  opacity: 0.5;\n}\n.UI.Input label:not(.control-label) {\n  position: absolute;\n  left: 75px;\n  top: 0.75rem;\n  z-index: 1;\n  max-width: calc(100% - 76px - 0.75rem);\n}\n.UI.Input .form-control[required] + label:not(.control-label)::after {\n  content: \"*\";\n  color: red;\n}\n.UI.Input .form-control[readonly] + label:not(.control-label),\n.UI.Input .form-control[disabled] + label:not(.control-label),\n.UI.Input .form-control[required]:valid + label:not(.control-label),\n.UI.Input input:not([value=\"\"]) + label:not(.control-label),\n.UI.Input textarea:not(:invalid) + label:not(.control-label) {\n  display: none;\n}\n.UI.Input .input-group {\n  border: none;\n  display: flex;\n  overflow: hidden;\n  align-items: center;\n  border-radius: var(--border-radius);\n  box-shadow: 0 0 0 1px var(--border-10);\n  background-color: var(--app-input-bg-color);\n}\n.UI.Input .input-group-prepend {\n  z-index: 10;\n  height: 45px;\n  position: relative;\n}\n.UI.Input .input-group-prepend .input-group-text {\n  width: 57px;\n  border: none;\n  color: var(--app-text-color);\n  display: block;\n  padding: 3px 18px;\n  position: relative;\n  background-color: transparent;\n}\n.UI.Input .input-group-prepend .input-group-text .icon {\n  top: 50%;\n  left: 50%;\n  margin: 0 3px;\n  position: absolute;\n  color: var(--blue);\n  transform: translate(-50%, -50%);\n}\n.UI.Input .input-group-prepend .input-group-text .addon {\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  position: absolute;\n  align-items: center;\n  justify-content: center;\n}\n.UI.Input .input-group-prepend .input-group-text .circle {\n  top: 50%;\n  left: 100%;\n  width: 10px;\n  height: 10px;\n  overflow: hidden;\n  position: absolute;\n  border-radius: 50%;\n  background-color: var(--app-text-color);\n  transform: translate(-50%, calc(-50% - 2px));\n}\n.UI.Input .input-group-prepend .input-group-text .circle::after {\n  top: 0;\n  left: 0;\n  content: \"\";\n  width: 100%;\n  z-index: -1;\n  height: 100%;\n  position: absolute;\n  background-color: var(--border-10);\n}\n.UI.Input .form-control,\n.UI.Input select {\n  border: none;\n  height: 45px;\n  color: inherit;\n  box-shadow: none;\n  padding-left: 15px;\n  padding-right: 15px;\n  background-color: transparent;\n}\n.UI.Input .form-control option,\n.UI.Input select option {\n  background-color: var(--app-bg-color);\n}\n.UI.Input textarea {\n  min-height: 112px;\n}\n.UI.Input .embed-responsive {\n  display: flex;\n  cursor: pointer;\n  overflow: visible;\n  position: relative;\n  align-items: center;\n  justify-content: center;\n  background-color: var(--border-10);\n  border-radius: var(--border-radius);\n  box-shadow: 0 0 0 1px var(--border-10);\n}\n.UI.Input .embed-responsive .image-selected {\n  width: 100%;\n  text-align: center;\n  color: var(--blue);\n}\n.UI.Input .embed-responsive .image-selected .check-circle {\n  top: 0;\n  right: 0;\n  position: absolute;\n  transform: translate(50%, -50%);\n}\n.UI.Input .embed-responsive .image-selected .file-selected {\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  padding: 8px 15px;\n  position: absolute;\n  color: var(--white);\n  background-color: var(--black-70);\n  border-bottom-left-radius: var(--border-radius);\n  border-bottom-right-radius: var(--border-radius);\n}\n.UI.Input .embed-responsive .select-image {\n  width: 100%;\n  padding: 0 16px;\n  overflow: hidden;\n  text-align: center;\n  color: var(--border-50);\n}\n.UI.Input .embed-responsive .select-image .upload {\n  margin-top: 16px;\n  margin-bottom: 4px;\n  text-align: center;\n}\n.UI.Input .control-label {\n  font-weight: 500;\n}\n.UI.Input .input-group-append .input-group-text {\n  border: none;\n  padding: 0 24px;\n  color: var(--border);\n  background-color: transparent;\n}\n.UI.Input.lg .input-group {\n  border-radius: calc(var(--border-radius) * 2);\n}\n.UI.Input.lg .input-group-prepend {\n  height: 82px;\n}\n.UI.Input.lg .input-group-prepend .input-group-text {\n  padding-left: 39px;\n  padding-right: 28px;\n}\n.UI.Input.lg .form-control,\n.UI.Input.lg select {\n  height: 82px;\n  font-size: 18px;\n  padding-left: 40px;\n  padding-right: 40px;\n}\n.UI.Input.inactive .input-group-prepend .input-group-text .addon {\n  background-color: var(--readonly);\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormGroup, Input, InputGroup, InputGroupText, InputGroupAddon, CustomInput, Label } from 'reactstrap';
+import { FormGroup, Input as BSInput, InputGroup, InputGroupText, InputGroupAddon, CustomInput, Label } from 'reactstrap';
 
 import WithTooltip from '../WithTooltip/WithTooltip';
 
@@ -7,25 +7,28 @@ import { checkValidity } from '../../../shared/utility';
 
 import './Input.scss';
 
-export default ({ id, onChange, onClick, cms, dimensions = '1by1', size = '', className = '', name, type = 'text', required, readonly, disabled, placeholder, label, value = undefined, defaultValue = undefined, validation = {}, children, bonus, icon, addon, append }) => {
+const Input = ({ id, onChange, onClick, cms, dimensions = '1by1', size = '', className = '', inputClassName = '', name, type = 'text', required, readonly, disabled, placeholder, label, value, defaultValue, validation = {}, children, bonus, icon, addon, max, min, append }) => {
     const [touched, setTouched] = useState(false);
 
     const inputChangedHandler = e => {
         setTouched(true);
-        onChange(e);
+        if (onChange) onChange(e);
     }
 
-    if (required) validation.required = true;
-
-    const valid = touched && !!value && checkValidity(value, validation),
-        invalid = touched && !checkValidity(value, validation);
-
     const data = {
-        name, valid, invalid, type, required, disabled, defaultValue, value: !value ? '' : value, placeholder,
-        onChange: inputChangedHandler,
+        name, type, required, disabled, min, max, defaultValue, value, placeholder,
+        onChange: defaultValue ? undefined : inputChangedHandler,
         id: id ? id : name,
         readOnly: readonly,
+        className: inputClassName,
     };
+
+    if (validation) {
+        if (required) validation.required = true;
+
+        data.valid = touched && !!value && checkValidity(value, validation);
+        data.invalid = touched && !checkValidity(value, validation);
+    }
 
     let content;
     if (type === 'image') {
@@ -54,7 +57,7 @@ export default ({ id, onChange, onClick, cms, dimensions = '1by1', size = '', cl
             </InputGroupText>
         </InputGroupAddon>}
 
-        {children ? <CustomInput {...data}>{children}</CustomInput> : <Input {...data} />}
+        {children ? <CustomInput {...data}>{children}</CustomInput> : <BSInput {...data} />}
 
         {append && <InputGroupAddon addonType="append">
             <InputGroupText>
@@ -74,3 +77,5 @@ export default ({ id, onChange, onClick, cms, dimensions = '1by1', size = '', cl
         {bonus}
     </FormGroup>;
 };
+
+export default Input;

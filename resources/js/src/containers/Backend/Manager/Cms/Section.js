@@ -18,7 +18,7 @@ import { LanguageWithPages } from './utility';
 import { getCms, patchCms, resetCms } from '../../../../store/actions/backend/cms';
 import { updateObject } from '../../../../shared/utility';
 
-class Auth extends Component {
+class Section extends Component {
     state = {
         abbr: process.env.MIX_DEFAULT_LANG,
         isMounted: false,
@@ -124,4 +124,4 @@ const mapDispatchToProps = dispatch => ({
     reset: () => dispatch(resetCms()),
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Auth));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Section));

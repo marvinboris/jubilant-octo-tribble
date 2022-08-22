@@ -205,7 +205,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (_ref) {
+
+var Input = function Input(_ref) {
   var id = _ref.id,
       onChange = _ref.onChange,
       onClick = _ref.onClick,
@@ -216,6 +217,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       size = _ref$size === void 0 ? '' : _ref$size,
       _ref$className = _ref.className,
       className = _ref$className === void 0 ? '' : _ref$className,
+      _ref$inputClassName = _ref.inputClassName,
+      inputClassName = _ref$inputClassName === void 0 ? '' : _ref$inputClassName,
       name = _ref.name,
       _ref$type = _ref.type,
       type = _ref$type === void 0 ? 'text' : _ref$type,
@@ -224,16 +227,16 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       disabled = _ref.disabled,
       placeholder = _ref.placeholder,
       label = _ref.label,
-      _ref$value = _ref.value,
-      value = _ref$value === void 0 ? undefined : _ref$value,
-      _ref$defaultValue = _ref.defaultValue,
-      defaultValue = _ref$defaultValue === void 0 ? undefined : _ref$defaultValue,
+      value = _ref.value,
+      defaultValue = _ref.defaultValue,
       _ref$validation = _ref.validation,
       validation = _ref$validation === void 0 ? {} : _ref$validation,
       children = _ref.children,
       bonus = _ref.bonus,
       icon = _ref.icon,
       addon = _ref.addon,
+      max = _ref.max,
+      min = _ref.min,
       append = _ref.append;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
@@ -243,26 +246,31 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
   var inputChangedHandler = function inputChangedHandler(e) {
     setTouched(true);
-    onChange(e);
+    if (onChange) onChange(e);
   };
 
-  if (required) validation.required = true;
-  var valid = touched && !!value && (0,_shared_utility__WEBPACK_IMPORTED_MODULE_2__.checkValidity)(value, validation),
-      invalid = touched && !(0,_shared_utility__WEBPACK_IMPORTED_MODULE_2__.checkValidity)(value, validation);
   var data = {
     name: name,
-    valid: valid,
-    invalid: invalid,
     type: type,
     required: required,
     disabled: disabled,
+    min: min,
+    max: max,
     defaultValue: defaultValue,
-    value: !value ? '' : value,
+    value: value,
     placeholder: placeholder,
-    onChange: inputChangedHandler,
+    onChange: defaultValue ? undefined : inputChangedHandler,
     id: id ? id : name,
-    readOnly: readonly
+    readOnly: readonly,
+    className: inputClassName
   };
+
+  if (validation) {
+    if (required) validation.required = true;
+    data.valid = touched && !!value && (0,_shared_utility__WEBPACK_IMPORTED_MODULE_2__.checkValidity)(value, validation);
+    data.invalid = touched && !(0,_shared_utility__WEBPACK_IMPORTED_MODULE_2__.checkValidity)(value, validation);
+  }
+
   var content;
 
   if (type === 'image') {
@@ -342,7 +350,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       children: content
     }), bonus]
   });
-});
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Input);
 
 /***/ }),
 
@@ -417,15 +427,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/node_modules/react-router/esm/react-router.js");
-/* harmony import */ var _components_Messages_Error__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Messages/Error */ "./resources/js/src/components/Messages/Error/index.js");
-/* harmony import */ var _components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Messages/Feedback */ "./resources/js/src/components/Messages/Feedback/index.js");
-/* harmony import */ var _components_Frontend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Frontend/UI/Title/PageTitle */ "./resources/js/src/components/Frontend/UI/Title/PageTitle/index.js");
-/* harmony import */ var _components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/Frontend/UI/Title/SectionTitle */ "./resources/js/src/components/Frontend/UI/Title/SectionTitle/index.js");
-/* harmony import */ var _components_UI_Input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/UI/Input */ "./resources/js/src/components/UI/Input/index.js");
-/* harmony import */ var _store_actions_frontend_contact__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../store/actions/frontend/contact */ "./resources/js/src/store/actions/frontend/contact.js");
-/* harmony import */ var _Contact_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Contact.scss */ "./resources/js/src/containers/Frontend/Contact/Contact.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _components_UI_Preloaders_Loading__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/UI/Preloaders/Loading */ "./resources/js/src/components/UI/Preloaders/Loading/index.js");
+/* harmony import */ var _components_Messages_Error__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Messages/Error */ "./resources/js/src/components/Messages/Error/index.js");
+/* harmony import */ var _components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Messages/Feedback */ "./resources/js/src/components/Messages/Feedback/index.js");
+/* harmony import */ var _components_Frontend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/Frontend/UI/Title/PageTitle */ "./resources/js/src/components/Frontend/UI/Title/PageTitle/index.js");
+/* harmony import */ var _components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/Frontend/UI/Title/SectionTitle */ "./resources/js/src/components/Frontend/UI/Title/SectionTitle/index.js");
+/* harmony import */ var _components_UI_Input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../components/UI/Input */ "./resources/js/src/components/UI/Input/index.js");
+/* harmony import */ var _store_actions_frontend_contact__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../store/actions/frontend/contact */ "./resources/js/src/store/actions/frontend/contact.js");
+/* harmony import */ var _Contact_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Contact.scss */ "./resources/js/src/containers/Frontend/Contact/Contact.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -466,6 +477,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var initialState = {
   name: '',
   email: '',
@@ -488,7 +500,10 @@ var Contact = /*#__PURE__*/function (_Component) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    _defineProperty(_assertThisInitialized(_this), "state", _objectSpread({}, initialState));
+    _defineProperty(_assertThisInitialized(_this), "state", _objectSpread(_objectSpread({}, initialState), {}, {
+      isMounted: false,
+      componentLoading: false
+    }));
 
     _defineProperty(_assertThisInitialized(_this), "saveHandler", function (e) {
       e.preventDefault();
@@ -507,9 +522,25 @@ var Contact = /*#__PURE__*/function (_Component) {
   }
 
   _createClass(Contact, [{
-    key: "componentDidUpdate",
+    key: "componentDidMount",
     value: // Lifecycle methods
-    function componentDidUpdate(prevProps) {
+    function componentDidMount() {
+      var _this2 = this;
+
+      this.setState({
+        isMounted: true,
+        componentLoading: true
+      }, function () {
+        return setTimeout(function () {
+          _this2.setState({
+            componentLoading: false
+          });
+        }, 250);
+      });
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
       if (!prevProps.frontend.contact.message && this.props.frontend.contact.message && this.props.frontend.contact.message.type === 'success') this.setState(_objectSpread({}, initialState));
     }
   }, {
@@ -529,79 +560,81 @@ var Contact = /*#__PURE__*/function (_Component) {
       var _this$state = this.state,
           name = _this$state.name,
           email = _this$state.email,
-          message = _this$state.message;
-      console.log({
-        backend_message: backend_message
-      });
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-        className: "Contact",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Frontend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_4__["default"], _objectSpread({}, cms)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("section", {
-          className: "contact",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-            className: "container",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-              className: "row justify-content-center",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                className: "col-lg-6",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("iframe", {
-                  src: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15919.402202656811!2d9.6971916!3d4.0508907!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2cb0b54eda30f0fa!2sLeader%20Assurance!5e0!3m2!1sfr!2scm!4v1661138882340!5m2!1sfr!2scm",
-                  style: {
-                    border: 0
-                  },
-                  allowFullScreen: "",
-                  loading: "lazy",
-                  referrerPolicy: "no-referrer-when-downgrade"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                className: "col-lg-6",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_5__["default"], _objectSpread(_objectSpread({}, cms.contact), {}, {
-                  centered: true
-                })), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
-                  children: cms.contact.description
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Messages_Error__WEBPACK_IMPORTED_MODULE_2__["default"], {
-                  err: error
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                  message: backend_message
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("form", {
-                  onSubmit: this.saveHandler,
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_6__["default"], {
-                    type: "text",
-                    name: "name",
-                    onChange: this.inputChangeHandler,
-                    value: name,
-                    placeholder: cms.contact.name,
-                    required: true,
-                    disabled: loading
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_6__["default"], {
-                    type: "email",
-                    name: "email",
-                    onChange: this.inputChangeHandler,
-                    value: email,
-                    placeholder: cms.contact.email,
-                    required: true,
-                    disabled: loading
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_6__["default"], {
-                    type: "textarea",
-                    name: "message",
-                    onChange: this.inputChangeHandler,
-                    value: message,
-                    placeholder: cms.contact.message,
-                    required: true,
-                    disabled: loading
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "submit",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("button", {
-                      className: 'btn btn-blue' + (loading ? ' btn-disabled' : ''),
-                      children: [cms.contact.submit, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
-                        className: "fas fa-paper-plane"
-                      })]
-                    })
+          message = _this$state.message,
+          isMounted = _this$state.isMounted,
+          componentLoading = _this$state.componentLoading;
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_UI_Preloaders_Loading__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        loading: isMounted && componentLoading,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+          className: "Contact",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_Frontend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_5__["default"], _objectSpread({}, cms)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("section", {
+            className: "contact",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+              className: "container",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+                className: "row justify-content-center",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+                  className: "col-lg-6",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("iframe", {
+                    src: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15919.402202656811!2d9.6971916!3d4.0508907!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2cb0b54eda30f0fa!2sLeader%20Assurance!5e0!3m2!1sfr!2scm!4v1661138882340!5m2!1sfr!2scm",
+                    style: {
+                      border: 0
+                    },
+                    allowFullScreen: "",
+                    loading: "lazy",
+                    referrerPolicy: "no-referrer-when-downgrade"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+                  className: "col-lg-6",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_6__["default"], _objectSpread(_objectSpread({}, cms.contact), {}, {
+                    centered: true
+                  })), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("p", {
+                    children: cms.contact.description
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_Messages_Error__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                    err: error
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                    message: backend_message
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("form", {
+                    onSubmit: this.saveHandler,
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      type: "text",
+                      name: "name",
+                      onChange: this.inputChangeHandler,
+                      value: name,
+                      placeholder: cms.contact.name,
+                      required: true,
+                      disabled: loading
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      type: "email",
+                      name: "email",
+                      onChange: this.inputChangeHandler,
+                      value: email,
+                      placeholder: cms.contact.email,
+                      required: true,
+                      disabled: loading
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                      type: "textarea",
+                      name: "message",
+                      onChange: this.inputChangeHandler,
+                      value: message,
+                      placeholder: cms.contact.message,
+                      required: true,
+                      disabled: loading
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+                      className: "submit",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("button", {
+                        className: 'btn btn-blue' + (loading ? ' btn-disabled' : ''),
+                        children: [cms.contact.submit, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("i", {
+                          className: "fas fa-paper-plane"
+                        })]
+                      })
+                    })]
                   })]
                 })]
-              })]
+              })
             })
-          })
-        })]
+          })]
+        })
       });
     }
   }]);
@@ -616,15 +649,15 @@ var mapStateToProps = function mapStateToProps(state) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     post: function post(data) {
-      return dispatch((0,_store_actions_frontend_contact__WEBPACK_IMPORTED_MODULE_7__.postContact)(data));
+      return dispatch((0,_store_actions_frontend_contact__WEBPACK_IMPORTED_MODULE_8__.postContact)(data));
     },
     reset: function reset() {
-      return dispatch((0,_store_actions_frontend_contact__WEBPACK_IMPORTED_MODULE_7__.resetContact)());
+      return dispatch((0,_store_actions_frontend_contact__WEBPACK_IMPORTED_MODULE_8__.resetContact)());
     }
   };
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_10__.withRouter)((0,react_redux__WEBPACK_IMPORTED_MODULE_1__.connect)(mapStateToProps, mapDispatchToProps)(Contact)));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_11__.withRouter)((0,react_redux__WEBPACK_IMPORTED_MODULE_1__.connect)(mapStateToProps, mapDispatchToProps)(Contact)));
 
 /***/ }),
 
@@ -810,7 +843,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".UI.Input {\n  position: relative;\n}\n.UI.Input ::-moz-placeholder {\n  color: var(--border-50);\n  opacity: 1;\n}\n.UI.Input :-ms-input-placeholder {\n  color: var(--border-50);\n  opacity: 1;\n}\n.UI.Input ::placeholder {\n  color: var(--border-50);\n  opacity: 1;\n}\n.UI.Input label:not(.control-label) {\n  position: absolute;\n  left: 75px;\n  top: 0.75rem;\n  z-index: 1;\n  max-width: calc(100% - 76px - 0.75rem);\n}\n.UI.Input .form-control[required] + label:not(.control-label)::after {\n  content: \"*\";\n  color: red;\n}\n.UI.Input .form-control[readonly] + label:not(.control-label),\n.UI.Input .form-control[disabled] + label:not(.control-label),\n.UI.Input .form-control[required]:valid + label:not(.control-label),\n.UI.Input input:not([value=\"\"]) + label:not(.control-label),\n.UI.Input textarea:not(:invalid) + label:not(.control-label) {\n  display: none;\n}\n.UI.Input .input-group {\n  border: none;\n  display: flex;\n  overflow: hidden;\n  border-radius: var(--border-radius);\n  align-items: center;\n  background-color: var(--white);\n  box-shadow: 0 0 0 1px var(--border-10);\n}\n.UI.Input .input-group-prepend {\n  z-index: 10;\n  height: 45px;\n  position: relative;\n}\n.UI.Input .input-group-prepend .input-group-text {\n  width: 57px;\n  border: none;\n  display: block;\n  padding: 3px 18px;\n  position: relative;\n  color: var(--border-30);\n  background-color: transparent;\n}\n.UI.Input .input-group-prepend .input-group-text .icon {\n  top: 50%;\n  left: 50%;\n  margin: 0 3px;\n  position: absolute;\n  color: var(--blue);\n  transform: translate(-50%, -50%);\n}\n.UI.Input .input-group-prepend .input-group-text .addon {\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  position: absolute;\n  align-items: center;\n  justify-content: center;\n}\n.UI.Input .input-group-prepend .input-group-text .circle {\n  top: 50%;\n  left: 100%;\n  width: 10px;\n  height: 10px;\n  overflow: hidden;\n  position: absolute;\n  border-radius: 50%;\n  background-color: var(--white);\n  transform: translate(-50%, calc(-50% - 2px));\n}\n.UI.Input .input-group-prepend .input-group-text .circle::after {\n  top: 0;\n  left: 0;\n  content: \"\";\n  width: 100%;\n  z-index: -1;\n  height: 100%;\n  position: absolute;\n  background-color: var(--border-10);\n}\n.UI.Input .form-control,\n.UI.Input select {\n  border: none;\n  height: 45px;\n  color: inherit;\n  box-shadow: none;\n  padding-left: 15px;\n  padding-right: 15px;\n}\n.UI.Input textarea {\n  min-height: 112px;\n}\n.UI.Input .embed-responsive {\n  display: flex;\n  cursor: pointer;\n  overflow: visible;\n  position: relative;\n  align-items: center;\n  justify-content: center;\n  background-color: var(--border-10);\n  border-radius: var(--border-radius);\n  box-shadow: 0 0 0 1px var(--border-10);\n}\n.UI.Input .embed-responsive .image-selected {\n  width: 100%;\n  text-align: center;\n  color: var(--green);\n}\n.UI.Input .embed-responsive .image-selected .check-circle {\n  top: 0;\n  right: 0;\n  position: absolute;\n  transform: translate(50%, -50%);\n}\n.UI.Input .embed-responsive .image-selected .file-selected {\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  padding: 8px 15px;\n  position: absolute;\n  color: var(--white);\n  background-color: var(--black-70);\n  border-bottom-left-radius: var(--border-radius);\n  border-bottom-right-radius: var(--border-radius);\n}\n.UI.Input .embed-responsive .select-image {\n  width: 100%;\n  padding: 0 16px;\n  overflow: hidden;\n  text-align: center;\n  color: var(--border-50);\n}\n.UI.Input .embed-responsive .select-image .upload {\n  margin-top: 16px;\n  margin-bottom: 4px;\n  text-align: center;\n}\n.UI.Input .control-label {\n  font-weight: 500;\n}\n.UI.Input .input-group-append .input-group-text {\n  border: none;\n  padding: 0 24px;\n  color: var(--border);\n  background-color: transparent;\n}\n.UI.Input.lg .input-group {\n  border-radius: calc(var(--border-radius) * 2);\n}\n.UI.Input.lg .input-group-prepend {\n  height: 82px;\n}\n.UI.Input.lg .input-group-prepend .input-group-text {\n  padding-left: 39px;\n  padding-right: 28px;\n}\n.UI.Input.lg .form-control,\n.UI.Input.lg select {\n  height: 82px;\n  font-size: 18px;\n  padding-left: 40px;\n  padding-right: 40px;\n}\n.UI.Input.inactive .input-group-prepend .input-group-text .addon {\n  background-color: var(--readonly);\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".UI.Input {\n  position: relative;\n  font-family: var(--title-font-family);\n}\n.UI.Input ::-moz-placeholder {\n  color: var(--app-text-color);\n  opacity: 0.5;\n}\n.UI.Input :-ms-input-placeholder {\n  color: var(--app-text-color);\n  opacity: 0.5;\n}\n.UI.Input ::placeholder {\n  color: var(--app-text-color);\n  opacity: 0.5;\n}\n.UI.Input label:not(.control-label) {\n  position: absolute;\n  left: 75px;\n  top: 0.75rem;\n  z-index: 1;\n  max-width: calc(100% - 76px - 0.75rem);\n}\n.UI.Input .form-control[required] + label:not(.control-label)::after {\n  content: \"*\";\n  color: red;\n}\n.UI.Input .form-control[readonly] + label:not(.control-label),\n.UI.Input .form-control[disabled] + label:not(.control-label),\n.UI.Input .form-control[required]:valid + label:not(.control-label),\n.UI.Input input:not([value=\"\"]) + label:not(.control-label),\n.UI.Input textarea:not(:invalid) + label:not(.control-label) {\n  display: none;\n}\n.UI.Input .input-group {\n  border: none;\n  display: flex;\n  overflow: hidden;\n  align-items: center;\n  border-radius: var(--border-radius);\n  box-shadow: 0 0 0 1px var(--border-10);\n  background-color: var(--app-input-bg-color);\n}\n.UI.Input .input-group-prepend {\n  z-index: 10;\n  height: 45px;\n  position: relative;\n}\n.UI.Input .input-group-prepend .input-group-text {\n  width: 57px;\n  border: none;\n  color: var(--app-text-color);\n  display: block;\n  padding: 3px 18px;\n  position: relative;\n  background-color: transparent;\n}\n.UI.Input .input-group-prepend .input-group-text .icon {\n  top: 50%;\n  left: 50%;\n  margin: 0 3px;\n  position: absolute;\n  color: var(--blue);\n  transform: translate(-50%, -50%);\n}\n.UI.Input .input-group-prepend .input-group-text .addon {\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  position: absolute;\n  align-items: center;\n  justify-content: center;\n}\n.UI.Input .input-group-prepend .input-group-text .circle {\n  top: 50%;\n  left: 100%;\n  width: 10px;\n  height: 10px;\n  overflow: hidden;\n  position: absolute;\n  border-radius: 50%;\n  background-color: var(--app-text-color);\n  transform: translate(-50%, calc(-50% - 2px));\n}\n.UI.Input .input-group-prepend .input-group-text .circle::after {\n  top: 0;\n  left: 0;\n  content: \"\";\n  width: 100%;\n  z-index: -1;\n  height: 100%;\n  position: absolute;\n  background-color: var(--border-10);\n}\n.UI.Input .form-control,\n.UI.Input select {\n  border: none;\n  height: 45px;\n  color: inherit;\n  box-shadow: none;\n  padding-left: 15px;\n  padding-right: 15px;\n  background-color: transparent;\n}\n.UI.Input .form-control option,\n.UI.Input select option {\n  background-color: var(--app-bg-color);\n}\n.UI.Input textarea {\n  min-height: 112px;\n}\n.UI.Input .embed-responsive {\n  display: flex;\n  cursor: pointer;\n  overflow: visible;\n  position: relative;\n  align-items: center;\n  justify-content: center;\n  background-color: var(--border-10);\n  border-radius: var(--border-radius);\n  box-shadow: 0 0 0 1px var(--border-10);\n}\n.UI.Input .embed-responsive .image-selected {\n  width: 100%;\n  text-align: center;\n  color: var(--blue);\n}\n.UI.Input .embed-responsive .image-selected .check-circle {\n  top: 0;\n  right: 0;\n  position: absolute;\n  transform: translate(50%, -50%);\n}\n.UI.Input .embed-responsive .image-selected .file-selected {\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  padding: 8px 15px;\n  position: absolute;\n  color: var(--white);\n  background-color: var(--black-70);\n  border-bottom-left-radius: var(--border-radius);\n  border-bottom-right-radius: var(--border-radius);\n}\n.UI.Input .embed-responsive .select-image {\n  width: 100%;\n  padding: 0 16px;\n  overflow: hidden;\n  text-align: center;\n  color: var(--border-50);\n}\n.UI.Input .embed-responsive .select-image .upload {\n  margin-top: 16px;\n  margin-bottom: 4px;\n  text-align: center;\n}\n.UI.Input .control-label {\n  font-weight: 500;\n}\n.UI.Input .input-group-append .input-group-text {\n  border: none;\n  padding: 0 24px;\n  color: var(--border);\n  background-color: transparent;\n}\n.UI.Input.lg .input-group {\n  border-radius: calc(var(--border-radius) * 2);\n}\n.UI.Input.lg .input-group-prepend {\n  height: 82px;\n}\n.UI.Input.lg .input-group-prepend .input-group-text {\n  padding-left: 39px;\n  padding-right: 28px;\n}\n.UI.Input.lg .form-control,\n.UI.Input.lg select {\n  height: 82px;\n  font-size: 18px;\n  padding-left: 40px;\n  padding-right: 40px;\n}\n.UI.Input.inactive .input-group-prepend .input-group-text .addon {\n  background-color: var(--readonly);\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

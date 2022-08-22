@@ -1,9 +1,10 @@
 .UI.Input {
     position: relative;
+    font-family: var(--title-font-family);
 
     ::placeholder {
-        color: var(--border-50);
-        opacity: 1;
+        color: var(--app-text-color);
+        opacity: .5;
     }
 
     label:not(.control-label) {
@@ -31,10 +32,10 @@
         border: none;
         display: flex;
         overflow: hidden;
-        border-radius: var(--border-radius);
         align-items: center;
-        background-color: var(--white);
+        border-radius: var(--border-radius);
         box-shadow: 0 0 0 1px var(--border-10);
+        background-color: var(--app-input-bg-color);
     }
 
     .input-group-prepend {
@@ -45,10 +46,10 @@
         .input-group-text {
             width: 57px;
             border: none;
+            color: var(--app-text-color);
             display: block;
             padding: 3px 18px;
             position: relative;
-            color: var(--border-30);
             background-color: transparent;
 
             .icon {
@@ -79,7 +80,7 @@
                 overflow: hidden;
                 position: absolute;
                 border-radius: 50%;
-                background-color: var(--white);
+                background-color: var(--app-text-color);
                 transform: translate(-50%, calc(-50% - 2px));
 
                 &::after {
@@ -104,6 +105,11 @@
         box-shadow: none;
         padding-left: 15px;
         padding-right: 15px;
+        background-color: transparent;
+
+        option {
+            background-color: var(--app-bg-color);
+        }
     }
 
     textarea {
@@ -124,7 +130,7 @@
         .image-selected {
             width: 100%;
             text-align: center;
-            color: var(--green);
+            color: var(--blue);
 
             .check-circle {
                 top: 0;

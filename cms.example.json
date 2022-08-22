@@ -155,9 +155,7 @@
                             "title": "CMS",
                             "global": "Global",
                             "general": "G\u00e9n\u00e9ral",
-                            "components": "Composants",
                             "auth": "Authentification",
-                            "messages": "Messages",
                             "backend": "Backend",
                             "frontend": "Frontend"
                         },
@@ -835,7 +833,7 @@
                     "copyright": "Copyright",
                     "all_rights": "All rights reserved by"
                 },
-                "components": {
+                "messages": {
                     "admin": {
                         "not_found": "Invalid credentials.",
                         "invalid": "Invalid verification code.",
@@ -944,9 +942,7 @@
                             "title": "CMS",
                             "global": "Global",
                             "general": "General",
-                            "components": "Components",
                             "auth": "Authentication",
-                            "messages": "Messages",
                             "backend": "Backend",
                             "frontend": "Frontend"
                         },
@@ -1113,34 +1109,38 @@
                     "dashboard": {
                         "admin": {
                             "icon": "home",
-                            "title": "Admin panel",
-                            "subtitle": "Dashboard",
+                            "title": "Panneau de l'administrateur",
+                            "subtitle": "Tableau de bord",
                             "blocks": {
-                                "events": "Events",
-                                "activities": "Activities",
-                                "elders": "Elders",
+                                "services": "Services",
                                 "publications": "Publications",
-                                "subscribers": "Subscribers"
+                                "subscribers": "Souscripteurs"
+                            },
+                            "general_report": {
+                                "title": "Rapport g\u00e9n\u00e9ral",
+                                "subtitle": "Rapport g\u00e9n\u00e9ral",
+                                "services": "Services",
+                                "publications": "Publications",
+                                "total_services": "Total des services",
+                                "total_publications": "Total des publications"
                             }
                         },
                         "user": {
                             "icon": "home",
-                            "title": "User panel",
-                            "subtitle": "Dashboard",
+                            "title": "Panneau de l'utilisateur",
+                            "subtitle": "Tableau de bord",
                             "blocks": {
-                                "events": "Events",
-                                "activities": "Activities",
-                                "elders": "Elders",
+                                "services": "Services",
                                 "publications": "Publications",
-                                "subscribers": "Subscribers"
+                                "subscribers": "Souscripteurs"
                             },
                             "general_report": {
-                                "title": "General",
-                                "subtitle": "General",
-                                "elders": "Elders",
+                                "title": "Rapport g\u00e9n\u00e9ral",
+                                "subtitle": "Rapport g\u00e9n\u00e9ral",
+                                "services": "Services",
                                 "publications": "Publications",
-                                "total_elders": "Total elders",
-                                "total_publications": "Total publications"
+                                "total_services": "Total des services",
+                                "total_publications": "Total des publications"
                             }
                         }
                     },
@@ -1492,7 +1492,7 @@
                         },
                         "quote": {
                             "title": "Be accompanied by our experts.",
-                            "get": "Obtenir un devis gratuit",
+                            "get": "Get a free quote",
                             "form": {
                                 "title": "Risk pricing",
                                 "subtitle": "Please complete the form.",

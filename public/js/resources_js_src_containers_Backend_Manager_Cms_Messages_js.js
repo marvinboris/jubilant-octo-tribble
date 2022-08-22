@@ -318,25 +318,6 @@ __webpack_require__.r(__webpack_exports__);
     "updated": "Param\xE8tre modifi\xE9 avec succ\xE8s.",
     "deleted": "Param\xE8tre supprim\xE9 avec succ\xE8s."
   },
-  "events": {
-    "not_found": "Ev\xE8nement introuvable.",
-    "created": "Ev\xE8nement cr\xE9\xE9 avec succ\xE8s.",
-    "updated": "Ev\xE8nement modifi\xE9 avec succ\xE8s.",
-    "deleted": "Ev\xE8nement supprim\xE9 avec succ\xE8s."
-  },
-  "activities": {
-    "not_found": "Activit\xE9 introuvable.",
-    "created": "Activit\xE9 cr\xE9\xE9e avec succ\xE8s.",
-    "updated": "Activit\xE9 modifi\xE9e avec succ\xE8s.",
-    "deleted": "Activit\xE9 supprim\xE9e avec succ\xE8s."
-  },
-  "elders": {
-    "not_found": "Ancien introuvable.",
-    "created": "Ancien cr\xE9\xE9 avec succ\xE8s.",
-    "updated": "Ancien modifi\xE9 avec succ\xE8s.",
-    "deleted": "Ancien supprim\xE9 avec succ\xE8s.",
-    "application": "Candidature d'adh\xE9sion rejet\xE9e avec succ\xE8s."
-  },
   "publications": {
     "not_found": "Publication introuvable.",
     "created": "Publication cr\xE9\xE9e avec succ\xE8s.",
@@ -349,17 +330,29 @@ __webpack_require__.r(__webpack_exports__);
     "updated": "Souscripteur modifi\xE9 avec succ\xE8s.",
     "deleted": "Souscripteur supprim\xE9 avec succ\xE8s."
   },
-  "contributions": {
-    "not_found": "Cotisation introuvable.",
-    "created": "Cotisation cr\xE9\xE9e avec succ\xE8s.",
-    "updated": "Cotisation modifi\xE9e avec succ\xE8s.",
-    "deleted": "Cotisation supprim\xE9e avec succ\xE8s."
+  "services": {
+    "not_found": "Service introuvable.",
+    "created": "Service cr\xE9\xE9 avec succ\xE8s.",
+    "updated": "Service modifi\xE9 avec succ\xE8s.",
+    "deleted": "Service supprim\xE9 avec succ\xE8s."
   },
-  "schools": {
-    "not_found": "Ecole introuvable.",
-    "created": "Ecole cr\xE9\xE9e avec succ\xE8s.",
-    "updated": "Ecole modifi\xE9e avec succ\xE8s.",
-    "deleted": "Ecole supprim\xE9e avec succ\xE8s."
+  "testimonies": {
+    "not_found": "Témoignage introuvable.",
+    "created": "T\xE9moignage cr\xE9\xE9 avec succ\xE8s.",
+    "updated": "T\xE9moignage modifi\xE9 avec succ\xE8s.",
+    "deleted": "T\xE9moignage supprim\xE9 avec succ\xE8s."
+  },
+  "team_members": {
+    "not_found": "Membre d'équipe introuvable.",
+    "created": "Membre d'\xE9quipe cr\xE9\xE9 avec succ\xE8s.",
+    "updated": "Membre d'\xE9quipe modifi\xE9 avec succ\xE8s.",
+    "deleted": "Membre d'\xE9quipe supprim\xE9 avec succ\xE8s."
+  },
+  "partners": {
+    "not_found": "Partenaire introuvable.",
+    "created": "Partenaire cr\xE9\xE9 avec succ\xE8s.",
+    "updated": "Partenaire modifi\xE9 avec succ\xE8s.",
+    "deleted": "Partenaire supprim\xE9 avec succ\xE8s."
   }
 });
 

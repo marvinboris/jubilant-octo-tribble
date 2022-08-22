@@ -11,12 +11,12 @@ class ServiceBlock extends Component {
         const {
             content: {
                 cms: {
-                    pages: { components: { service_block: cms } }
+                    pages: { frontend: { components: { service_block: cms } } }
                 }
             },
             icon, title, body, link
         } = this.props;
-        const lang = localStorage.getItem('lang');
+        const lang = localStorage.getItem('frontend_lang');
 
         const formattedBody = htmlEntities(body[lang]);
 

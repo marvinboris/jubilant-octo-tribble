@@ -1,6 +1,8 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
+import Loading from '../../../components/UI/Preloaders/Loading';
+
 import Error from '../../../components/Messages/Error';
 import Feedback from '../../../components/Messages/Feedback';
 
@@ -37,7 +39,7 @@ const Redirection = ({ props, resource }) => {
     } = props;
 
     if (role === 'user') {
-        const feature = data.role.features.find(f => f.prefix === resource);
+        const feature = data.role.features.find(f => f.prefix === resource.split('_').join('-'));
         return !(feature && JSON.parse(feature.permissions).includes(props.edit ? 'u' : 'c')) ? <Redirect to="/user/dashboard" /> : null;
     }
 
@@ -62,16 +64,17 @@ export const add = {
         fileUpload: id => document.getElementById(id).click(),
     },
     lifecycle: {
-        componentDidMount: (props) => {
+        componentDidMount: (props, setState) => {
             props.reset();
             if (props.edit) props.get(props.match.params.id);
             else if (props.info) props.info();
+            setState({ isMounted: true });
         },
         componentDidUpdate: (resource, singular) => (prevProps, props, state, setState, resetState) => {
             if (!prevProps.backend[resource].message && props.backend[resource].message && props.backend[resource].message.type === 'success' && !props.edit) {
                 if (state.add) resetState();
                 else props.history.push({
-                    pathname: `/${props.auth.role}/${resource}`,
+                    pathname: `/${props.auth.role}/${resource.split('_').join('-')}`,
                     state: {
                         message: props.backend[resource].message,
                     },
@@ -82,30 +85,32 @@ export const add = {
                 setState({ ...item });
             }
         },
-        render: ({ className, props, resource, children }) => {
+        render: ({ className, props, state, resource, children }) => {
             const {
                 content: {
                     cms: {
                         pages: { backend: { pages: { [resource]: cms } } }
                     }
                 },
-                backend: { [resource]: { error, message } },
+                backend: { [resource]: { loading, error, message } },
                 auth: { role }
             } = props;
 
             return <div className={className}>
                 <PageTitle title={cms.title} subtitle={props.edit ? cms.edit : cms.add} icon={cms.icon}>
-                    <Breadcrumb items={props.edit && [{ to: '/' + role + '/' + resource, content: cms.index }]} main={props.edit ? cms.edit : cms.add} />
+                    <Breadcrumb items={props.edit && [{ to: `/${role}/${resource.split('_').join('-')}`, content: cms.index }]} main={props.edit ? cms.edit : cms.add} />
                 </PageTitle>
 
-                <div className='content'>
-                    <Redirection props={props} resource={resource} />
-                    <Feedback message={message} />
-                    <Error err={error} />
-                    <Form onSubmit={saveHandler(props)} icon={cms.icon} title={props.edit ? cms.edit : cms.add} list={cms.index} link={`/${role}/${resource}`} innerClassName="row justify-content-center">
-                        {children}
-                    </Form>
-                </div>
+                <Loading loading={state.isMounted && loading} isAuthenticated>
+                    <div className='content'>
+                        <Redirection props={props} resource={resource} />
+                        <Feedback message={message} />
+                        <Error err={error} />
+                        <Form onSubmit={saveHandler(props)} icon={cms.icon} title={props.edit ? cms.edit : cms.add} list={cms.index} link={`/${role}/${resource.split('_').join('-')}`} innerClassName="row justify-content-center">
+                            {children}
+                        </Form>
+                    </div>
+                </Loading>
             </div>
         }
     }
@@ -113,7 +118,7 @@ export const add = {
 
 export const index = {
     lifecycle: {
-        render: ({ className, props, resource, data, fields }) => {
+        render: ({ className, props, state, resource, data, fields }) => {
             const {
                 content: {
                     cms: {
@@ -124,16 +129,18 @@ export const index = {
                 auth: { role }
             } = props;
             return <div className={className}>
-                <PageTitle title={cms.title} subtitle={cms.index}>
+                <PageTitle title={cms.title} subtitle={cms.index} icon={cms.icon}>
                     <Breadcrumb main={cms.index} />
                 </PageTitle>
 
-                <div className='content'>
-                    <Error err={error} />
-                    {props.location.state ? <Feedback time={5000} message={props.location.state.message} /> : null}
-                    <Feedback message={message} />
-                    <List array={data} loading={loading} data={JSON.stringify(items)} get={props.get} total={total} bordered add={cms.add} link={`/${role}/${resource}/add`} icon={cms.icon} title={cms.index} className="shadow-sm" fields={fields} />
-                </div>
+                <Loading loading={state.isMounted && loading} isAuthenticated>
+                    <div className='content'>
+                        <Error err={error} />
+                        {props.location.state ? <Feedback time={5000} message={props.location.state.message} /> : null}
+                        <Feedback message={message} />
+                        <List array={data} loading={loading} data={JSON.stringify(items)} get={props.get} total={total} bordered add={cms.add} link={`/${role}/${resource.split('_').join('-')}/add`} icon={cms.icon} title={cms.index} className="shadow-sm" fields={fields} />
+                    </div>
+                </Loading>
             </div>;
         }
     }

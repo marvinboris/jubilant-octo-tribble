@@ -21,7 +21,7 @@ class Login extends Component {
     }
 
 
-blue
+
     // Component methods
     toggle = () => {
         this.setState(prevState => ({ modal: !prevState.modal }));
@@ -55,30 +55,30 @@ blue
         const {
             content: {
                 cms: {
-                    pages: { auth: { user: { login } } }
+                    pages: { auth: { pages: { user: { login } } } }
                 }
             },
             auth: { loading, error, message },
         } = this.props;
 
-        const titleContent = <div className="text-37 text-700 text-blue">{login.title}</div>;
+        const titleContent = <div className={`text-37 text-${window.APP_SECONDARY_COLOR} title`}>{login.title}</div>;
 
         const formContent = <>
             <Input type="email" icon="key" onChange={this.inputChangeHandler} validation={{ required: true }} value={email} name="email" required placeholder={login.email_address} />
             <Input id="password" type={visible ? "text" : "password"} className="position-relative" icon="lock" onChange={this.inputChangeHandler} validation={{ required: true }} value={password} name="password" required placeholder={login.password}
                 bonus={<div className="position-absolute d-flex align-items-center" style={{ height: '100%', top: 0, right: 30, zIndex: 10, cursor: 'pointer' }} onClick={this.eyeClickedHandler}>
                     <div className="position-relative">
-                        <i className="fas fa-eye text-blue" />
+                        <i className={`fas fa-eye text-${window.APP_SECONDARY_COLOR}`} />
 
                         <div style={!visible ? { visibility: 'visible' } : { visibility: 'hidden' }}>
-                            <div style={{ height: 1.5, width: 24, transform: 'rotate(30deg) translate(-9px, -10px)' }} className="bg-blue" />
+                            <div style={{ height: 1.5, width: 24, transform: 'rotate(30deg) translate(-9.5px, -12px)' }} className={`bg-${window.APP_SECONDARY_COLOR}`} />
                         </div>
                     </div>
                 </div>}
             />
 
             <div className="mt-5 pt-1 pb-2">
-                <button className="btn-block btn btn-blue">{login.sign_in}<i className='fas fa-sign-in-alt' /></button>
+                <button className={`btn-block btn btn-${window.APP_PRIMARY_COLOR}`}>{login.sign_in}<i className='fas fa-sign-in-alt' /></button>
             </div>
         </>;
 

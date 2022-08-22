@@ -461,8 +461,6 @@ var Login = /*#__PURE__*/function (_Component) {
       visible: false
     });
 
-    _defineProperty(_assertThisInitialized(_this), "blue", void 0);
-
     _defineProperty(_assertThisInitialized(_this), "toggle", function () {
       _this.setState(function (prevState) {
         return {
@@ -518,14 +516,14 @@ var Login = /*#__PURE__*/function (_Component) {
           password = _this$state.password,
           visible = _this$state.visible;
       var _this$props2 = this.props,
-          login = _this$props2.content.cms.pages.auth.user.login,
+          login = _this$props2.content.cms.pages.auth.pages.user.login,
           _this$props2$auth = _this$props2.auth,
           loading = _this$props2$auth.loading,
           error = _this$props2$auth.error,
           message = _this$props2$auth.message;
 
       var titleContent = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-        className: "text-37 text-700 text-blue",
+        className: "text-37 text-".concat(window.APP_SECONDARY_COLOR, " title"),
         children: login.title
       });
 
@@ -567,7 +565,7 @@ var Login = /*#__PURE__*/function (_Component) {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
               className: "position-relative",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
-                className: "fas fa-eye text-blue"
+                className: "fas fa-eye text-".concat(window.APP_SECONDARY_COLOR)
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                 style: !visible ? {
                   visibility: 'visible'
@@ -578,9 +576,9 @@ var Login = /*#__PURE__*/function (_Component) {
                   style: {
                     height: 1.5,
                     width: 24,
-                    transform: 'rotate(30deg) translate(-9px, -10px)'
+                    transform: 'rotate(30deg) translate(-9.5px, -12px)'
                   },
-                  className: "bg-blue"
+                  className: "bg-".concat(window.APP_SECONDARY_COLOR)
                 })
               })]
             })
@@ -588,7 +586,7 @@ var Login = /*#__PURE__*/function (_Component) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "mt-5 pt-1 pb-2",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("button", {
-            className: "btn-block btn btn-blue",
+            className: "btn-block btn btn-".concat(window.APP_PRIMARY_COLOR),
             children: [login.sign_in, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
               className: "fas fa-sign-in-alt"
             })]

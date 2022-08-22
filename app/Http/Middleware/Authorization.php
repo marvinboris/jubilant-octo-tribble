@@ -18,6 +18,8 @@ class Authorization
     {
         $user = $request->user();
 
+        if ($user->type() === 'admin') return $next($request);
+
         $rootPath = url('api/user/');
 
         $url = $request->url();

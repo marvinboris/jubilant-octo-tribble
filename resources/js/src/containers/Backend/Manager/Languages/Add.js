@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-dom';
 import Save from '../../../../components/Backend/UI/Form/Save';
 
 import Input from '../../../../components/UI/Input';
-import Preloader from '../../../../components/UI/Preloaders/Preloader';
 
 import actions from '../../../../store/actions/backend/languages';
 import * as utility from '../utility';
@@ -20,16 +19,15 @@ const initialState = {
 }
 
 class Add extends Component {
-    state = { ...initialState }
+    state = { ...initialState, isMounted: false }
 
     // Component methods
     resetState = () => this.setState({ ...initialState })
     saveAddHandler = () => utility.add.component.saveAddHandler(this.setState.bind(this), this.props)
     inputChangeHandler = e => utility.add.component.inputChangeHandler(this.state, this.setState.bind(this))(e)
-    fileUpload = id => utility.add.component.fileUpload(id)
 
     // Lifecycle methods
-    componentDidMount() { utility.add.lifecycle.componentDidMount(this.props) }
+    componentDidMount() { utility.add.lifecycle.componentDidMount(this.props, this.setState.bind(this)) }
     componentDidUpdate(prevProps) { utility.add.lifecycle.componentDidUpdate('languages', 'language')(prevProps, this.props, this.state, this.setState.bind(this), this.resetState) }
     componentWillUnmount() { this.props.reset() }
     render() {
@@ -40,17 +38,12 @@ class Add extends Component {
                 },
                 countries,
             },
-            backend: { languages: { loading } },
         } = this.props;
         const { name, abbr, flag } = this.state;
-        let content;
 
         const countriesOptions = countries.map(({ country, code, name }) => <option key={country} value={country} code={code}>{name}</option>);
 
-        if (loading) content = <div className='col-12'>
-            <Preloader />
-        </div>;
-        else content = <>
+        const content = <>
             {this.props.edit && <input type="hidden" name="_method" defaultValue="PATCH" />}
 
             <div className='row'>
@@ -73,7 +66,7 @@ class Add extends Component {
             </div>
         </>;
 
-        return <utility.add.lifecycle.render className='Languages' props={this.props} resource={'languages'}>
+        return <utility.add.lifecycle.render className='Languages' props={this.props} state={this.state} resource={'languages'}>
             {content}
         </utility.add.lifecycle.render>;
     }

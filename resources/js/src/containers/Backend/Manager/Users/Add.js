@@ -24,7 +24,7 @@ const initialState = {
 }
 
 class Add extends Component {
-    state = { ...initialState }
+    state = { ...initialState, isMounted: false }
 
     // Component methods
     resetState = () => this.setState({ ...initialState })
@@ -33,7 +33,7 @@ class Add extends Component {
     fileUpload = id => utility.add.component.fileUpload(id)
 
     // Lifecycle methods
-    componentDidMount() { utility.add.lifecycle.componentDidMount(this.props) }
+    componentDidMount() { utility.add.lifecycle.componentDidMount(this.props, this.setState.bind(this)) }
     componentDidUpdate(prevProps) { utility.add.lifecycle.componentDidUpdate('users', 'user')(prevProps, this.props, this.state, this.setState.bind(this), this.resetState) }
     componentWillUnmount() { this.props.reset() }
     render() {
@@ -43,17 +43,13 @@ class Add extends Component {
                     pages: { backend: { pages: { users: { form } } } }
                 }
             },
-            backend: { users: { loading, roles = [], user = {} } },
+            backend: { users: { roles = [], user = {} } },
         } = this.props;
         const { name, phone, photo, email, password, password_confirmation, role_id } = this.state;
-        let content;
 
         const rolesOptions = roles.sort((a, b) => a.name.localeCompare(b.name)).map(role => <option key={JSON.stringify(role)} value={role.id}>{role.name}</option>);
 
-        if (loading) content = <div className='col-12'>
-            <Preloader />
-        </div>;
-        else content = <>
+        const content = <>
             {this.props.edit && <input type="hidden" name="_method" defaultValue="PATCH" />}
 
             <div className='row'>
@@ -79,7 +75,7 @@ class Add extends Component {
             </div>
         </>;
 
-        return <utility.add.lifecycle.render className='Users' props={this.props} resource={'users'}>
+        return <utility.add.lifecycle.render className='Users' props={this.props} state={this.state} resource={'users'}>
             <input type="file" id="photo" name="photo" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
             {content}
         </utility.add.lifecycle.render>;

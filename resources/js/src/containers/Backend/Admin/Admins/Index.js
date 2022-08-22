@@ -28,7 +28,7 @@ class Index extends Component {
         const {
             content: {
                 cms: {
-                    pages: { components: { list: { action, see } }, backend: { pages: { admins: { icon, title, add, index, form } } } }
+                    pages: { backend: { components: { list: { action, see } }, pages: { admins: { icon, title, add, index, form } } } }
                 }
             },
             backend: { admins: { loading, error, message, admins = [], total } },

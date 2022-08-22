@@ -68,12 +68,12 @@ var ServiceBlock = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       var _this$props = this.props,
-          cms = _this$props.content.cms.pages.components.service_block,
+          cms = _this$props.content.cms.pages.frontend.components.service_block,
           icon = _this$props.icon,
           title = _this$props.title,
           body = _this$props.body,
           link = _this$props.link;
-      var lang = localStorage.getItem('lang');
+      var lang = localStorage.getItem('frontend_lang');
       var formattedBody = (0,_shared_utility__WEBPACK_IMPORTED_MODULE_2__.htmlEntities)(body[lang]);
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "UI ServiceBlock shadow-lg",

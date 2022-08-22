@@ -41,77 +41,12 @@
                     "D\u00e9c"
                 ]
             },
-            "components": {
-                "form": {
-                    "save": "Sauvegarder",
-                    "save_add": "Sauvegarder & ajouter",
-                    "selected_file": "Fichier s\u00e9lectionn\u00e9",
-                    "active": "Actif",
-                    "inactive": "Inactif"
-                },
-                "list": {
-                    "action": "Action",
-                    "all": "Tous",
-                    "first": "Premi\u00e8re",
-                    "last": "Derni\u00e8re",
-                    "loading": "Chargement en cours",
-                    "print": "Imprimer",
-                    "pdf": "PDF",
-                    "csv": "CSV",
-                    "excel": "Excel",
-                    "search": "Rechercher",
-                    "see": "Voir",
-                    "show": "Afficher",
-                    "sl": "SL",
-                    "showing": "Affichant",
-                    "from": "sur",
-                    "entries": {
-                        "singular": "entr\u00e9e",
-                        "plural": "entr\u00e9es"
-                    }
-                },
-                "service_block": {
-                    "read_more": "En savoir plus"
-                },
-                "publication_block": {
-                    "read_more": "Lire la suite"
-                }
-            },
             "auth": {
                 "footer": {
                     "copyrights": "Copyrights",
                     "all_rights": "Tous droits r\u00e9serv\u00e9s par"
                 },
-                "user": {
-                    "login": {
-                        "title": "Bienvenue !",
-                        "sign_in": "Se connecter",
-                        "email_address": "Adresse mail",
-                        "password": "Mot de passe"
-                    }
-                },
-                "admin": {
-                    "login": {
-                        "sign_in_to": "Se connecter au",
-                        "sign_in": "Se connecter",
-                        "admin_panel": "Panneau de l'administrateur",
-                        "email_address": "Adresse mail",
-                        "password": "Mot de passe",
-                        "sms": "SMS",
-                        "email": "Adresse mail",
-                        "otp_method": "M\u00e9thode OTP"
-                    },
-                    "verify": {
-                        "enter": "Entrer",
-                        "verification_code": "Code de v\u00e9rification",
-                        "continue": "Continuer",
-                        "didnt_receive_code": "Aucun code re\u00e7u",
-                        "resend": "Renvoyer"
-                    }
-                }
-            },
-            "messages": {
-                "auth": {
+                "messages": {
                     "admin": {
                         "not_found": "Informations incorrectes.",
                         "invalid": "Code de v\u00e9rification invalide.",
@@ -125,84 +60,34 @@
                         "failure": "Echec."
                     }
                 },
-                "admins": {
-                    "not_found": "Administrateur introuvable.",
-                    "created": "Administrateur cr\u00e9\u00e9 avec succ\u00e8s.",
-                    "updated": "Administrateur modifi\u00e9 avec succ\u00e8s.",
-                    "deleted": "Administrateur supprim\u00e9 avec succ\u00e8s."
-                },
-                "users": {
-                    "not_found": "Utilisateur introuvable.",
-                    "created": "Utilisateur cr\u00e9\u00e9 avec succ\u00e8s.",
-                    "updated": "Utilisateur modifi\u00e9 avec succ\u00e8s.",
-                    "deleted": "Utilisateur supprim\u00e9 avec succ\u00e8s."
-                },
-                "roles": {
-                    "not_found": "R\u00f4le introuvable.",
-                    "created": "R\u00f4le cr\u00e9\u00e9 avec succ\u00e8s.",
-                    "updated": "R\u00f4le modifi\u00e9 avec succ\u00e8s.",
-                    "deleted": "R\u00f4le supprim\u00e9 avec succ\u00e8s."
-                },
-                "features": {
-                    "not_found": "Fonctionnalit\u00e9 introuvable.",
-                    "created": "Fonctionnalit\u00e9 cr\u00e9\u00e9e avec succ\u00e8s.",
-                    "updated": "Fonctionnalit\u00e9 modifi\u00e9e avec succ\u00e8s.",
-                    "deleted": "Fonctionnalit\u00e9 supprim\u00e9e avec succ\u00e8s."
-                },
-                "languages": {
-                    "not_found": "Langue introuvable.",
-                    "created": "Langue cr\u00e9\u00e9e avec succ\u00e8s.",
-                    "updated": "Langue modifi\u00e9e avec succ\u00e8s.",
-                    "deleted": "Langue supprim\u00e9e avec succ\u00e8s."
-                },
-                "notifications": {
-                    "not_found": "Notification introuvable."
-                },
-                "cms": {
-                    "not_found": "Contenu introuvable.",
-                    "updated": "Contenu modifi\u00e9 avec succ\u00e8s."
-                },
-                "settings": {
-                    "not_found": "Param\u00e8tre introuvable.",
-                    "created": "Param\u00e8tre cr\u00e9\u00e9 avec succ\u00e8s.",
-                    "updated": "Param\u00e8tre modifi\u00e9 avec succ\u00e8s.",
-                    "deleted": "Param\u00e8tre supprim\u00e9 avec succ\u00e8s."
-                },
-                "publications": {
-                    "not_found": "Publication introuvable.",
-                    "created": "Publication cr\u00e9\u00e9e avec succ\u00e8s.",
-                    "updated": "Publication modifi\u00e9e avec succ\u00e8s.",
-                    "deleted": "Publication supprim\u00e9e avec succ\u00e8s."
-                },
-                "subscribers": {
-                    "not_found": "Souscripteur introuvable.",
-                    "created": "Souscripteur cr\u00e9\u00e9 avec succ\u00e8s.",
-                    "updated": "Souscripteur modifi\u00e9 avec succ\u00e8s.",
-                    "deleted": "Souscripteur supprim\u00e9 avec succ\u00e8s."
-                },
-                "services": {
-                    "not_found": "Service introuvable.",
-                    "created": "Service cr\u00e9\u00e9 avec succ\u00e8s.",
-                    "updated": "Service modifi\u00e9 avec succ\u00e8s.",
-                    "deleted": "Service supprim\u00e9 avec succ\u00e8s."
-                },
-                "testimonies": {
-                    "not_found": "Témoignage introuvable.",
-                    "created": "Témoignage cr\u00e9\u00e9 avec succ\u00e8s.",
-                    "updated": "Témoignage modifi\u00e9 avec succ\u00e8s.",
-                    "deleted": "Témoignage supprim\u00e9 avec succ\u00e8s."
-                },
-                "team_members": {
-                    "not_found": "Membre d'équipe introuvable.",
-                    "created": "Membre d'équipe cr\u00e9\u00e9 avec succ\u00e8s.",
-                    "updated": "Membre d'équipe modifi\u00e9 avec succ\u00e8s.",
-                    "deleted": "Membre d'équipe supprim\u00e9 avec succ\u00e8s."
-                },
-                "partners": {
-                    "not_found": "Partenaire introuvable.",
-                    "created": "Partenaire cr\u00e9\u00e9 avec succ\u00e8s.",
-                    "updated": "Partenaire modifi\u00e9 avec succ\u00e8s.",
-                    "deleted": "Partenaire supprim\u00e9 avec succ\u00e8s."
+                "pages": {
+                    "user": {
+                        "login": {
+                            "title": "Bienvenue !",
+                            "sign_in": "Se connecter",
+                            "email_address": "Adresse mail",
+                            "password": "Mot de passe"
+                        }
+                    },
+                    "admin": {
+                        "login": {
+                            "sign_in_to": "Se connecter au",
+                            "sign_in": "Se connecter",
+                            "admin_panel": "Panneau de l'administrateur",
+                            "email_address": "Adresse mail",
+                            "password": "Mot de passe",
+                            "sms": "SMS",
+                            "email": "Adresse mail",
+                            "otp_method": "M\u00e9thode OTP"
+                        },
+                        "verify": {
+                            "enter": "Entrer",
+                            "verification_code": "Code de v\u00e9rification",
+                            "continue": "Continuer",
+                            "didnt_receive_code": "Aucun code re\u00e7u",
+                            "resend": "Renvoyer"
+                        }
+                    }
                 }
             },
             "backend": {
@@ -322,6 +207,117 @@
                             "add": "Ajouter un partenaire",
                             "index": "Liste des partenaires"
                         }
+                    }
+                },
+                "components": {
+                    "form": {
+                        "save": "Sauvegarder",
+                        "save_add": "Sauvegarder & ajouter",
+                        "selected_file": "Fichier s\u00e9lectionn\u00e9",
+                        "active": "Actif",
+                        "inactive": "Inactif"
+                    },
+                    "list": {
+                        "action": "Action",
+                        "all": "Tous",
+                        "first": "Premi\u00e8re",
+                        "last": "Derni\u00e8re",
+                        "loading": "Chargement en cours",
+                        "print": "Imprimer",
+                        "pdf": "PDF",
+                        "csv": "CSV",
+                        "excel": "Excel",
+                        "search": "Rechercher",
+                        "see": "Voir",
+                        "show": "Afficher",
+                        "sl": "SL",
+                        "showing": "Affichant",
+                        "from": "sur",
+                        "entries": {
+                            "singular": "entr\u00e9e",
+                            "plural": "entr\u00e9es"
+                        }
+                    }
+                },
+                "messages": {
+                    "admins": {
+                        "not_found": "Administrateur introuvable.",
+                        "created": "Administrateur cr\u00e9\u00e9 avec succ\u00e8s.",
+                        "updated": "Administrateur modifi\u00e9 avec succ\u00e8s.",
+                        "deleted": "Administrateur supprim\u00e9 avec succ\u00e8s."
+                    },
+                    "users": {
+                        "not_found": "Utilisateur introuvable.",
+                        "created": "Utilisateur cr\u00e9\u00e9 avec succ\u00e8s.",
+                        "updated": "Utilisateur modifi\u00e9 avec succ\u00e8s.",
+                        "deleted": "Utilisateur supprim\u00e9 avec succ\u00e8s."
+                    },
+                    "roles": {
+                        "not_found": "R\u00f4le introuvable.",
+                        "created": "R\u00f4le cr\u00e9\u00e9 avec succ\u00e8s.",
+                        "updated": "R\u00f4le modifi\u00e9 avec succ\u00e8s.",
+                        "deleted": "R\u00f4le supprim\u00e9 avec succ\u00e8s."
+                    },
+                    "features": {
+                        "not_found": "Fonctionnalit\u00e9 introuvable.",
+                        "created": "Fonctionnalit\u00e9 cr\u00e9\u00e9e avec succ\u00e8s.",
+                        "updated": "Fonctionnalit\u00e9 modifi\u00e9e avec succ\u00e8s.",
+                        "deleted": "Fonctionnalit\u00e9 supprim\u00e9e avec succ\u00e8s."
+                    },
+                    "languages": {
+                        "not_found": "Langue introuvable.",
+                        "created": "Langue cr\u00e9\u00e9e avec succ\u00e8s.",
+                        "updated": "Langue modifi\u00e9e avec succ\u00e8s.",
+                        "deleted": "Langue supprim\u00e9e avec succ\u00e8s."
+                    },
+                    "notifications": {
+                        "not_found": "Notification introuvable."
+                    },
+                    "cms": {
+                        "not_found": "Contenu introuvable.",
+                        "updated": "Contenu modifi\u00e9 avec succ\u00e8s."
+                    },
+                    "settings": {
+                        "not_found": "Param\u00e8tre introuvable.",
+                        "created": "Param\u00e8tre cr\u00e9\u00e9 avec succ\u00e8s.",
+                        "updated": "Param\u00e8tre modifi\u00e9 avec succ\u00e8s.",
+                        "deleted": "Param\u00e8tre supprim\u00e9 avec succ\u00e8s."
+                    },
+                    "publications": {
+                        "not_found": "Publication introuvable.",
+                        "created": "Publication cr\u00e9\u00e9e avec succ\u00e8s.",
+                        "updated": "Publication modifi\u00e9e avec succ\u00e8s.",
+                        "deleted": "Publication supprim\u00e9e avec succ\u00e8s."
+                    },
+                    "subscribers": {
+                        "not_found": "Souscripteur introuvable.",
+                        "created": "Souscripteur cr\u00e9\u00e9 avec succ\u00e8s.",
+                        "updated": "Souscripteur modifi\u00e9 avec succ\u00e8s.",
+                        "deleted": "Souscripteur supprim\u00e9 avec succ\u00e8s."
+                    },
+                    "services": {
+                        "not_found": "Service introuvable.",
+                        "created": "Service cr\u00e9\u00e9 avec succ\u00e8s.",
+                        "updated": "Service modifi\u00e9 avec succ\u00e8s.",
+                        "deleted": "Service supprim\u00e9 avec succ\u00e8s."
+                    },
+                    "testimonies": {
+                        "not_found": "Témoignage introuvable.",
+                        "created": "Témoignage cr\u00e9\u00e9 avec succ\u00e8s.",
+                        "updated": "Témoignage modifi\u00e9 avec succ\u00e8s.",
+                        "deleted": "Témoignage supprim\u00e9 avec succ\u00e8s."
+                    },
+                    "team_members": {
+                        "not_found": "Membre d'équipe introuvable.",
+                        "created": "Membre d'équipe cr\u00e9\u00e9 avec succ\u00e8s.",
+                        "updated": "Membre d'équipe modifi\u00e9 avec succ\u00e8s.",
+                        "deleted": "Membre d'équipe supprim\u00e9 avec succ\u00e8s."
+                    },
+                    "partners": {
+                        "not_found": "Partenaire introuvable.",
+                        "created": "Partenaire cr\u00e9\u00e9 avec succ\u00e8s.",
+                        "updated": "Partenaire modifi\u00e9 avec succ\u00e8s.",
+                        "deleted": "Partenaire supprim\u00e9 avec succ\u00e8s."
                     }
                 },
                 "pages": {
@@ -634,6 +630,14 @@
                         ]
                     }
                 },
+                "components": {
+                    "service_block": {
+                        "read_more": "En savoir plus"
+                    },
+                    "publication_block": {
+                        "read_more": "Lire la suite"
+                    }
+                },
                 "pages": {
                     "home": {
                         "banner": {
@@ -643,11 +647,11 @@
                             "carousel": [
                                 {
                                     "src": "\/images\/achievement-african-african-american-arms-raised-bangkok-black-1568857-pxhere.com.jpg",
-                                    "altText": "Nous sommes une société de courtage en assurances, spécialisée dans le domaine de conseils en assurance, du placement des risques, de l’audit des portefeuilles en assurance, de l’analyse des risques, du montage des appels d’offres, du suivi de la gestion production et sinistres."
+                                    "altText": "Nous sommes courtier conseil en assurances, spécialisée dans le domaine du placement des risques, de l’audit des portefeuilles en assurance, de l’analyse des risques, du montage des appels d’offres, du suivi de la gestion production et sinistres."
                                 },
                                 {
                                     "src": "\/images\/african-african-american-arrow-bangkok-black-bridge-1456513-pxhere.com.jpg",
-                                    "altText": "Nous nous efforçons de fournir les meilleurs conseils en matière d’assurances à nos clients, leur permettant une meilleure couverture des risques grâce à des propositions de valeur et des solutions optimales."
+                                    "altText": "Nous nous efforçons de fournir de meilleurs conseils en matière d’assurances, permettant ainsi à nos clients de bénéficier d'une couverture optimale de risques grâce à des propositions de valeur et de meilleures solutions."
                                 },
                                 {
                                     "src": "\/images\/african-american-afro-american-analyzing-black-people-brainstorming-1434697-pxhere.com.jpg",
@@ -659,7 +663,7 @@
                             "title": "Leader Assurance SARL",
                             "subtitle": "Qui sommes-nous?",
                             "photo": "\/images\/achievement-african-african-american-bangkok-black-bridge-1567129-pxhere.com.jpg",
-                            "description": "Nous sommes un cabinet de conseil et de courtage en assurances, spécialisé dans le domaine de conseils en Assurance, de placement des risques, de l’audit des portefeuilles en assurances, de l’analyse des risques, du suivi de la gestion production et sinistres.<br /><br />Notre but est de vous accompagner dans la mise en place de vos contrats d’assurance, de vous apporter des informations nécessaires avant la souscription ou pendant les renouvellements, de vous prodiguer des conseils avant et pendant la vie de vos contrats d’assurance et aussi vous assister en cas de survenance d’un sinistre.",
+                            "description": "Nous sommes courtier conseil en assurances, spécialisée dans le domaine du placement des risques, de l’audit des portefeuilles en assurance, de l’analyse des risques, du montage des appels d’offres, du suivi de la gestion production et sinistres.<br /><br /><strong>Notre but est d’accompagner nos clients dans la sélection des potentiels assureurs et dans la mise en place des contrats. Nous donnons des informations nécessaires avant la souscription ou pendant les renouvellements.  Nous prodiguons également des conseils avant et pendant la vie des contrats assistons aussi nos clients en cas de survenance d’un sinistre ainsi que l’accompagnement lors des visites de risques au côté de la Compagnie d’assurance.</strong>",
                             "read_more": "En savoir plus",
                             "icon": "info-circle"
                         },
@@ -745,7 +749,7 @@
                             "title": "Leader Assurance SARL",
                             "subtitle": "Qui sommes-nous?",
                             "photo": "\/images\/achievement-african-african-american-bangkok-black-bridge-1567129-pxhere.com.jpg",
-                            "description": "Nous sommes une société de courtage en assurances, spécialisée dans le domaine de conseils en assurance, du placement des risques, de l’audit des portefeuilles en assurance, de l’analyse des risques, du montage des appels d’offres, du suivi de la gestion production et sinistres.<br /><br />Nous nous efforçons de fournir les meilleurs conseils en matière d’assurances à nos clients, leur permettant une meilleure couverture des risques grâce à des propositions de valeur et des solutions optimales.<br /><br />LEADER ASSURANCE SARL opère en fournissant la meilleure propriété intellectuelle et le meilleur service possible aux clients, faisant des affaires de manière transparente et d’éthique pour assurer des solutions conformes. Notre philosophie repose sur l’intégrité et le respect de nos clients.<br /><br />Nous comprenons que la gestion des risques est très différente de la gestion de la stratégie, et notre expertise nuancée nous permet de voir ce que vous pourriez toujours ne pas voir. Heureusement, nous pouvons identifier les risques potentiels, les analyser et prendre toutes les mesures de précaution nécessaires pour minimiser ou atténuer le risque.<br /><br /><strong>Notre but est d’accompagner nos clients dans la sélection des potentiels assureurs et dans la mise en place de vos contrats d’assurance. Nous vous donnons des informations nécessaires avant la souscription ou pendant les renouvellements.  Nous vous prodiguons également des conseils avant et pendant la vie de vos contrats d’assurance et aussi vous assister en cas de survenance d’un sinistre ainsi que l’accompagnement lors des visites de risques au côté de la Compagnie d’assurance.</strong>",
+                            "description": "Nous sommes courtier conseil en assurances, spécialisée dans le domaine du placement des risques, de l’audit des portefeuilles en assurance, de l’analyse des risques, du montage des appels d’offres, du suivi de la gestion production et sinistres.<br /><br />Nous nous efforçons de fournir de meilleurs conseils en matière d’assurances, permettant ainsi à nos clients de bénéficier d'une couverture optimale de risques grâce à des propositions de valeur et de meilleures solutions.<br /><br />LEADER ASSURANCE SARL opère en fournissant la meilleure propriété intellectuelle et le meilleur service possible aux clients, faisant des affaires de manière transparente et d’éthique pour assurer des solutions conformes. Notre philosophie repose sur l’intégrité et le respect de nos clients.<br /><br />Nous comprenons que la gestion des risques est très différente de la gestion de la stratégie, et notre expertise nuancée nous permet de voir ce que vous pourriez toujours ne pas voir. Heureusement, nous pouvons identifier les risques potentiels, les analyser et prendre toutes les mesures de précaution nécessaires pour minimiser ou atténuer le risque.<br /><br /><strong>Notre but est d’accompagner nos clients dans la sélection des potentiels assureurs et dans la mise en place des contrats. Nous donnons des informations nécessaires avant la souscription ou pendant les renouvellements.  Nous prodiguons également des conseils avant et pendant la vie des contrats assistons aussi nos clients en cas de survenance d’un sinistre ainsi que l’accompagnement lors des visites de risques au côté de la Compagnie d’assurance.</strong>",
                             "read_more": "En savoir plus"
                         },
                         "services": {
@@ -759,7 +763,6 @@
                             "subtitle": "Voici ceux grâce à qui tout ceci est possible",
                             "centered": "true"
                         }
-
                     },
                     "contact": {
                         "title": "Contact",
@@ -827,84 +830,12 @@
                     "Dec"
                 ]
             },
-            "components": {
-                "form": {
-                    "save": "Save",
-                    "save_add": "Save & Add",
-                    "selected_file": "File selected",
-                    "active": "Active",
-                    "inactive": "Inactive"
-                },
-                "list": {
-                    "action": "Action",
-                    "all": "All",
-                    "first": "First",
-                    "last": "Last",
-                    "loading": "Loading",
-                    "print": "Print",
-                    "pdf": "PDF",
-                    "csv": "CSV",
-                    "excel": "Excel",
-                    "search": "Search",
-                    "see": "See",
-                    "show": "Show",
-                    "sl": "SL",
-                    "showing": "Showing",
-                    "from": "from",
-                    "entries": {
-                        "singular": "entry",
-                        "plural": "entries"
-                    }
-                },
-                "service_block": {
-                    "read_more": "Read more"
-                },
-                "remaining_time": {
-                    "days": "Days",
-                    "hours": "Hr",
-                    "minutes": "Min",
-                    "seconds": "Sec",
-                    "remaining": "Remaining"
-                },
-                "publication_block": {
-                    "read_more": "Read more"
-                }
-            },
             "auth": {
                 "footer": {
                     "copyright": "Copyright",
                     "all_rights": "All rights reserved by"
                 },
-                "user": {
-                    "login": {
-                        "title": "Welcome User !",
-                        "sign_in": "Sign in",
-                        "email_address": "E-mail address",
-                        "password": "Password"
-                    }
-                },
-                "admin": {
-                    "login": {
-                        "sign_in_to": "Sign in to",
-                        "sign_in": "Sign in",
-                        "admin_panel": "Admin panel",
-                        "email_address": "E-mail address",
-                        "password": "Password",
-                        "sms": "SMS",
-                        "email": "E-mail address",
-                        "otp_method": "OTP Method"
-                    },
-                    "verify": {
-                        "enter": "Enter",
-                        "verification_code": "Verification code",
-                        "continue": "Continue",
-                        "didnt_receive_code": "Didn't receive code",
-                        "resend": "Resend"
-                    }
-                }
-            },
-            "messages": {
-                "auth": {
+                "components": {
                     "admin": {
                         "not_found": "Invalid credentials.",
                         "invalid": "Invalid verification code.",
@@ -918,84 +849,34 @@
                         "failure": "Failure."
                     }
                 },
-                "admins": {
-                    "not_found": "Admin not found.",
-                    "created": "Admin successfully created.",
-                    "updated": "Admin successfully updated.",
-                    "deleted": "Admin succesfully deleted."
-                },
-                "users": {
-                    "not_found": "User not found.",
-                    "created": "User successfully created.",
-                    "updated": "User successfully updated.",
-                    "deleted": "User succesfully deleted."
-                },
-                "roles": {
-                    "not_found": "Role not found.",
-                    "created": "Role successfully created.",
-                    "updated": "Role successfully updated.",
-                    "deleted": "Role succesfully deleted."
-                },
-                "features": {
-                    "not_found": "Feature not found.",
-                    "created": "Feature successfully created.",
-                    "updated": "Feature successfully updated.",
-                    "deleted": "Feature successfully deleted."
-                },
-                "languages": {
-                    "not_found": "Language not found.",
-                    "created": "Language successfully created.",
-                    "updated": "Language successfully updated.",
-                    "deleted": "Language successfully deleted."
-                },
-                "notifications": {
-                    "not_found": "Notification not found."
-                },
-                "cms": {
-                    "not_found": "Content not found.",
-                    "updated": "Content successfully updated."
-                },
-                "settings": {
-                    "not_found": "Setting not found.",
-                    "created": "Setting successfully created.",
-                    "updated": "Setting successfully updated.",
-                    "deleted": "Setting succesfully deleted."
-                },
-                "publications": {
-                    "not_found": "Publication not found.",
-                    "created": "Publication successfully created.",
-                    "updated": "Publication successfully updated.",
-                    "deleted": "Publication successfully deleted."
-                },
-                "subscribers": {
-                    "not_found": "Subscriber not found.",
-                    "created": "Subscriber successfully created.",
-                    "updated": "Subscriber successfully updated.",
-                    "deleted": "Subscriber succesfully deleted."
-                },
-                "services": {
-                    "not_found": "Service not found.",
-                    "created": "Service successfully created.",
-                    "updated": "Service successfully updated.",
-                    "deleted": "Service succesfully deleted."
-                },
-                "testimonies": {
-                    "not_found": "Testimony not found.",
-                    "created": "Testimony successfully created.",
-                    "updated": "Testimony successfully updated.",
-                    "deleted": "Testimony succesfully deleted."
-                },
-                "team_members": {
-                    "not_found": "Team member not found.",
-                    "created": "Team member successfully created.",
-                    "updated": "Team member successfully updated.",
-                    "deleted": "Team member succesfully deleted."
-                },
-                "partners": {
-                    "not_found": "Partner not found.",
-                    "created": "Partner successfully created.",
-                    "updated": "Partner successfully updated.",
-                    "deleted": "Partner succesfully deleted."
+                "pages": {
+                    "user": {
+                        "login": {
+                            "title": "Welcome User !",
+                            "sign_in": "Sign in",
+                            "email_address": "E-mail address",
+                            "password": "Password"
+                        }
+                    },
+                    "admin": {
+                        "login": {
+                            "sign_in_to": "Sign in to",
+                            "sign_in": "Sign in",
+                            "admin_panel": "Admin panel",
+                            "email_address": "E-mail address",
+                            "password": "Password",
+                            "sms": "SMS",
+                            "email": "E-mail address",
+                            "otp_method": "OTP Method"
+                        },
+                        "verify": {
+                            "enter": "Enter",
+                            "verification_code": "Verification code",
+                            "continue": "Continue",
+                            "didnt_receive_code": "Didn't receive code",
+                            "resend": "Resend"
+                        }
+                    }
                 }
             },
             "backend": {
@@ -1115,6 +996,117 @@
                             "add": "Add partner",
                             "index": "Partner list"
                         }
+                    }
+                },
+                "components": {
+                    "form": {
+                        "save": "Save",
+                        "save_add": "Save & Add",
+                        "selected_file": "File selected",
+                        "active": "Active",
+                        "inactive": "Inactive"
+                    },
+                    "list": {
+                        "action": "Action",
+                        "all": "All",
+                        "first": "First",
+                        "last": "Last",
+                        "loading": "Loading",
+                        "print": "Print",
+                        "pdf": "PDF",
+                        "csv": "CSV",
+                        "excel": "Excel",
+                        "search": "Search",
+                        "see": "See",
+                        "show": "Show",
+                        "sl": "SL",
+                        "showing": "Showing",
+                        "from": "from",
+                        "entries": {
+                            "singular": "entry",
+                            "plural": "entries"
+                        }
+                    }
+                },
+                "messages": {
+                    "admins": {
+                        "not_found": "Admin not found.",
+                        "created": "Admin successfully created.",
+                        "updated": "Admin successfully updated.",
+                        "deleted": "Admin succesfully deleted."
+                    },
+                    "users": {
+                        "not_found": "User not found.",
+                        "created": "User successfully created.",
+                        "updated": "User successfully updated.",
+                        "deleted": "User succesfully deleted."
+                    },
+                    "roles": {
+                        "not_found": "Role not found.",
+                        "created": "Role successfully created.",
+                        "updated": "Role successfully updated.",
+                        "deleted": "Role succesfully deleted."
+                    },
+                    "features": {
+                        "not_found": "Feature not found.",
+                        "created": "Feature successfully created.",
+                        "updated": "Feature successfully updated.",
+                        "deleted": "Feature successfully deleted."
+                    },
+                    "languages": {
+                        "not_found": "Language not found.",
+                        "created": "Language successfully created.",
+                        "updated": "Language successfully updated.",
+                        "deleted": "Language successfully deleted."
+                    },
+                    "notifications": {
+                        "not_found": "Notification not found."
+                    },
+                    "cms": {
+                        "not_found": "Content not found.",
+                        "updated": "Content successfully updated."
+                    },
+                    "settings": {
+                        "not_found": "Setting not found.",
+                        "created": "Setting successfully created.",
+                        "updated": "Setting successfully updated.",
+                        "deleted": "Setting succesfully deleted."
+                    },
+                    "publications": {
+                        "not_found": "Publication not found.",
+                        "created": "Publication successfully created.",
+                        "updated": "Publication successfully updated.",
+                        "deleted": "Publication successfully deleted."
+                    },
+                    "subscribers": {
+                        "not_found": "Subscriber not found.",
+                        "created": "Subscriber successfully created.",
+                        "updated": "Subscriber successfully updated.",
+                        "deleted": "Subscriber succesfully deleted."
+                    },
+                    "services": {
+                        "not_found": "Service not found.",
+                        "created": "Service successfully created.",
+                        "updated": "Service successfully updated.",
+                        "deleted": "Service succesfully deleted."
+                    },
+                    "testimonies": {
+                        "not_found": "Testimony not found.",
+                        "created": "Testimony successfully created.",
+                        "updated": "Testimony successfully updated.",
+                        "deleted": "Testimony succesfully deleted."
+                    },
+                    "team_members": {
+                        "not_found": "Team member not found.",
+                        "created": "Team member successfully created.",
+                        "updated": "Team member successfully updated.",
+                        "deleted": "Team member succesfully deleted."
+                    },
+                    "partners": {
+                        "not_found": "Partner not found.",
+                        "created": "Partner successfully created.",
+                        "updated": "Partner successfully updated.",
+                        "deleted": "Partner succesfully deleted."
                     }
                 },
                 "pages": {
@@ -1423,6 +1415,14 @@
                         ]
                     }
                 },
+                "components": {
+                    "service_block": {
+                        "read_more": "Read more"
+                    },
+                    "publication_block": {
+                        "read_more": "Read more"
+                    }
+                },
                 "pages": {
                     "home": {
                         "banner": {
@@ -1432,11 +1432,11 @@
                             "carousel": [
                                 {
                                     "src": "\/images\/achievement-african-african-american-arms-raised-bangkok-black-1568857-pxhere.com.jpg",
-                                    "altText": "We are an insurance brokerage company, specializing in the field of insurance advice, risk placement, auditing of insurance portfolios, risk analysis, setting up calls for tenders, follow-up of production and claims management."
+                                    "altText": "We are an insurance broker, specializing in the field of risk placement, auditing insurance portfolios, risk analysis, setting up calls for tenders, monitoring production and claims management."
                                 },
                                 {
                                     "src": "\/images\/african-african-american-arrow-bangkok-black-bridge-1456513-pxhere.com.jpg",
-                                    "altText": "We strive to provide the best insurance advice to our clients, enabling them to better cover risks through value propositions and optimal solutions."
+                                    "altText": "We strive to provide better insurance advice, enabling our clients to benefit from optimal risk coverage through value propositions and better solutions."
                                 },
                                 {
                                     "src": "\/images\/african-american-afro-american-analyzing-black-people-brainstorming-1434697-pxhere.com.jpg",
@@ -1448,7 +1448,7 @@
                             "title": "Leader Assurance SARL",
                             "subtitle": "Who are we?",
                             "photo": "\/images\/achievement-african-african-american-bangkok-black-bridge-1567129-pxhere.com.jpg",
-                            "description": "We are an insurance consulting and brokerage firm, specializing in the field of insurance consulting, risk placement, auditing of insurance portfolios, risk analysis, monitoring of production and claims management. .<br /><br />Our goal is to assist you in setting up your insurance contracts, to provide you with the necessary information before subscription or during renewals, to provide you with advice before and during the life of your insurance contracts and also assist you in the event of a claim.",
+                            "description": "We are an insurance broker, specializing in the field of risk placement, auditing insurance portfolios, risk analysis, setting up calls for tenders, monitoring production and claims management.< br /><br /><strong>Our goal is to support our clients in the selection of potential insurers and in the implementation of contracts. We provide necessary information before subscription or during renewals. We also provide advice before and during the life of the contracts, also assist our clients in the event of a claim, as well as support during risk visits alongside the insurance company.</strong>",
                             "read_more": "Read more",
                             "icon": "info-circle"
                         },
@@ -1548,7 +1548,6 @@
                             "subtitle": "Here are the people who made all this possible",
                             "centered": "true"
                         }
-
                     },
                     "contact": {
                         "title": "Contact",

@@ -10,18 +10,30 @@ import { updateObject, convertDate, htmlEntities } from '../../../../shared/util
 import * as utility from '../utility';
 
 class Index extends Component {
-    componentDidMount() { this.props.get() }
-    componentWillUnmount() { this.props.reset() }
+    state = { isMounted: false }
+
+
+
+    // Lifecycle methods
+    componentDidMount() {
+        this.props.get();
+        this.setState({ isMounted: true });
+    }
+
+    componentWillUnmount() {
+        this.props.reset();
+    }
+
     render() {
         const {
             content: {
                 cms: {
-                    pages: { components: { list: { action, see } }, backend: { pages: { services: { form } } } }
+                    pages: { backend: { components: { list: { action, see } }, pages: { services: { form } } } }
                 }
             },
             backend: { services: { services = [] } },
         } = this.props;
-        const lang = localStorage.getItem('lang');
+        const lang = localStorage.getItem('backend_lang');
 
         const data = services.map(service => {
             const title = service.title[lang];
@@ -36,7 +48,7 @@ class Index extends Component {
             });
         });
 
-        return <utility.index.lifecycle.render className='Publications' props={this.props} resource='services' data={data} fields={[
+        return <utility.index.lifecycle.render className='Publications' props={this.props} state={this.state} resource='services' data={data} fields={[
             { name: form.title, key: 'title' },
             { name: form.body, key: 'body' },
             { name: form.icon, key: 'icon' },

@@ -128,7 +128,7 @@ class List extends Component {
         const {
             fields, array, loading = false, total = 0, limit, bordered, title, subtitle, add, link, dark = false, borderless, outerClassName = '', select, children, selectHandler, content: {
                 cms: {
-                    pages: { components: { list: cms } }
+                    pages: { backend: { components: { list: cms } } }
                 }
             }
         } = this.props;

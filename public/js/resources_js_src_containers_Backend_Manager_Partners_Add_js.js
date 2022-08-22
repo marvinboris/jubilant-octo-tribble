@@ -64,7 +64,7 @@ var Save = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       var _this$props = this.props,
-          _this$props$content$c = _this$props.content.cms.pages.components.form,
+          _this$props$content$c = _this$props.content.cms.pages.backend.components.form,
           save = _this$props$content$c.save,
           save_add = _this$props$content$c.save_add,
           saveAddHandler = _this$props.saveAddHandler,
@@ -461,7 +461,7 @@ var List = /*#__PURE__*/function (_Component) {
           select = _this$props2.select,
           children = _this$props2.children,
           selectHandler = _this$props2.selectHandler,
-          cms = _this$props2.content.cms.pages.components.list;
+          cms = _this$props2.content.cms.pages.backend.components.list;
       var _this$state5 = this.state,
           show = _this$state5.show,
           search = _this$state5.search,
@@ -1375,7 +1375,9 @@ var Add = /*#__PURE__*/function (_Component) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    _defineProperty(_assertThisInitialized(_this), "state", _objectSpread({}, initialState));
+    _defineProperty(_assertThisInitialized(_this), "state", _objectSpread(_objectSpread({}, initialState), {}, {
+      isMounted: false
+    }));
 
     _defineProperty(_assertThisInitialized(_this), "resetState", function () {
       return _this.setState(_objectSpread({}, initialState));
@@ -1400,7 +1402,7 @@ var Add = /*#__PURE__*/function (_Component) {
     key: "componentDidMount",
     value: // Lifecycle methods
     function componentDidMount() {
-      _utility__WEBPACK_IMPORTED_MODULE_6__.add.lifecycle.componentDidMount(this.props);
+      _utility__WEBPACK_IMPORTED_MODULE_6__.add.lifecycle.componentDidMount(this.props, this.setState.bind(this));
     }
   }, {
     key: "componentDidUpdate",
@@ -1418,11 +1420,11 @@ var Add = /*#__PURE__*/function (_Component) {
       var _this2 = this;
 
       var _this$props = this.props,
-          _this$props$content$c = _this$props.content.cms.pages,
+          _this$props$content$c = _this$props.content.cms.pages.backend,
           _this$props$content$c2 = _this$props$content$c.components.form,
           active = _this$props$content$c2.active,
           inactive = _this$props$content$c2.inactive,
-          form = _this$props$content$c.backend.pages.partners.form,
+          form = _this$props$content$c.pages.partners.form,
           _this$props$backend$p = _this$props.backend.partners,
           loading = _this$props$backend$p.loading,
           _this$props$backend$p2 = _this$props$backend$p.partner,
@@ -1547,19 +1549,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "index": () => (/* binding */ index)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/node_modules/react-router/esm/react-router.js");
-/* harmony import */ var _components_Messages_Error__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/Messages/Error */ "./resources/js/src/components/Messages/Error/index.js");
-/* harmony import */ var _components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Messages/Feedback */ "./resources/js/src/components/Messages/Feedback/index.js");
-/* harmony import */ var _components_Backend_UI_Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Backend/UI/Form */ "./resources/js/src/components/Backend/UI/Form/index.js");
-/* harmony import */ var _components_Backend_UI_List__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Backend/UI/List */ "./resources/js/src/components/Backend/UI/List/index.js");
-/* harmony import */ var _components_Backend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/Backend/UI/Title/PageTitle */ "./resources/js/src/components/Backend/UI/Title/PageTitle/index.js");
-/* harmony import */ var _components_Backend_UI_Title_Breadcrumb__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/Backend/UI/Title/Breadcrumb */ "./resources/js/src/components/Backend/UI/Title/Breadcrumb/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _components_UI_Preloaders_Loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/UI/Preloaders/Loading */ "./resources/js/src/components/UI/Preloaders/Loading/index.js");
+/* harmony import */ var _components_Messages_Error__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Messages/Error */ "./resources/js/src/components/Messages/Error/index.js");
+/* harmony import */ var _components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Messages/Feedback */ "./resources/js/src/components/Messages/Feedback/index.js");
+/* harmony import */ var _components_Backend_UI_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Backend/UI/Form */ "./resources/js/src/components/Backend/UI/Form/index.js");
+/* harmony import */ var _components_Backend_UI_List__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/Backend/UI/List */ "./resources/js/src/components/Backend/UI/List/index.js");
+/* harmony import */ var _components_Backend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/Backend/UI/Title/PageTitle */ "./resources/js/src/components/Backend/UI/Title/PageTitle/index.js");
+/* harmony import */ var _components_Backend_UI_Title_Breadcrumb__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../components/Backend/UI/Title/Breadcrumb */ "./resources/js/src/components/Backend/UI/Title/Breadcrumb/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1603,9 +1607,9 @@ var Redirection = function Redirection(_ref) {
 
   if (role === 'user') {
     var feature = data.role.features.find(function (f) {
-      return f.prefix === resource;
+      return f.prefix === resource.split('_').join('-');
     });
-    return !(feature && JSON.parse(feature.permissions).includes(props.edit ? 'u' : 'c')) ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Redirect, {
+    return !(feature && JSON.parse(feature.permissions).includes(props.edit ? 'u' : 'c')) ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Redirect, {
       to: "/user/dashboard"
     }) : null;
   }
@@ -1648,15 +1652,18 @@ var add = {
     }
   },
   lifecycle: {
-    componentDidMount: function componentDidMount(props) {
+    componentDidMount: function componentDidMount(props, setState) {
       props.reset();
       if (props.edit) props.get(props.match.params.id);else if (props.info) props.info();
+      setState({
+        isMounted: true
+      });
     },
     componentDidUpdate: function componentDidUpdate(resource, singular) {
       return function (prevProps, props, state, setState, resetState) {
         if (!prevProps.backend[resource].message && props.backend[resource].message && props.backend[resource].message.type === 'success' && !props.edit) {
           if (state.add) resetState();else props.history.push({
-            pathname: "/".concat(props.auth.role, "/").concat(resource),
+            pathname: "/".concat(props.auth.role, "/").concat(resource.split('_').join('-')),
             state: {
               message: props.backend[resource].message
             }
@@ -1672,44 +1679,50 @@ var add = {
     render: function render(_ref2) {
       var className = _ref2.className,
           props = _ref2.props,
+          state = _ref2.state,
           resource = _ref2.resource,
           children = _ref2.children;
       var cms = props.content.cms.pages.backend.pages[resource],
           _props$backend$resour = props.backend[resource],
+          loading = _props$backend$resour.loading,
           error = _props$backend$resour.error,
           message = _props$backend$resour.message,
           role = props.auth.role;
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: className,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Backend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Backend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_6__["default"], {
           title: cms.title,
           subtitle: props.edit ? cms.edit : cms.add,
           icon: cms.icon,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Backend_UI_Title_Breadcrumb__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Backend_UI_Title_Breadcrumb__WEBPACK_IMPORTED_MODULE_7__["default"], {
             items: props.edit && [{
-              to: '/' + role + '/' + resource,
+              to: "/".concat(role, "/").concat(resource.split('_').join('-')),
               content: cms.index
             }],
             main: props.edit ? cms.edit : cms.add
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "content",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Redirection, {
-            props: props,
-            resource: resource
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            message: message
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Messages_Error__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            err: error
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Backend_UI_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            onSubmit: saveHandler(props),
-            icon: cms.icon,
-            title: props.edit ? cms.edit : cms.add,
-            list: cms.index,
-            link: "/".concat(role, "/").concat(resource),
-            innerClassName: "row justify-content-center",
-            children: children
-          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_UI_Preloaders_Loading__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          loading: state.isMounted && loading,
+          isAuthenticated: true,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            className: "content",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(Redirection, {
+              props: props,
+              resource: resource
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              message: message
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Messages_Error__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              err: error
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Backend_UI_Form__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              onSubmit: saveHandler(props),
+              icon: cms.icon,
+              title: props.edit ? cms.edit : cms.add,
+              list: cms.index,
+              link: "/".concat(role, "/").concat(resource.split('_').join('-')),
+              innerClassName: "row justify-content-center",
+              children: children
+            })]
+          })
         })]
       });
     }
@@ -1720,6 +1733,7 @@ var index = {
     render: function render(_ref3) {
       var className = _ref3.className,
           props = _ref3.props,
+          state = _ref3.state,
           resource = _ref3.resource,
           data = _ref3.data,
           fields = _ref3.fields;
@@ -1732,37 +1746,42 @@ var index = {
           items = _props$backend$resour3 === void 0 ? [] : _props$backend$resour3,
           total = _props$backend$resour2.total,
           role = props.auth.role;
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: className,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Backend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Backend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_6__["default"], {
           title: cms.title,
           subtitle: cms.index,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Backend_UI_Title_Breadcrumb__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          icon: cms.icon,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Backend_UI_Title_Breadcrumb__WEBPACK_IMPORTED_MODULE_7__["default"], {
             main: cms.index
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "content",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Messages_Error__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            err: error
-          }), props.location.state ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            time: 5000,
-            message: props.location.state.message
-          }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            message: message
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Backend_UI_List__WEBPACK_IMPORTED_MODULE_4__["default"], {
-            array: data,
-            loading: loading,
-            data: JSON.stringify(items),
-            get: props.get,
-            total: total,
-            bordered: true,
-            add: cms.add,
-            link: "/".concat(role, "/").concat(resource, "/add"),
-            icon: cms.icon,
-            title: cms.index,
-            className: "shadow-sm",
-            fields: fields
-          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_UI_Preloaders_Loading__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          loading: state.isMounted && loading,
+          isAuthenticated: true,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            className: "content",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Messages_Error__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              err: error
+            }), props.location.state ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              time: 5000,
+              message: props.location.state.message
+            }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              message: message
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Backend_UI_List__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              array: data,
+              loading: loading,
+              data: JSON.stringify(items),
+              get: props.get,
+              total: total,
+              bordered: true,
+              add: cms.add,
+              link: "/".concat(role, "/").concat(resource.split('_').join('-'), "/add"),
+              icon: cms.icon,
+              title: cms.index,
+              className: "shadow-sm",
+              fields: fields
+            })]
+          })
         })]
       });
     }

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
+import Loading from '../../../../components/UI/Preloaders/Loading';
+
 import PageTitle from '../../../../components/Frontend/UI/Title/PageTitle';
 
 import { getPublication, resetPublications } from '../../../../store/actions/frontend/publications';
@@ -9,9 +11,14 @@ import { getPublication, resetPublications } from '../../../../store/actions/fro
 import './Show.scss';
 
 class Publications extends Component {
+    state = { isMounted: false }
+
+
+
     // Lifecycle methods
     componentDidMount() {
         this.props.get(this.props.match.params.slug);
+        this.setState({ isMounted: true })
     }
 
     componentWillUnmount() {
@@ -26,7 +33,7 @@ class Publications extends Component {
             frontend: { publications: { loading, publication } }
         } = this.props;
         let content;
-        const lang = localStorage.getItem('lang');
+        const lang = localStorage.getItem('frontend_lang');
 
         if (loading) content = <>
             <PageTitle title={cms.title} subtitle={cms.loading} />
@@ -51,9 +58,11 @@ class Publications extends Component {
             </>;
         }
 
-        return <div className="Publications Show">
-            {content}
-        </div>;
+        return <Loading loading={this.state.isMounted && loading}>
+            <div className="Publications Show">
+                {content}
+            </div>
+        </Loading>;
     }
 }
 

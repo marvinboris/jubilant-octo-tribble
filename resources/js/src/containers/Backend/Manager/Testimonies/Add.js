@@ -27,7 +27,7 @@ const initialState = {
 }
 
 class Add extends Component {
-    state = { ...initialState }
+    state = { ...initialState, isMounted: false }
 
     // Component methods
     resetState = () => this.setState({ ...initialState, company: {}, title: {}, body: {} })
@@ -36,21 +36,21 @@ class Add extends Component {
     fileUpload = id => utility.add.component.fileUpload(id)
 
     // Lifecycle methods
-    componentDidMount() { utility.add.lifecycle.componentDidMount(this.props) }
+    componentDidMount() { utility.add.lifecycle.componentDidMount(this.props, this.setState.bind(this)) }
     componentDidUpdate(prevProps) { utility.add.lifecycle.componentDidUpdate('testimonies', 'testimony')(prevProps, this.props, this.state, this.setState.bind(this), this.resetState) }
     componentWillUnmount() { this.props.reset() }
     render() {
         const {
             content: {
                 cms: {
-                    pages: { components: { form: { active, inactive } }, backend: { pages: { testimonies: { form } } } }
+                    pages: { backend: { components: { form: { active, inactive } }, pages: { testimonies: { form } } } }
                 }, languages
             },
             backend: { testimonies: { loading, testimony = {} } },
         } = this.props;
         const { name, company, title, body, photo, is_active, translate } = this.state;
         let content;
-        const lang = localStorage.getItem('lang');
+        const lang = localStorage.getItem('backend_lang');
 
         const languagesOptions = languages.map(language => <option key={JSON.stringify(language)} value={language.abbr}>{language.name}</option>);
 

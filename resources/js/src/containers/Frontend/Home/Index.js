@@ -6,6 +6,8 @@ import OwlCarousel from 'react-owl-carousel2';
 import Carousel from './Carousel';
 import Quote from './Quote';
 
+import Loading from '../../../components/UI/Preloaders/Loading';
+
 import Error from '../../../components/Messages/Error';
 import Feedback from '../../../components/Messages/Feedback';
 
@@ -47,7 +49,7 @@ const initialState = {
 };
 
 class Home extends Component {
-    state = { ...initialState }
+    state = { ...initialState, isMounted: false }
 
 
 
@@ -72,6 +74,7 @@ class Home extends Component {
     // Lifecycle methods
     componentDidMount() {
         this.props.get();
+        this.setState({ isMounted: true });
     }
 
     componentDidUpdate(prevProps) {
@@ -92,7 +95,7 @@ class Home extends Component {
             frontend: { home: { loading, error, message, testimonies = [], partners = [], publications = [], team = [] } }
         } = this.props;
         const { name, email, service_id } = this.state;
-        const lang = localStorage.getItem('lang');
+        const lang = localStorage.getItem('frontend_lang');
 
         const policiesContent = cms.policy.carousel.map(policy => <PolicyBlock key={JSON.stringify(policy)} {...policy} cms={cms.policy} />);
         const servicesContent = services.map(service => <div key={JSON.stringify(service)} className='col-md-6 col-xxl-4'><ServiceBlock {...service} /></div>);
@@ -101,95 +104,96 @@ class Home extends Component {
         const publicationsContent = publications.map(publication => <div key={JSON.stringify(publication)} className='col-md-4'><PublicationBlock {...publication} /></div>);
         const teamContent = team.map(member => <TeamMemberBlock key={JSON.stringify(member)} {...{ ...member, job: member.job[lang] }} />);
 
-        return <div className="Home">
-            <div className='banner'>
-                <div className="banner__container">
-                    <div className="banner__text container">
-                        <div className='row'>
-                            <div className='col-10 col-md-8 col-xl-6'><div className='title text-24 text-md-28 text-xl-32'>{cms.banner.title}</div></div>
+        return <Loading loading={this.state.isMounted && loading}>
+            <div className="Home">
+                <div className='banner'>
+                    <div className="banner__container">
+                        <div className="banner__text container">
+                            <div className='row'>
+                                <div className='col-10 col-md-8 col-xl-6'><div className='title text-24 text-md-28 text-xl-32'>{cms.banner.title}</div></div>
 
-                            <div className='col-10 col-md-9 col-xl-8'><div className='subtitle text-14 text-md-16 text-xl-18'>{cms.banner.carousel[0].altText}</div></div>
+                                <div className='col-10 col-md-9 col-xl-8'><div className='subtitle text-14 text-md-16 text-xl-18'>{cms.banner.carousel[0].altText}</div></div>
 
-                            <div className='col-12'>
-                                <Link to={'/about'} className="about btn btn-white">{cms.banner.about}<i className='fas fa-address-card' /></Link>
-                                <Link to={'/services'} className="btn btn-outline-white">{cms.banner.services}<i className='fas fa-concierge-bell' /></Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <Carousel items={cms.banner.carousel} />
-            </div>
-
-            <section className='about'>
-                <div className='container'>
-                    <div className='row'>
-                        <div className='col-md-5 col-lg-4'>
-                            <img src={cms.about.photo} className='img-fluid' />
-                        </div>
-
-                        <div className='col-md-7 col-lg-8'>
-                            <SectionTitle {...cms.about} />
-
-                            <p dangerouslySetInnerHTML={{ __html: cms.about.description }} />
-
-                            <div className='actions text-center text-md-left'>
-                                <Link to={'/about'} className="about btn btn-outline-blue">{cms.about.read_more}<i className='fas fa-plus' /></Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className='policy'>
-                <div className='container'>
-                    <div className='row'>
-                        <div className='col-md-6'>
-                            <div className='img'>
-                                <img src={cms.policy.photo} />
-                            </div>
-                        </div>
-
-                        <div className='col-md-6'>
-                            <OwlCarousel ref="policy-carousel" options={{ items: 1, autoplay: true, dots: true }}>{policiesContent}</OwlCarousel>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className='services'>
-                <div className='container'>
-                    <SectionTitle {...cms.services} />
-
-                    <div className='row'>
-                        {servicesContent}
-                    </div>
-                </div>
-            </section>
-
-            <section className='newsletter'>
-                <div className='container'>
-                    <SectionTitle {...cms.newsletter} centered />
-
-                    <div className='row justify-content-center'>
-                        <div className='col-lg-7'>
-                            <form onSubmit={this.newsletterHandler}>
-                                <Error err={error} />
-                                <Feedback message={message} />
-
-                                <Input type='text' name='name' onChange={this.inputChangeHandler} value={name} label={cms.newsletter.name} required disabled={loading} />
-                                <Input type='email' name='email' onChange={this.inputChangeHandler} value={email} label={cms.newsletter.email} required disabled={loading} />
-
-                                <div className='submit'>
-                                    <button className={'btn btn-outline-white' + (loading ? ' btn-disabled' : '')}>{cms.newsletter.submit}<i className='fas fa-paper-plane' /></button>
+                                <div className='col-12'>
+                                    <Link to={'/about'} className="about btn btn-white">{cms.banner.about}<i className='fas fa-address-card' /></Link>
+                                    <Link to={'/services'} className="btn btn-outline-white">{cms.banner.services}<i className='fas fa-concierge-bell' /></Link>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
 
-            {/* <section className='testimonies'>
+                    <Carousel items={cms.banner.carousel} />
+                </div>
+
+                <section className='about'>
+                    <div className='container'>
+                        <div className='row'>
+                            <div className='col-md-5 col-lg-4'>
+                                <img src={cms.about.photo} className='img-fluid' />
+                            </div>
+
+                            <div className='col-md-7 col-lg-8'>
+                                <SectionTitle {...cms.about} />
+
+                                <p dangerouslySetInnerHTML={{ __html: cms.about.description }} />
+
+                                <div className='actions text-center text-md-left'>
+                                    <Link to={'/about'} className="about btn btn-outline-blue">{cms.about.read_more}<i className='fas fa-plus' /></Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section className='policy'>
+                    <div className='container'>
+                        <div className='row'>
+                            <div className='col-md-6'>
+                                <div className='img'>
+                                    <img src={cms.policy.photo} />
+                                </div>
+                            </div>
+
+                            <div className='col-md-6'>
+                                <OwlCarousel ref="policy-carousel" options={{ items: 1, autoplay: true, dots: true }}>{policiesContent}</OwlCarousel>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section className='services'>
+                    <div className='container'>
+                        <SectionTitle {...cms.services} />
+
+                        <div className='row'>
+                            {servicesContent}
+                        </div>
+                    </div>
+                </section>
+
+                <section className='newsletter'>
+                    <div className='container'>
+                        <SectionTitle {...cms.newsletter} centered />
+
+                        <div className='row justify-content-center'>
+                            <div className='col-lg-7'>
+                                <form onSubmit={this.newsletterHandler}>
+                                    <Error err={error} />
+                                    <Feedback message={message} />
+
+                                    <Input type='text' name='name' onChange={this.inputChangeHandler} value={name} label={cms.newsletter.name} required disabled={loading} />
+                                    <Input type='email' name='email' onChange={this.inputChangeHandler} value={email} label={cms.newsletter.email} required disabled={loading} />
+
+                                    <div className='submit'>
+                                        <button className={'btn btn-outline-white' + (loading ? ' btn-disabled' : '')}>{cms.newsletter.submit}<i className='fas fa-paper-plane' /></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* <section className='testimonies'>
                 <div className='container'>
                     <SectionTitle {...cms.testimonies} />
                     <div className='row justify-content-center'>
@@ -202,36 +206,37 @@ class Home extends Component {
                 </div>
             </section> */}
 
-            <section className='partners'>
-                <div className='container'>
-                    {partners.length > 0 && <OwlCarousel ref="partners-carousel" options={{ responsive: { 0: { items: 2 }, 600: { items: 3 }, 900: { items: 4 }, 1200: { items: 5 } }, dots: false, margin: 20 }}>{partnersContent}</OwlCarousel>}
-                </div>
-            </section>
-
-            <section className='quote'>
-                <div className='container'>
-                    <SectionTitle {...cms.quote} />
-
-                    <div>
-                        <View title={cms.quote.form.title} content={<Quote />}><button className='btn btn-white'>{cms.quote.get}</button></View>
+                <section className='partners'>
+                    <div className='container'>
+                        {partners.length > 0 && <OwlCarousel ref="partners-carousel" options={{ responsive: { 0: { items: 2 }, 600: { items: 3 }, 900: { items: 4 }, 1200: { items: 5 } }, dots: false, margin: 20 }}>{partnersContent}</OwlCarousel>}
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section className='team'>
-                <div className='container'>
-                    <SectionTitle {...cms.team} centered />
+                <section className='quote'>
+                    <div className='container'>
+                        <SectionTitle {...cms.quote} />
 
-                    {team.length > 0 && <OwlCarousel ref="team-carousel" options={{ responsive: { 0: { items: 1 }, 600: { items: 2 }, 900: { items: 3 }, 1200: { items: 4 } }, dots: false, margin: 20 }}>{teamContent}</OwlCarousel>}
-                </div>
-            </section>
+                        <div>
+                            <View title={cms.quote.form.title} content={<Quote />}><button className='btn btn-white'>{cms.quote.get}</button></View>
+                        </div>
+                    </div>
+                </section>
 
-            <section className='publications'>
-                <div className='container'>
-                    <div className='row'>{publicationsContent}</div>
-                </div>
-            </section>
-        </div>;
+                <section className='team'>
+                    <div className='container'>
+                        <SectionTitle {...cms.team} centered />
+
+                        {team.length > 0 && <OwlCarousel ref="team-carousel" options={{ responsive: { 0: { items: 1 }, 600: { items: 2 }, 900: { items: 3 }, 1200: { items: 4 } }, dots: false, margin: 20 }}>{teamContent}</OwlCarousel>}
+                    </div>
+                </section>
+
+                <section className='publications'>
+                    <div className='container'>
+                        <div className='row'>{publicationsContent}</div>
+                    </div>
+                </section>
+            </div>
+        </Loading>;
     }
 }
 

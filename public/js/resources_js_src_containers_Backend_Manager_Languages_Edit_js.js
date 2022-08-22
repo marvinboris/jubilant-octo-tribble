@@ -64,7 +64,7 @@ var Save = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       var _this$props = this.props,
-          _this$props$content$c = _this$props.content.cms.pages.components.form,
+          _this$props$content$c = _this$props.content.cms.pages.backend.components.form,
           save = _this$props$content$c.save,
           save_add = _this$props$content$c.save_add,
           saveAddHandler = _this$props.saveAddHandler,
@@ -461,7 +461,7 @@ var List = /*#__PURE__*/function (_Component) {
           select = _this$props2.select,
           children = _this$props2.children,
           selectHandler = _this$props2.selectHandler,
-          cms = _this$props2.content.cms.pages.components.list;
+          cms = _this$props2.content.cms.pages.backend.components.list;
       var _this$state5 = this.state,
           show = _this$state5.show,
           search = _this$state5.search,
@@ -1179,61 +1179,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 /***/ }),
 
-/***/ "./resources/js/src/components/UI/Preloaders/Preloader/Preloader/index.js":
-/*!********************************************************************************!*\
-  !*** ./resources/js/src/components/UI/Preloaders/Preloader/Preloader/index.js ***!
-  \********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _Preloader_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Preloader.css */ "./resources/js/src/components/UI/Preloaders/Preloader/Preloader/Preloader.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "Preloader",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      id: "preloader",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        id: "loader"
-      })
-    })
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/src/components/UI/Preloaders/Preloader/index.js":
-/*!**********************************************************************!*\
-  !*** ./resources/js/src/components/UI/Preloaders/Preloader/index.js ***!
-  \**********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _Preloader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Preloader */ "./resources/js/src/components/UI/Preloaders/Preloader/Preloader/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "py-5 my-3 text-center",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Preloader__WEBPACK_IMPORTED_MODULE_1__["default"], {})
-  });
-});
-
-/***/ }),
-
 /***/ "./resources/js/src/components/UI/WithTooltip/WithTooltip.js":
 /*!*******************************************************************!*\
   !*** ./resources/js/src/components/UI/WithTooltip/WithTooltip.js ***!
@@ -1305,13 +1250,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _components_Backend_UI_Form_Save__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../components/Backend/UI/Form/Save */ "./resources/js/src/components/Backend/UI/Form/Save/index.js");
 /* harmony import */ var _components_UI_Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../components/UI/Input */ "./resources/js/src/components/UI/Input/index.js");
-/* harmony import */ var _components_UI_Preloaders_Preloader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../components/UI/Preloaders/Preloader */ "./resources/js/src/components/UI/Preloaders/Preloader/index.js");
-/* harmony import */ var _store_actions_backend_languages__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../store/actions/backend/languages */ "./resources/js/src/store/actions/backend/languages.js");
-/* harmony import */ var _utility__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utility */ "./resources/js/src/containers/Backend/Manager/utility.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _store_actions_backend_languages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../store/actions/backend/languages */ "./resources/js/src/store/actions/backend/languages.js");
+/* harmony import */ var _utility__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utility */ "./resources/js/src/containers/Backend/Manager/utility.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -1351,7 +1295,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
 var initialState = {
   name: '',
   abbr: '',
@@ -1375,22 +1318,20 @@ var Add = /*#__PURE__*/function (_Component) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    _defineProperty(_assertThisInitialized(_this), "state", _objectSpread({}, initialState));
+    _defineProperty(_assertThisInitialized(_this), "state", _objectSpread(_objectSpread({}, initialState), {}, {
+      isMounted: false
+    }));
 
     _defineProperty(_assertThisInitialized(_this), "resetState", function () {
       return _this.setState(_objectSpread({}, initialState));
     });
 
     _defineProperty(_assertThisInitialized(_this), "saveAddHandler", function () {
-      return _utility__WEBPACK_IMPORTED_MODULE_6__.add.component.saveAddHandler(_this.setState.bind(_assertThisInitialized(_this)), _this.props);
+      return _utility__WEBPACK_IMPORTED_MODULE_5__.add.component.saveAddHandler(_this.setState.bind(_assertThisInitialized(_this)), _this.props);
     });
 
     _defineProperty(_assertThisInitialized(_this), "inputChangeHandler", function (e) {
-      return _utility__WEBPACK_IMPORTED_MODULE_6__.add.component.inputChangeHandler(_this.state, _this.setState.bind(_assertThisInitialized(_this)))(e);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "fileUpload", function (id) {
-      return _utility__WEBPACK_IMPORTED_MODULE_6__.add.component.fileUpload(id);
+      return _utility__WEBPACK_IMPORTED_MODULE_5__.add.component.inputChangeHandler(_this.state, _this.setState.bind(_assertThisInitialized(_this)))(e);
     });
 
     return _this;
@@ -1400,12 +1341,12 @@ var Add = /*#__PURE__*/function (_Component) {
     key: "componentDidMount",
     value: // Lifecycle methods
     function componentDidMount() {
-      _utility__WEBPACK_IMPORTED_MODULE_6__.add.lifecycle.componentDidMount(this.props);
+      _utility__WEBPACK_IMPORTED_MODULE_5__.add.lifecycle.componentDidMount(this.props, this.setState.bind(this));
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
-      _utility__WEBPACK_IMPORTED_MODULE_6__.add.lifecycle.componentDidUpdate('languages', 'language')(prevProps, this.props, this.state, this.setState.bind(this), this.resetState);
+      _utility__WEBPACK_IMPORTED_MODULE_5__.add.lifecycle.componentDidUpdate('languages', 'language')(prevProps, this.props, this.state, this.setState.bind(this), this.resetState);
     }
   }, {
     key: "componentWillUnmount",
@@ -1415,41 +1356,36 @@ var Add = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this$props = this.props,
-          _this$props$content = _this$props.content,
+      var _this$props$content = this.props.content,
           form = _this$props$content.cms.pages.backend.pages.languages.form,
-          countries = _this$props$content.countries,
-          loading = _this$props.backend.languages.loading;
+          countries = _this$props$content.countries;
       var _this$state = this.state,
           name = _this$state.name,
           abbr = _this$state.abbr,
           flag = _this$state.flag;
-      var content;
       var countriesOptions = countries.map(function (_ref) {
         var country = _ref.country,
             code = _ref.code,
             name = _ref.name;
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
           value: country,
           code: code,
           children: name
         }, country);
       });
-      if (loading) content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-        className: "col-12",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_UI_Preloaders_Preloader__WEBPACK_IMPORTED_MODULE_4__["default"], {})
-      });else content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
-        children: [this.props.edit && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+
+      var content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+        children: [this.props.edit && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
           type: "hidden",
           name: "_method",
           defaultValue: "PATCH"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
           className: "row",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "col-lg-9",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
               className: "row",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
                 type: "text",
                 className: "col-md-6",
                 onChange: this.inputChangeHandler,
@@ -1457,7 +1393,7 @@ var Add = /*#__PURE__*/function (_Component) {
                 name: "name",
                 required: true,
                 label: form.name
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
                 type: "text",
                 className: "col-md-6",
                 onChange: this.inputChangeHandler,
@@ -1465,18 +1401,18 @@ var Add = /*#__PURE__*/function (_Component) {
                 name: "abbr",
                 required: true,
                 label: form.abbr
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
                 className: "col-md-6",
                 type: "select",
-                addon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                addon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
                   className: "text-secondary text-small d-inline-flex",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
                     className: "rounded-circle overflow-hidden position-relative d-flex justify-content-center align-items-center",
                     style: {
                       width: 30,
                       height: 30
                     },
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
                       className: "flag-icon text-xx-large position-absolute flag-icon-".concat(flag.toLowerCase())
                     })
                   })
@@ -1489,20 +1425,22 @@ var Add = /*#__PURE__*/function (_Component) {
                 name: "flag",
                 required: true,
                 label: form.select_flag,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
                   children: form.select_flag
                 }), countriesOptions]
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Backend_UI_Form_Save__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Backend_UI_Form_Save__WEBPACK_IMPORTED_MODULE_2__["default"], {
             edit: this.props.edit,
             saveAddHandler: this.saveAddHandler
           })]
         })]
       });
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_utility__WEBPACK_IMPORTED_MODULE_6__.add.lifecycle.render, {
+
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_utility__WEBPACK_IMPORTED_MODULE_5__.add.lifecycle.render, {
         className: "Languages",
         props: this.props,
+        state: this.state,
         resource: 'languages',
         children: content
       });
@@ -1519,21 +1457,21 @@ var mapStateToProps = function mapStateToProps(state) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     get: function get(id) {
-      return dispatch(_store_actions_backend_languages__WEBPACK_IMPORTED_MODULE_5__["default"].show(id));
+      return dispatch(_store_actions_backend_languages__WEBPACK_IMPORTED_MODULE_4__["default"].show(id));
     },
     post: function post(data) {
-      return dispatch(_store_actions_backend_languages__WEBPACK_IMPORTED_MODULE_5__["default"].post(data));
+      return dispatch(_store_actions_backend_languages__WEBPACK_IMPORTED_MODULE_4__["default"].post(data));
     },
     patch: function patch(id, data) {
-      return dispatch(_store_actions_backend_languages__WEBPACK_IMPORTED_MODULE_5__["default"].patch(id, data));
+      return dispatch(_store_actions_backend_languages__WEBPACK_IMPORTED_MODULE_4__["default"].patch(id, data));
     },
     reset: function reset() {
-      return dispatch(_store_actions_backend_languages__WEBPACK_IMPORTED_MODULE_5__["default"].reset());
+      return dispatch(_store_actions_backend_languages__WEBPACK_IMPORTED_MODULE_4__["default"].reset());
     }
   };
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.withRouter)((0,react_redux__WEBPACK_IMPORTED_MODULE_1__.connect)(mapStateToProps, mapDispatchToProps)(Add)));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.withRouter)((0,react_redux__WEBPACK_IMPORTED_MODULE_1__.connect)(mapStateToProps, mapDispatchToProps)(Add)));
 
 /***/ }),
 
@@ -1573,19 +1511,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "index": () => (/* binding */ index)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/node_modules/react-router/esm/react-router.js");
-/* harmony import */ var _components_Messages_Error__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/Messages/Error */ "./resources/js/src/components/Messages/Error/index.js");
-/* harmony import */ var _components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Messages/Feedback */ "./resources/js/src/components/Messages/Feedback/index.js");
-/* harmony import */ var _components_Backend_UI_Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Backend/UI/Form */ "./resources/js/src/components/Backend/UI/Form/index.js");
-/* harmony import */ var _components_Backend_UI_List__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Backend/UI/List */ "./resources/js/src/components/Backend/UI/List/index.js");
-/* harmony import */ var _components_Backend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/Backend/UI/Title/PageTitle */ "./resources/js/src/components/Backend/UI/Title/PageTitle/index.js");
-/* harmony import */ var _components_Backend_UI_Title_Breadcrumb__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/Backend/UI/Title/Breadcrumb */ "./resources/js/src/components/Backend/UI/Title/Breadcrumb/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _components_UI_Preloaders_Loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/UI/Preloaders/Loading */ "./resources/js/src/components/UI/Preloaders/Loading/index.js");
+/* harmony import */ var _components_Messages_Error__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Messages/Error */ "./resources/js/src/components/Messages/Error/index.js");
+/* harmony import */ var _components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Messages/Feedback */ "./resources/js/src/components/Messages/Feedback/index.js");
+/* harmony import */ var _components_Backend_UI_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Backend/UI/Form */ "./resources/js/src/components/Backend/UI/Form/index.js");
+/* harmony import */ var _components_Backend_UI_List__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/Backend/UI/List */ "./resources/js/src/components/Backend/UI/List/index.js");
+/* harmony import */ var _components_Backend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/Backend/UI/Title/PageTitle */ "./resources/js/src/components/Backend/UI/Title/PageTitle/index.js");
+/* harmony import */ var _components_Backend_UI_Title_Breadcrumb__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../components/Backend/UI/Title/Breadcrumb */ "./resources/js/src/components/Backend/UI/Title/Breadcrumb/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1629,9 +1569,9 @@ var Redirection = function Redirection(_ref) {
 
   if (role === 'user') {
     var feature = data.role.features.find(function (f) {
-      return f.prefix === resource;
+      return f.prefix === resource.split('_').join('-');
     });
-    return !(feature && JSON.parse(feature.permissions).includes(props.edit ? 'u' : 'c')) ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Redirect, {
+    return !(feature && JSON.parse(feature.permissions).includes(props.edit ? 'u' : 'c')) ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Redirect, {
       to: "/user/dashboard"
     }) : null;
   }
@@ -1674,15 +1614,18 @@ var add = {
     }
   },
   lifecycle: {
-    componentDidMount: function componentDidMount(props) {
+    componentDidMount: function componentDidMount(props, setState) {
       props.reset();
       if (props.edit) props.get(props.match.params.id);else if (props.info) props.info();
+      setState({
+        isMounted: true
+      });
     },
     componentDidUpdate: function componentDidUpdate(resource, singular) {
       return function (prevProps, props, state, setState, resetState) {
         if (!prevProps.backend[resource].message && props.backend[resource].message && props.backend[resource].message.type === 'success' && !props.edit) {
           if (state.add) resetState();else props.history.push({
-            pathname: "/".concat(props.auth.role, "/").concat(resource),
+            pathname: "/".concat(props.auth.role, "/").concat(resource.split('_').join('-')),
             state: {
               message: props.backend[resource].message
             }
@@ -1698,44 +1641,50 @@ var add = {
     render: function render(_ref2) {
       var className = _ref2.className,
           props = _ref2.props,
+          state = _ref2.state,
           resource = _ref2.resource,
           children = _ref2.children;
       var cms = props.content.cms.pages.backend.pages[resource],
           _props$backend$resour = props.backend[resource],
+          loading = _props$backend$resour.loading,
           error = _props$backend$resour.error,
           message = _props$backend$resour.message,
           role = props.auth.role;
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: className,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Backend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Backend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_6__["default"], {
           title: cms.title,
           subtitle: props.edit ? cms.edit : cms.add,
           icon: cms.icon,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Backend_UI_Title_Breadcrumb__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Backend_UI_Title_Breadcrumb__WEBPACK_IMPORTED_MODULE_7__["default"], {
             items: props.edit && [{
-              to: '/' + role + '/' + resource,
+              to: "/".concat(role, "/").concat(resource.split('_').join('-')),
               content: cms.index
             }],
             main: props.edit ? cms.edit : cms.add
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "content",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Redirection, {
-            props: props,
-            resource: resource
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            message: message
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Messages_Error__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            err: error
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Backend_UI_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            onSubmit: saveHandler(props),
-            icon: cms.icon,
-            title: props.edit ? cms.edit : cms.add,
-            list: cms.index,
-            link: "/".concat(role, "/").concat(resource),
-            innerClassName: "row justify-content-center",
-            children: children
-          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_UI_Preloaders_Loading__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          loading: state.isMounted && loading,
+          isAuthenticated: true,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            className: "content",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(Redirection, {
+              props: props,
+              resource: resource
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              message: message
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Messages_Error__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              err: error
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Backend_UI_Form__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              onSubmit: saveHandler(props),
+              icon: cms.icon,
+              title: props.edit ? cms.edit : cms.add,
+              list: cms.index,
+              link: "/".concat(role, "/").concat(resource.split('_').join('-')),
+              innerClassName: "row justify-content-center",
+              children: children
+            })]
+          })
         })]
       });
     }
@@ -1746,6 +1695,7 @@ var index = {
     render: function render(_ref3) {
       var className = _ref3.className,
           props = _ref3.props,
+          state = _ref3.state,
           resource = _ref3.resource,
           data = _ref3.data,
           fields = _ref3.fields;
@@ -1758,37 +1708,42 @@ var index = {
           items = _props$backend$resour3 === void 0 ? [] : _props$backend$resour3,
           total = _props$backend$resour2.total,
           role = props.auth.role;
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: className,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Backend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Backend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_6__["default"], {
           title: cms.title,
           subtitle: cms.index,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Backend_UI_Title_Breadcrumb__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          icon: cms.icon,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Backend_UI_Title_Breadcrumb__WEBPACK_IMPORTED_MODULE_7__["default"], {
             main: cms.index
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "content",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Messages_Error__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            err: error
-          }), props.location.state ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            time: 5000,
-            message: props.location.state.message
-          }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            message: message
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Backend_UI_List__WEBPACK_IMPORTED_MODULE_4__["default"], {
-            array: data,
-            loading: loading,
-            data: JSON.stringify(items),
-            get: props.get,
-            total: total,
-            bordered: true,
-            add: cms.add,
-            link: "/".concat(role, "/").concat(resource, "/add"),
-            icon: cms.icon,
-            title: cms.index,
-            className: "shadow-sm",
-            fields: fields
-          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_UI_Preloaders_Loading__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          loading: state.isMounted && loading,
+          isAuthenticated: true,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            className: "content",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Messages_Error__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              err: error
+            }), props.location.state ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              time: 5000,
+              message: props.location.state.message
+            }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Messages_Feedback__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              message: message
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Backend_UI_List__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              array: data,
+              loading: loading,
+              data: JSON.stringify(items),
+              get: props.get,
+              total: total,
+              bordered: true,
+              add: cms.add,
+              link: "/".concat(role, "/").concat(resource.split('_').join('-'), "/add"),
+              icon: cms.icon,
+              title: cms.index,
+              className: "shadow-sm",
+              fields: fields
+            })]
+          })
         })]
       });
     }
@@ -1868,29 +1823,6 @@ var resource = function resource(type) {
     return resource('delete', id);
   }
 });
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/components/UI/Preloaders/Preloader/Preloader/Preloader.css":
-/*!***********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/components/UI/Preloaders/Preloader/Preloader/Preloader.css ***!
-  \***********************************************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, ".Preloader body {\r\n    background-color: #222;\r\n}\r\n\r\n.Preloader #preloader {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.Preloader #loader {\r\n    display: block;\r\n    position: relative;\r\n    left: 50%;\r\n    top: 50%;\r\n    width: 150px;\r\n    height: 150px;\r\n    margin: -75px 0 0 -75px;\r\n    border-radius: 50%;\r\n    border: 3px solid transparent;\r\n    border-top-color: #9370DB;\r\n    -webkit-animation: spin 2s linear infinite;\r\n    animation: spin 2s linear infinite;\r\n}\r\n\r\n.Preloader #loader:before {\r\n    content: \"\";\r\n    position: absolute;\r\n    top: 5px;\r\n    left: 5px;\r\n    right: 5px;\r\n    bottom: 5px;\r\n    border-radius: 50%;\r\n    border: 3px solid transparent;\r\n    border-top-color: #BA55D3;\r\n    -webkit-animation: spin 3s linear infinite;\r\n    animation: spin 3s linear infinite;\r\n}\r\n\r\n.Preloader #loader:after {\r\n    content: \"\";\r\n    position: absolute;\r\n    top: 15px;\r\n    left: 15px;\r\n    right: 15px;\r\n    bottom: 15px;\r\n    border-radius: 50%;\r\n    border: 3px solid transparent;\r\n    border-top-color: #FF00FF;\r\n    -webkit-animation: spin 1.5s linear infinite;\r\n    animation: spin 1.5s linear infinite;\r\n}\r\n\r\n@-webkit-keyframes spin {\r\n    0% {\r\n        transform: rotate(0deg);\r\n    }\r\n    100% {\r\n        transform: rotate(360deg);\r\n    }\r\n}\r\n\r\n@keyframes spin {\r\n    0% {\r\n        transform: rotate(0deg);\r\n    }\r\n    100% {\r\n        transform: rotate(360deg);\r\n    }\r\n}", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
 
 /***/ }),
 
@@ -3735,35 +3667,6 @@ var TooltipPopoverWrapper = /*#__PURE__*/function (_React$Component) {
 TooltipPopoverWrapper.propTypes = propTypes;
 TooltipPopoverWrapper.defaultProps = defaultProps;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TooltipPopoverWrapper);
-
-/***/ }),
-
-/***/ "./resources/js/src/components/UI/Preloaders/Preloader/Preloader/Preloader.css":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/src/components/UI/Preloaders/Preloader/Preloader/Preloader.css ***!
-  \*************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Preloader_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Preloader.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/components/UI/Preloaders/Preloader/Preloader/Preloader.css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Preloader_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Preloader_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 

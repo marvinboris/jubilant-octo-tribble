@@ -11,8 +11,14 @@ import { updateObject, convertDate } from '../../../../shared/utility';
 import * as utility from '../utility';
 
 class Index extends Component {
+    state = { isMounted: false }
+
+
+
+    // Lifecycle methods
     componentDidMount() {
         this.props.get();
+        this.setState({ isMounted: true });
     }
 
     componentWillUnmount() {
@@ -23,7 +29,7 @@ class Index extends Component {
         const {
             content: {
                 cms: {
-                    pages: { components: { list: { action, see } }, backend: { pages: { partners: { form } } } }
+                    pages: { backend: { components: { list: { action, see } }, pages: { partners: { form } } } }
                 }
             },
             backend: { partners: { partners = [] } },
@@ -37,7 +43,7 @@ class Index extends Component {
             });
         });
 
-        return <utility.index.lifecycle.render className='Partners' props={this.props} resource='partners' data={data} fields={[
+        return <utility.index.lifecycle.render className='Partners' props={this.props} state={this.state} resource='partners' data={data} fields={[
             { name: form.name, key: 'name' },
             { name: form.photo, key: 'photo' },
             { name: form.is_active, key: 'is_active' },

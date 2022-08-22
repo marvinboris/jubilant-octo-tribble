@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\UtilController;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -20,16 +21,16 @@ class AuthController extends Controller
             'password' => 'required|string',
         ]);
 
-        $user = User::whereEmail($request->email)->first();
+        $account = User::whereEmail($request->email)->first();
 
-        $credentials = ['email' => $user->email, 'password' => $request->password];
-        // if (!$user->email_verified_at) return response()->json([
+        $credentials = ['email' => $account->email, 'password' => $request->password];
+        // if (!$account->email_verified_at) return response()->json([
         //     'message' => [
         //         'type' => 'danger',
         //         'content' => 'Please, check your mailbox and click on the activation link.'
         //     ]
         // ], 403);
-        if ($user->is_active === 0) return response()->json([
+        if ($account->is_active === 0) return response()->json([
             'message' => [
                 'type' => 'danger',
                 'content' => 'Your account is not active. Please, contact the administrator.'
@@ -44,22 +45,22 @@ class AuthController extends Controller
                 ]
             ], 401);
 
-        $user->update([
+        $account->update([
             'ip' => $request->ip(),
             'last_login' => now()
         ]);
-        $tokenResult = $user->createToken(User::personalAccessToken());
+        $tokenResult = $account->createToken(User::personalAccessToken());
         $token = $tokenResult->token;
         // if ($request->remember_me)
         $token->expires_at = Carbon::now()->addWeeks(1);
         $token->save();
 
-        $data = array_merge($user->toArray(), [
-            'notifications' => $user->notifications()->latest()->limit(5)->get(),
-            'language' => $user->language->abbr
+        $data = array_merge($account->toArray(), [
+            'notifications' => $account->notifications()->latest()->limit(5)->get(),
+            'language' => $account->language->abbr
         ]);
 
-        $role = $user->role;
+        $role = $account->role;
 
         $role_features = [];
         foreach ($role->features as $feature) {
@@ -77,13 +78,24 @@ class AuthController extends Controller
             'role' => $role
         ];
 
+        $cmsFile = UtilController::cms();
+        $cms = [
+            'global' => $cmsFile['global'],
+            'pages' => $cmsFile['pages'][$account->language->abbr],
+        ];
+        if (request()->has('frontend_lang')) $cms['pages']['frontend'] = $cmsFile['pages'][request()->frontend_lang]['frontend'];
+
         return response()->json([
             'access_token' => $tokenResult->accessToken,
             'token_type' => 'Bearer',
             'expires_at' => Carbon::parse(
                 $tokenResult->token->expires_at
             )->toDateTimeString(),
-            'userData' => $data,
+            'accountData' => $data,
+            'content' => [
+                'language' => $account->language->toArray(),
+                'cms' => $cms,
+            ],
         ]);
     }
 
@@ -93,8 +105,8 @@ class AuthController extends Controller
             'email' => 'exists:users'
         ]);
 
-        $user = User::whereEmail($request->email)->first();
-        $link = url('/auth/reset/' . $user->id) . '/' . Crypt::encryptString($user->toJson());
+        $account = User::whereEmail($request->email)->first();
+        $link = url('/auth/reset/' . $account->id) . '/' . Crypt::encryptString($account->toJson());
         // Mail::to($request->email)->send(new ResetLink($link));
 
         return response()->json([
@@ -111,10 +123,10 @@ class AuthController extends Controller
             'password' => 'required|confirmed'
         ]);
 
-        $user = User::find($id);
-        if (Crypt::decryptString($code) === $user->toJson()) {
-            $user->password = Hash::make($request->password);
-            $user->save();
+        $account = User::find($id);
+        if (Crypt::decryptString($code) === $account->toJson()) {
+            $account->password = Hash::make($request->password);
+            $account->save();
 
             return response()->json([
                 'message' => [

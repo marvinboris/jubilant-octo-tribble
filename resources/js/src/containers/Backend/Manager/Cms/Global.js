@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 // Components
+import Loading from '../../../../components/UI/Preloaders/Loading';
+
 import Error from '../../../../components/Messages/Error';
 import Feedback from '../../../../components/Messages/Feedback';
 
@@ -11,7 +13,6 @@ import PageTitle from '../../../../components/Backend/UI/Title/PageTitle';
 import Breadcrumb from '../../../../components/Backend/UI/Title/Breadcrumb';
 
 import Input from '../../../../components/UI/Input';
-import Preloader from '../../../../components/UI/Preloaders/Preloader';
 
 import { getCms, patchCms, resetCms } from '../../../../store/actions/backend/cms';
 import { updateObject } from '../../../../shared/utility';
@@ -22,6 +23,8 @@ class Global extends Component {
         company_name: '',
         company_logo: null,
         logo: {},
+
+        isMounted: false,
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
@@ -35,6 +38,7 @@ class Global extends Component {
     componentDidMount() {
         this.props.reset();
         this.props.get();
+        this.setState({ isMounted: true });
     }
 
     componentWillUnmount() {
@@ -57,19 +61,15 @@ class Global extends Component {
         const {
             content: {
                 cms: {
-                    pages: { components: { form: { save } }, backend: { pages: { cms: { icon, title, global, form } } } }
+                    pages: { backend: { components: { form: { save } }, pages: { cms: { icon, title, global, form } } } }
                 }
             },
             backend: { cms: { loading, error, message, cms } },
             auth: { role }
         } = this.props;
         const { logo, app_name, company_name, company_logo } = this.state;
-        let content = null;
 
-        if (loading || !cms) content = <div className='col-12'>
-            <Preloader />
-        </div>;
-        else content = <div className='row'>
+        const content = !!cms && <div className='row'>
             <div className='col-lg-9'>
                 <div className='row'>
                     <input type="hidden" name="_method" defaultValue="PATCH" />
@@ -79,7 +79,7 @@ class Global extends Component {
                     {Object.keys(cms.global.logo).map(key => <Input type="image" key={'logo-' + key} className='col-md-6 col-xl-4' id={"logo-" + key} name={"logo[" + key + "]"} label={form.logo + '(' + key + ')'} onClick={() => this.fileUpload('logo-' + key)} cms={form} defaultValue={cms.global.logo[key]} value={logo[key]} dimensions="16by9" />)}
 
                     <div className="col-12" style={{ marginTop: 40 }}>
-                        <button className='btn btn-green'>{save}<i className='fas fa-save' /></button>
+                        <button className={`btn btn-${window.APP_PRIMARY_COLOR}`}>{save}<i className='fas fa-save' /></button>
                     </div>
                 </div>
             </div>
@@ -94,19 +94,21 @@ class Global extends Component {
                 <Breadcrumb main={global} />
             </PageTitle>
 
-            <div className='content'>
-                <Error err={error} />
-                <Feedback message={message} />
-                <Form onSubmit={this.submitHandler} icon={icon} title={global} link={`/${role}/cms`} innerClassName="row">
-                    <input type="file" id="company_logo" name="company_logo" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
-                    <input type="file" id="logo-big" name="logo[big]" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
-                    <input type="file" id="logo-dark" name="logo[dark]" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
-                    <input type="file" id="logo-default" name="logo[default]" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
-                    <input type="file" id="logo-light" name="logo[light]" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
-                    <input type="file" id="logo-named" name="logo[named]" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
-                    {content}
-                </Form>
-            </div>
+            <Loading loading={this.state.isMounted && loading} isAuthenticated>
+                <div className='content'>
+                    <Error err={error} />
+                    <Feedback message={message} />
+                    <Form onSubmit={this.submitHandler} icon={icon} title={global} link={`/${role}/cms`} innerClassName="row">
+                        <input type="file" id="company_logo" name="company_logo" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
+                        <input type="file" id="logo-big" name="logo[big]" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
+                        <input type="file" id="logo-dark" name="logo[dark]" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
+                        <input type="file" id="logo-default" name="logo[default]" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
+                        <input type="file" id="logo-light" name="logo[light]" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
+                        <input type="file" id="logo-named" name="logo[named]" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
+                        {content}
+                    </Form>
+                </div>
+            </Loading>
         </div>;
     }
 }

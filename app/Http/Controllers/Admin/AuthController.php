@@ -32,10 +32,10 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
-        $admin = Admin::where('email', $input['email'])->first();
+        $account = Admin::where('email', $input['email'])->first();
 
-        if ($admin) {
-            if (Hash::check($input['password'], $admin->password)) {
+        if ($account) {
+            if (Hash::check($input['password'], $account->password)) {
                 $code = User::generateNewRef();
                 // if ($request->otp === 'sms') {
                 //     $budget = new BudgetSMS([
@@ -45,11 +45,11 @@ class AuthController extends Controller
                 //         'from' => env('APP_NAME'),
                 //     ]);
 
-                //     $budget->send('+' . $admin->phone, 'Your Admin Login Code is ' . $code);
+                //     $budget->send('+' . $account->phone, 'Your Admin Login Code is ' . $code);
                 // } else 
-                if ($request->otp === 'email') Mail::to($admin->email)->send(new VerificationCode($code));
+                if ($request->otp === 'email') Mail::to($account->email)->send(new VerificationCode($code));
                 $hash = Crypt::encryptString(json_encode([
-                    'id' => $admin->id,
+                    'id' => $account->id,
                     'code' => $code,
                 ]));
                 return response()->json([
@@ -65,10 +65,10 @@ class AuthController extends Controller
     public function resend(Request $request)
     {
         $data = json_decode(Crypt::decryptString($request->hash));
-        $admin = Admin::findOrFail($data->id);
+        $account = Admin::findOrFail($data->id);
 
         $code = User::generateNewRef();
-        Mail::to($admin->email)->send(new VerificationCode($code));
+        Mail::to($account->email)->send(new VerificationCode($code));
         // $budget = new BudgetSMS([
         //     'username' => env('BUDGET_USERNAME'),
         //     'userid' => env('BUDGET_USER_ID'),
@@ -76,9 +76,9 @@ class AuthController extends Controller
         //     'from' => env('APP_NAME'),
         // ]);
 
-        // $budget->send('+' . $admin->phone, 'Your Verification Code is ' . $code);
+        // $budget->send('+' . $account->phone, 'Your Verification Code is ' . $code);
         $hash = Crypt::encryptString(json_encode([
-            'id' => $admin->id,
+            'id' => $account->id,
             'code' => $code,
         ]));
 
@@ -96,21 +96,32 @@ class AuthController extends Controller
 
         $data = json_decode(Crypt::decryptString($request->hash));
         if ($input['code'] === $data->code) {
-            $admin = Admin::findOrFail($data->id);
-            $tokenResult = $admin->createToken(Admin::personalAccessToken());
+            $account = Admin::findOrFail($data->id);
+            $tokenResult = $account->createToken(Admin::personalAccessToken());
             $token = $tokenResult->token;
             $token->save();
+
+            $cmsFile = UtilController::cms();
+            $cms = [
+                'global' => $cmsFile['global'],
+                'pages' => $cmsFile['pages'][$account->language->abbr],
+            ];
+            if (request()->has('frontend_lang')) $cms['pages']['frontend'] = $cmsFile['pages'][request()->frontend_lang]['frontend'];
+
             return response()->json([
                 'access_token' => $tokenResult->accessToken,
                 'token_type' => 'Bearer',
                 'expires_at' => Carbon::parse(
                     $tokenResult->token->expires_at
                 )->toDateTimeString(),
-                'userData' => array_merge($admin->toArray(), [
-                    'notifications' => $admin->unreadNotifications()->latest()->limit(5)->get(),
-                    // 'messages' => ContactUs::whereStatus(0)->latest()->limit(5)->get(),
-                    'language' => $admin->language->abbr
-                ])
+                'accountData' => array_merge($account->toArray(), [
+                    'notifications' => $account->unreadNotifications()->latest()->limit(5)->get(),
+                    'language' => $account->language->abbr
+                ]),
+                'content' => [
+                    'language' => $account->language->toArray(),
+                    'cms' => $cms,
+                ],
             ]);
         }
         return response()->json([

@@ -73,7 +73,7 @@ var PublicationBlock = /*#__PURE__*/function (_Component) {
           created_at = _this$props.created_at,
           _this$props$link = _this$props.link,
           link = _this$props$link === void 0 ? '/' : _this$props$link;
-      var lang = localStorage.getItem('lang');
+      var lang = localStorage.getItem('frontend_lang');
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "UI PublicationBlock shadow-sm",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {

@@ -64,7 +64,7 @@ var Save = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       var _this$props = this.props,
-          _this$props$content$c = _this$props.content.cms.pages.components.form,
+          _this$props$content$c = _this$props.content.cms.pages.backend.components.form,
           save = _this$props$content$c.save,
           save_add = _this$props$content$c.save_add,
           saveAddHandler = _this$props.saveAddHandler,

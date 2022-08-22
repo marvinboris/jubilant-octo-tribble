@@ -1,9 +1,10 @@
 import React, { Component, useState } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { FormGroup, Row } from 'reactstrap';
 
 // General
+import Loading from '../../../../components/UI/Preloaders/Loading';
+
 import Error from '../../../../components/Messages/Error';
 import Feedback from '../../../../components/Messages/Feedback';
 
@@ -12,7 +13,6 @@ import PageTitle from '../../../../components/Backend/UI/Title/PageTitle';
 import Breadcrumb from '../../../../components/Backend/UI/Title/Breadcrumb';
 
 import Input from '../../../../components/UI/Input';
-import Preloader from '../../../../components/UI/Preloaders/Preloader';
 
 import { getCms, patchCms, resetCms } from '../../../../store/actions/backend/cms';
 import { updateObject } from '../../../../shared/utility';
@@ -50,34 +50,33 @@ const Language = ({ general, language }) => {
 
     const prefix = `${language.abbr}[general]`;
     const prefixId = `${language.abbr}-general`;
-    const global = ['Date', 'Time', 'Home'].map(item => <Input key={Math.random()} type="text" className="col-md-6 col-lg-4" id={`${prefixId}-${item.toLowerCase()}`} name={`${prefix}[${item.toLowerCase()}]`} placeholder={item} onChange={e => onChange(e, item.toLowerCase())} value={value[item.toLowerCase()]} />);
-    const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].map((item, index) => <Input key={Math.random()} type="text" className="col-md-6 col-lg-4" id={`${prefixId}-date-${index}`} name={`${prefix}[days][]`} placeholder={item} onChange={e => onChange(e, 'days', index)} value={value.days[index]} />);
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map((item, index) => <Input key={Math.random()} type="text" className="col-md-6 col-lg-4" id={`${prefixId}-months-${index}`} name={`${prefix}[months][]`} placeholder={item} onChange={e => onChange(e, 'months', index)} value={value.months[index]} />);
+    const global = ['Date', 'Time', 'Home'].map(item => <Input key={Math.random()} type="text" className="col-md-6 col-lg-4" id={`${prefixId}-${item.toLowerCase()}`} name={`${prefix}[${item.toLowerCase()}]`} label={item} onChange={e => onChange(e, item.toLowerCase())} value={value[item.toLowerCase()]} />);
+    const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].map((item, index) => <Input key={Math.random()} type="text" className="col-md-6 col-lg-4" id={`${prefixId}-date-${index}`} name={`${prefix}[days][]`} label={item} onChange={e => onChange(e, 'days', index)} value={value.days[index]} />);
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map((item, index) => <Input key={Math.random()} type="text" className="col-md-6 col-lg-4" id={`${prefixId}-months-${index}`} name={`${prefix}[months][]`} label={item} onChange={e => onChange(e, 'months', index)} value={value.months[index]} />);
 
-    return <>
-        <Row>
-            {global}
-            <Separator />
+    return <div className='row'>
+        {global}
+        <Separator />
 
-            <div className='col-12'>
-                <h4>Week days</h4>
-            </div>
-            <Separator sm />
-            {weekDays}
-            <Separator />
+        <div className='col-12'>
+            <h4>Week days</h4>
+        </div>
+        <Separator sm />
+        {weekDays}
+        <Separator />
 
-            <div className='col-12'>
-                <h4>Months</h4>
-            </div>
-            <Separator sm />
-            {months}
-        </Row>
-    </>;
+        <div className='col-12'>
+            <h4>Months</h4>
+        </div>
+        <Separator sm />
+        {months}
+    </div>;
 };
 
 class General extends Component {
     state = {
-        abbr: process.env.MIX_DEFAULT_LANG
+        abbr: process.env.MIX_DEFAULT_LANG,
+        isMounted: false,
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
@@ -91,6 +90,7 @@ class General extends Component {
     async componentDidMount() {
         this.props.reset();
         this.props.get();
+        this.setState({ isMounted: true });
     }
 
     componentWillUnmount() {
@@ -107,61 +107,47 @@ class General extends Component {
         this.setState({ [name]: files ? files[0] : value });
     }
 
-    fileUpload = () => document.getElementById('logo').click()
-
-    toggle = tab => {
-        if (this.state.abbr !== tab) this.setState({ abbr: tab });
-    }
-
     render() {
         const {
             content: {
                 cms: {
-                    pages: { components: { form: { save } }, backend: { pages: { cms: { icon, title, general } } } }
+                    pages: { backend: { components: { form: { save } }, pages: { cms: { icon, title, general } } } }
                 }
             },
             backend: { cms: { loading, error, message, cms, languages = [] } },
+            auth: { role }
         } = this.props;
         const { abbr } = this.state;
-        let content = null;
-        let errors = null;
 
-        if (loading) content = <div className='col-12'>
-            <Preloader />
+        const errors = <Error err={error} />;
+
+        const languagesOptions = languages.map(language => <option key={Math.random() + JSON.stringify(language)} value={language.abbr}>{language.name}</option>);
+
+        const mainContent = languages.map(language => <div key={Math.random()} className={language.abbr === abbr ? "" : "d-none"}>
+            <Language general={cms.pages[language.abbr].general} language={language} />
+        </div>);
+
+        const content = <div>
+            <Feedback message={message} />
+
+            <input type="hidden" name="_method" defaultValue="PATCH" />
+
+            <div className='row'>
+                <div className="col-md-4">
+                    <Input type="select" name="abbr" label={'Lang'} onChange={this.inputChangeHandler} value={abbr}>
+                        {languagesOptions}
+                    </Input>
+                </div>
+            </div>
+
+            <hr />
+
+            <div>{mainContent}</div>
+
+            <div style={{ marginTop: 40 }}>
+                <button className={`btn btn-${window.APP_PRIMARY_COLOR}`}>{save}<i className='fas fa-save' /></button>
+            </div>
         </div>;
-        else {
-            errors = <>
-                <Error err={error} />
-            </>;
-
-            if (!languages) languages = [];
-            const languagesOptions = languages.map(language => <option key={Math.random() + JSON.stringify(language)} value={language.abbr}>{language.name}</option>);
-
-            const mainContent = languages.map(language => <div key={Math.random()} className={language.abbr === abbr ? "" : "d-none"}>
-                <Language general={cms.pages[language.abbr].general} language={language} />
-            </div>);
-
-            content = <div xl={12}>
-                <Feedback message={message} />
-                <Row>
-                    <input type="hidden" name="_method" defaultValue="PATCH" />
-
-                    <div className="col-md-4">
-                        <FormGroup>
-                            <Input type="select" name="abbr" label={'Lang'} onChange={this.inputChangeHandler} value={abbr}>
-                                {languagesOptions}
-                            </Input>
-                        </FormGroup>
-                    </div>
-
-                    <div lg={12}>{mainContent}</div>
-
-                    <div className="col-12" style={{ marginTop: 40 }}>
-                        <button className='btn btn-green'>{save}<i className='fas fa-save' /></button>
-                    </div>
-                </Row>
-            </div>;
-        }
 
 
         return <div className='Cms General'>
@@ -169,12 +155,14 @@ class General extends Component {
                 <Breadcrumb main={general} />
             </PageTitle>
 
-            <div className='content'>
-                {errors}
-                <Form onSubmit={this.submitHandler} icon={icon} title={general} link="/admin/cms" innerClassName="row justify-content-center">
-                    {content}
-                </Form>
-            </div>
+            <Loading loading={this.state.isMounted && loading} isAuthenticated>
+                <div className='content'>
+                    {errors}
+                    <Form onSubmit={this.submitHandler} icon={icon} title={general} link={`/${role}/cms`}>
+                        {content}
+                    </Form>
+                </div>
+            </Loading>
         </div>;
     }
 }

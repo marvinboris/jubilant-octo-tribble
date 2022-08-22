@@ -74,8 +74,8 @@ class UtilController extends Controller
         if (!is_dir($destinationPath)) mkdir($destinationPath);
         $destination = time() . '_' . $name;
 
-        $maxHeight = 640;
-        $maxWidth = 640;
+        $maxHeight = 1280;
+        $maxWidth = 1280;
 
         $actualHeight = $dimensions[1];
         $actualWidth = $dimensions[0];
@@ -130,7 +130,9 @@ class UtilController extends Controller
         $value = json_decode($value, true);
 
         foreach (Language::all() as $language) {
-            if (!array_key_exists($language->abbr, $value)) $value[$language->abbr] = $value[env('MIX_DEFAULT_LANG')];
+            if (!array_key_exists($language->abbr, $value))
+                $value[$language->abbr] =
+                    $value[env('MIX_DEFAULT_LANG', 'fr')];
         }
 
         return $value;
@@ -143,7 +145,16 @@ class UtilController extends Controller
     {
         request()->user()->token()->revoke();
 
+        $cmsFile = UtilController::cms();
+        $cms = [
+            'global' => $cmsFile['global'],
+            'pages' => $cmsFile['pages'][request()->frontend_lang],
+        ];
+
         return response()->json([
+            'content' => [
+                'cms' => $cms,
+            ],
             'message' => self::message('Successfully logged out.', 'success'),
         ]);
     }
@@ -179,7 +190,19 @@ class UtilController extends Controller
             ];
         } else if ($type === Admin::type()) $data = array_merge($data, []);
 
-        return response()->json(['data' => $data, 'role' => $type,]);
+        $cmsFile = UtilController::cms();
+        $cms = [
+            'global' => $cmsFile['global'],
+            'pages' => $cmsFile['pages'][$account->language->abbr],
+        ];
+        if (request()->has('frontend_lang')) $cms['pages']['frontend'] = $cmsFile['pages'][request()->frontend_lang]['frontend'];
+
+        $content = [
+            'language' => $account->language->toArray(),
+            'cms' => $cms,
+        ];
+
+        return response()->json(['data' => $data, 'role' => $type, 'content' => $content]);
     }
 
 

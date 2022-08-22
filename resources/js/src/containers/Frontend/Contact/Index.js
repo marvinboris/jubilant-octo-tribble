@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
+import Loading from '../../../components/UI/Preloaders/Loading';
+
 import Error from '../../../components/Messages/Error';
 import Feedback from '../../../components/Messages/Feedback';
 
@@ -21,7 +23,7 @@ const initialState = {
 }
 
 class Contact extends Component {
-    state = { ...initialState }
+    state = { ...initialState, isMounted: false, componentLoading: false }
 
 
 
@@ -39,6 +41,12 @@ class Contact extends Component {
 
 
     // Lifecycle methods
+    componentDidMount() {
+        this.setState({ isMounted: true, componentLoading: true }, () => setTimeout(() => {
+            this.setState({ componentLoading: false });
+        }, 250));
+    }
+
     componentDidUpdate(prevProps) {
         if (!prevProps.frontend.contact.message && this.props.frontend.contact.message && this.props.frontend.contact.message.type === 'success') this.setState({ ...initialState });
     }
@@ -54,38 +62,42 @@ class Contact extends Component {
             } },
             frontend: { contact: { loading, error, message: backend_message } }
         } = this.props;
-        const { name, email, message } = this.state;
+        const { name, email, message, isMounted, componentLoading } = this.state;
 
-        console.log({ backend_message })
+        return <Loading loading={isMounted && componentLoading}>
+            <div className="Contact">
+                <PageTitle {...cms} />
 
-        return <div className="Contact">
-            <PageTitle {...cms} />
+                <section className='contact'>
+                    <div className='container'>
+                        <div className='row justify-content-center'>
+                            <div className='col-lg-6'>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15919.402202656811!2d9.6971916!3d4.0508907!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2cb0b54eda30f0fa!2sLeader%20Assurance!5e0!3m2!1sfr!2scm!4v1661138882340!5m2!1sfr!2scm" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+                            </div>
 
-            <section className='contact'>
-                <div className='container'>
-                    <SectionTitle {...cms.contact} centered />
+                            <div className='col-lg-6'>
+                                <SectionTitle {...cms.contact} centered />
 
-                    <div className='row justify-content-center'>
-                        <div className='col-lg-7'>
-                            <p>{cms.contact.description}</p>
+                                <p>{cms.contact.description}</p>
 
-                            <Error err={error} />
-                            <Feedback message={backend_message} />
+                                <Error err={error} />
+                                <Feedback message={backend_message} />
 
-                            <form onSubmit={this.saveHandler}>
-                                <Input type='text' name='name' onChange={this.inputChangeHandler} value={name} placeholder={cms.contact.name} required disabled={loading} />
-                                <Input type='email' name='email' onChange={this.inputChangeHandler} value={email} placeholder={cms.contact.email} required disabled={loading} />
-                                <Input type='textarea' name='message' onChange={this.inputChangeHandler} value={message} placeholder={cms.contact.message} required disabled={loading} />
+                                <form onSubmit={this.saveHandler}>
+                                    <Input type='text' name='name' onChange={this.inputChangeHandler} value={name} placeholder={cms.contact.name} required disabled={loading} />
+                                    <Input type='email' name='email' onChange={this.inputChangeHandler} value={email} placeholder={cms.contact.email} required disabled={loading} />
+                                    <Input type='textarea' name='message' onChange={this.inputChangeHandler} value={message} placeholder={cms.contact.message} required disabled={loading} />
 
-                                <div className='submit'>
-                                    <button className={'btn btn-blue' + (loading ? ' btn-disabled' : '')}>{cms.contact.submit}<i className='fas fa-paper-plane' /></button>
-                                </div>
-                            </form>
+                                    <div className='submit'>
+                                        <button className={'btn btn-blue' + (loading ? ' btn-disabled' : '')}>{cms.contact.submit}<i className='fas fa-paper-plane' /></button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>;
+                </section>
+            </div>
+        </Loading>;
     }
 }
 

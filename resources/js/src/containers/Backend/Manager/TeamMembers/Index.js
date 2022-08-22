@@ -11,18 +11,30 @@ import { updateObject, convertDate, htmlEntities } from '../../../../shared/util
 import * as utility from '../utility';
 
 class Index extends Component {
-    componentDidMount() { this.props.get() }
-    componentWillUnmount() { this.props.reset() }
+    state = { isMounted: false }
+
+
+
+    // Lifecycle methods
+    componentDidMount() {
+        this.props.get();
+        this.setState({ isMounted: true });
+    }
+
+    componentWillUnmount() {
+        this.props.reset();
+    }
+
     render() {
         const {
             content: {
                 cms: {
-                    pages: { components: { list: { action, see } }, backend: { pages: { team_members: { form } } } }
+                    pages: { backend: { components: { list: { action, see } }, pages: { team_members: { form } } } }
                 }
             },
             backend: { team_members: { team_members = [] } },
         } = this.props;
-        const lang = localStorage.getItem('lang');
+        const lang = localStorage.getItem('backend_lang');
 
         const data = team_members.map(team_member => {
             const job = team_member.job[lang];
@@ -35,7 +47,7 @@ class Index extends Component {
             });
         });
 
-        return <utility.index.lifecycle.render className='TeamMembers' props={this.props} resource='team_members' data={data} fields={[
+        return <utility.index.lifecycle.render className='TeamMembers' props={this.props} state={this.state} resource='team_members' data={data} fields={[
             { name: form.name, key: 'name' },
             { name: form.job, key: 'job' },
             { name: form.photo, key: 'photo' },

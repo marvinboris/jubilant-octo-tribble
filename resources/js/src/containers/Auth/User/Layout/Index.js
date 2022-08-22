@@ -10,7 +10,7 @@ class Layout extends Component {
     render() {
         const {
             content: {
-                cms: { global: { company_name }, pages: { auth: { footer } } }
+                cms: { pages: { auth: { footer } } }
             },
             children,
         } = this.props;
@@ -31,8 +31,8 @@ class Layout extends Component {
             </main>
 
             <footer>
-                <div className='container d-flex justify-content-center align-items-center'>
-                    <div><i className='far fa-copyright fa-fw text-14 text-md-16 text-xl-18 text-blue' /> {footer.copyrights} {(new Date()).getFullYear()}. {footer.all_rights} <span className='special'>{company_name}</span></div>
+                <div className='container'>
+                    <div><i className={`far fa-copyright fa-fw text-14 text-md-16 text-xl-18 text-${window.APP_SECONDARY_COLOR}`} /> {footer.copyrights} {(new Date()).getFullYear()}. {footer.all_rights} <span className='special'><Logo type='named' /></span></div>
                 </div>
             </footer>
         </div>

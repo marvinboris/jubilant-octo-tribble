@@ -43,10 +43,10 @@ export default ({ props, toggle, selectItem, selectedItem }) => {
 
         let items = [];
 
+        const feature = data.role && data.role.features.find(f => path.includes('/user/' + f.prefix));
+        if (!feature) return null;
+        
         if (!custom) {
-            const feature = data.role && data.role.features.find(f => path.includes('/user/' + f.prefix));
-            if (!feature) return null;
-
             let { permissions } = feature;
 
             if (permissions && permissions.includes('c')) items.push({ link: '/add', text: dropdown.add });
@@ -61,25 +61,17 @@ export default ({ props, toggle, selectItem, selectedItem }) => {
     const sideDrawerItems = <>
         <SDI fixed={true} id={cms.sidebar.menu.dashboard.title} icon={cms.sidebar.menu.dashboard.icon} path={`/${role}/dashboard`} />
         {role === 'admin' && <SDI fixed={true} id={cms.sidebar.menu.admins.title} icon={cms.sidebar.menu.admins.icon} path={`/${role}/admins`} />}
-        {resources.map(resource => <SDI key={JSON.stringify(cms.sidebar.menu[resource])} fixed={role === 'admin'} id={cms.sidebar.menu[resource].title} icon={cms.sidebar.menu[resource].icon} path={`/${role}/${resource}`} />)}
-        {<SDI fixed={role === 'admin'} dropdown={cms.sidebar.menu.cms} icon={cms.sidebar.menu.cms.icon} path={`/${role}/cms`} custom={[
-            { link: '/global', text: cms.sidebar.menu.cms.global },
-            { link: '/general', text: cms.sidebar.menu.cms.general },
-            { link: '/messages', text: cms.sidebar.menu.cms.messages },
-            { link: '/components', text: cms.sidebar.menu.cms.components },
-            { link: '/auth', text: cms.sidebar.menu.cms.auth },
-            { link: '/backend', text: cms.sidebar.menu.cms.backend },
-            { link: '/frontend', text: cms.sidebar.menu.cms.frontend },
-        ]} />}
+        {resources.map(resource => <SDI key={JSON.stringify(cms.sidebar.menu[resource])} fixed={role === 'admin'} id={cms.sidebar.menu[resource].title} icon={cms.sidebar.menu[resource].icon} path={`/${role}/${resource.split('_').join('-')}`} />)}
+        {<SDI fixed={role === 'admin'} dropdown={cms.sidebar.menu.cms} icon={cms.sidebar.menu.cms.icon} path={`/${role}/cms`} custom={Object.keys(cms.sidebar.menu.cms).filter(key => !['icon', 'title'].includes(key)).map(key => ({ link: `/${key}`, text: cms.sidebar.menu.cms[key] }))} />}
         <SDI fixed={true} dropdown={cms.sidebar.menu.settings} icon={cms.sidebar.menu.settings.icon} path={`/${role}/settings`} custom={[
             { link: '/language', text: cms.sidebar.menu.settings.language },
         ]} />
 
         <div className='mt-auto'>
             <div className="py-2 px-3 text-300 rounded-4 cursor-pointer" onClick={modalToggle}>
-                <i className="fas fa-fw fa-power-off text-blue mr-3" />
+                <i className={`fas fa-fw fa-power-off text-${window.APP_PRIMARY_COLOR} mr-3`} />
 
-                <span className="text-border text-700">{cms.header.logout}</span>
+                <span className="title">{cms.header.logout}</span>
             </div>
         </div>
 
@@ -88,7 +80,7 @@ export default ({ props, toggle, selectItem, selectedItem }) => {
             <ModalBody className="text-center">
                 <p>{cms.header.sure_logout}?</p>
                 <div>
-                    <Button color="blue" onClick={props.logout}>{cms.header.logout} <i className='fas fa-power-off fa-fw' /></Button>{' '}
+                    <Button color={`${window.APP_PRIMARY_COLOR}`} onClick={props.logout}>{cms.header.logout} <i className='fas fa-power-off fa-fw' /></Button>{' '}
                     <Button color="red" onClick={modalToggle}>{cms.header.close} <i className='fas fa-times fa-fw' /></Button>
                 </div>
             </ModalBody>
@@ -104,7 +96,7 @@ export default ({ props, toggle, selectItem, selectedItem }) => {
             </div>
 
             <div className="flex-fill">
-                <ul className="navbar-nav scrollbar-blue flex-column pr-3">
+                <ul className={`navbar-nav scrollbar-${window.APP_PRIMARY_COLOR} flex-column pr-3`}>
                     {sideDrawerItems}
                 </ul>
             </div>

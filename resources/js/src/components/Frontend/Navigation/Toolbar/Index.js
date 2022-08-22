@@ -8,7 +8,7 @@ import Logo from '../../../UI/Logo';
 import Languages from './Languages';
 import NavigationItems from '../NavigationItems/NavigationItems';
 
-import { changeLanguage } from '../../../../store/actions/content';
+import { frontendLanguage } from '../../../../store/actions/content';
 
 import './Toolbar.scss';
 
@@ -37,11 +37,11 @@ class Toolbar extends Component {
 
     // Lifecycle methods
     componentDidMount() {
-        this.setState({ language: this.props.content.languages.find(l => l.abbr === localStorage.getItem('lang')) });
+        this.setState({ language: this.props.content.languages.find(l => l.abbr === localStorage.getItem('frontend_lang')) });
     }
 
     componentDidUpdate(prevProps) {
-        if (JSON.stringify(prevProps.content.cms) !== JSON.stringify(this.props.content.cms)) this.setState({ language: this.props.content.languages.find(l => l.abbr === localStorage.getItem('lang')) });
+        if (JSON.stringify(prevProps.content.cms) !== JSON.stringify(this.props.content.cms)) this.setState({ language: this.props.content.languages.find(l => l.abbr === localStorage.getItem('frontend_lang')) });
     }
 
     render() {
@@ -98,7 +98,7 @@ class Toolbar extends Component {
 const mapStateToProps = state => ({ ...state });
 
 const mapDispatchToProps = dispatch => ({
-    changeLanguage: id => dispatch(changeLanguage(id)),
+    changeLanguage: id => dispatch(frontendLanguage(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Toolbar);

@@ -21,7 +21,7 @@ const initialState = {
 }
 
 class Add extends Component {
-    state = { ...initialState }
+    state = { ...initialState, isMounted: false }
 
     // Component methods
     resetState = () => this.setState({ ...initialState })
@@ -55,10 +55,9 @@ class Add extends Component {
         }
         this.setState({ [name]: files ? files[0] : value });
     }
-    fileUpload = id => utility.add.component.fileUpload(id)
 
     // Lifecycle methods
-    componentDidMount() { utility.add.lifecycle.componentDidMount(this.props) }
+    componentDidMount() { utility.add.lifecycle.componentDidMount(this.props, this.setState.bind(this)) }
     componentDidUpdate(prevProps) { utility.add.lifecycle.componentDidUpdate('roles', 'role')(prevProps, this.props, this.state, this.setState.bind(this), this.resetState) }
     componentWillUnmount() { this.props.reset() }
     render() {
@@ -68,10 +67,9 @@ class Add extends Component {
                     pages: { backend: { pages: { roles: { form } } } }
                 }
             },
-            backend: { roles: { loading, features = [] } },
+            backend: { roles: { features = [] } },
         } = this.props;
         const { name, description, features: f } = this.state;
-        let content;
 
         const featuresItems = features.sort((a, b) => a.name.localeCompare(b.name)).map(feature => {
             const element = f.find(i => +i.id === +feature.id);
@@ -95,10 +93,7 @@ class Add extends Component {
             </div>
         });
 
-        if (loading) content = <div className='col-12'>
-            <Preloader />
-        </div>;
-        else content = <>
+        const content = <>
             {this.props.edit && <input type="hidden" name="_method" defaultValue="PATCH" />}
 
             <div className='row'>
@@ -118,7 +113,7 @@ class Add extends Component {
             </div>
         </>;
 
-        return <utility.add.lifecycle.render className='Roles' props={this.props} resource={'roles'}>
+        return <utility.add.lifecycle.render className='Roles' props={this.props} state={this.state} resource={'roles'}>
             {content}
         </utility.add.lifecycle.render>;
     }

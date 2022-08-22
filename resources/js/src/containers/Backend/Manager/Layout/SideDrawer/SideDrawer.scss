@@ -9,7 +9,7 @@
 	.content {
 		z-index: 1;
 		padding: 16px;
-		background-color: var(--soft);
+		background-color: var(--app-bg-color);
 		position: relative;
 
 		&::after {

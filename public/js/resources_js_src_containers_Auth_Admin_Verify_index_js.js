@@ -492,7 +492,7 @@ var Verify = /*#__PURE__*/function (_Component) {
     value: function render() {
       var code = this.state.code;
       var _this$props2 = this.props,
-          _this$props2$content$ = _this$props2.content.cms.pages.auth.admin.verify,
+          _this$props2$content$ = _this$props2.content.cms.pages.auth.psges.admin.verify,
           enter = _this$props2$content$.enter,
           verification_code = _this$props2$content$.verification_code,
           didnt_receive_code = _this$props2$content$.didnt_receive_code,

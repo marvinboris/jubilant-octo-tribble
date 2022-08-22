@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import OwlCarousel from 'react-owl-carousel2';
 
+import Loading from '../../../components/UI/Preloaders/Loading';
+
 import PageTitle from '../../../components/Frontend/UI/Title/PageTitle';
 import SectionTitle from '../../../components/Frontend/UI/Title/SectionTitle';
 
@@ -14,9 +16,14 @@ import { getAbout, resetAbout } from '../../../store/actions/frontend/about';
 import './About.scss';
 
 class About extends Component {
+    state = { isMounted: false }
+
+
+
     // Lifecycle methods
     componentDidMount() {
         this.props.get();
+        this.setState({ isMounted: true });
     }
 
     componentWillUnmount() {
@@ -28,49 +35,51 @@ class About extends Component {
             content: { cms: {
                 pages: { frontend: { pages: { about: cms } } }
             }, services },
-            frontend: { about: { team = [] } }
+            frontend: { about: { loading, team = [] } }
         } = this.props;
-        const lang = localStorage.getItem('lang');
+        const lang = localStorage.getItem('frontend_lang');
 
         const servicesContent = services.map(service => <div key={JSON.stringify(service)} className='col-md-6 col-xxl-4'><ServiceBlock {...service} /></div>);
         const teamContent = team.map(member => <TeamMemberBlock key={JSON.stringify(member)} {...{ ...member, job: member.job[lang] }} />);
 
-        return <div className="About">
-            <PageTitle {...cms} />
+        return <Loading loading={this.state.isMounted && loading}>
+            <div className="About">
+                <PageTitle {...cms} />
 
-            <section className='about'>
-                <div className='container'>
-                    <SectionTitle {...cms.about} centered />
-                    <div className='row'>
-                        <div className='col-md-5 col-lg-4'>
-                            <img src={cms.about.photo} className='img-fluid' />
-                        </div>
+                <section className='about'>
+                    <div className='container'>
+                        <SectionTitle {...cms.about} centered />
+                        <div className='row'>
+                            <div className='col-md-5 col-lg-4'>
+                                <img src={cms.about.photo} className='img-fluid' />
+                            </div>
 
-                        <div className='col-md-7 col-lg-8'>
-                            <p dangerouslySetInnerHTML={{ __html: cms.about.description }} />
+                            <div className='col-md-7 col-lg-8'>
+                                <p dangerouslySetInnerHTML={{ __html: cms.about.description }} />
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section className='services'>
-                <div className='container'>
-                    <SectionTitle {...cms.services} centered />
+                <section className='services'>
+                    <div className='container'>
+                        <SectionTitle {...cms.services} centered />
 
-                    <div className='row'>
-                        {servicesContent}
+                        <div className='row'>
+                            {servicesContent}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section className='team'>
-                <div className='container'>
-                    <SectionTitle {...cms.team} centered />
+                <section className='team'>
+                    <div className='container'>
+                        <SectionTitle {...cms.team} centered />
 
-                    {team.length > 0 && <OwlCarousel ref="team-carousel" options={{ responsive: { 0: { items: 1 }, 600: { items: 2 }, 900: { items: 3 }, 1200: { items: 4 } }, dots: false, margin: 20 }}>{teamContent}</OwlCarousel>}
-                </div>
-            </section>
-        </div>;
+                        {team.length > 0 && <OwlCarousel ref="team-carousel" options={{ responsive: { 0: { items: 1 }, 600: { items: 2 }, 900: { items: 3 }, 1200: { items: 4 } }, dots: false, margin: 20 }}>{teamContent}</OwlCarousel>}
+                    </div>
+                </section>
+            </div>
+        </Loading>;
     }
 }
 

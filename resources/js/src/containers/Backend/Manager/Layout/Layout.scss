@@ -8,16 +8,19 @@
         }
     }
 
+    .input-group {
+        background-color: var(--app-bg-color) !important;
+    }
+
     .main {
         padding-left: 0;
-        color: var(--border);
         min-height: 100vh;
-        background-color: var(--soft);
+        background-color: var(--app-bg-color);
 
         .sticky-top {
             display: flex;
-            height: 60.97px;
-            background-color: var(--white);
+            height: var(--app-header-height);
+            background-color: var(--app-bg-color);
 
             &>.d-flex {
                 padding: 12px 32px 9px 18px;

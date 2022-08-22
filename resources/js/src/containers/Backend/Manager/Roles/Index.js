@@ -10,13 +10,25 @@ import { updateObject, convertDate } from '../../../../shared/utility';
 import * as utility from '../utility';
 
 class Index extends Component {
-    componentDidMount() { this.props.get() }
-    componentWillUnmount() { this.props.reset() }
+    state = { isMounted: false }
+
+
+
+    // Lifecycle methods
+    componentDidMount() {
+        this.props.get();
+        this.setState({ isMounted: true });
+    }
+
+    componentWillUnmount() {
+        this.props.reset();
+    }
+
     render() {
         const {
             content: {
                 cms: {
-                    pages: { components: { list: { action } }, backend: { pages: { roles: { form } } } }
+                    pages: { backend: { components: { list: { action } }, pages: { roles: { form } } } }
                 }
             },
             backend: { roles: { roles = [] } },
@@ -29,9 +41,9 @@ class Index extends Component {
             });
         });
 
-        return <utility.index.lifecycle.render className='Roles' props={this.props} resource='roles' data={data} fields={[
+        return <utility.index.lifecycle.render className='Roles' props={this.props} state={this.state} resource='roles' data={data} fields={[
             { name: form.name, key: 'name' },
-            { name: form.description, key: 'description' },
+            { name: form.description, key: 'description', className: 'w-100' },
             { name: form.created_at, key: 'created_at' },
             { name: action, key: 'action', fixed: true }
         ]} />;

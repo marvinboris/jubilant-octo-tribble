@@ -41,7 +41,7 @@ export class Verify extends Component {
         const {
             content: {
                 cms: {
-                    pages: { auth: { admin: { verify: { enter, verification_code, didnt_receive_code, resend, continue: continue_ } } } }
+                    pages: { auth: { psges: { admin: { verify: { enter, verification_code, didnt_receive_code, resend, continue: continue_ } } } } }
                 }
             },
             auth: { hash, loading, error, message },

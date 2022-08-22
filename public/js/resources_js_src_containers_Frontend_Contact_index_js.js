@@ -537,15 +537,26 @@ var Contact = /*#__PURE__*/function (_Component) {
         className: "Contact",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Frontend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_4__["default"], _objectSpread({}, cms)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("section", {
           className: "contact",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
             className: "container",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_5__["default"], _objectSpread(_objectSpread({}, cms.contact), {}, {
-              centered: true
-            })), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
               className: "row justify-content-center",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                className: "col-lg-7",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                className: "col-lg-6",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("iframe", {
+                  src: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15919.402202656811!2d9.6971916!3d4.0508907!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2cb0b54eda30f0fa!2sLeader%20Assurance!5e0!3m2!1sfr!2scm!4v1661138882340!5m2!1sfr!2scm",
+                  style: {
+                    border: 0
+                  },
+                  allowFullScreen: "",
+                  loading: "lazy",
+                  referrerPolicy: "no-referrer-when-downgrade"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                className: "col-lg-6",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Frontend_UI_Title_SectionTitle__WEBPACK_IMPORTED_MODULE_5__["default"], _objectSpread(_objectSpread({}, cms.contact), {}, {
+                  centered: true
+                })), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
                   children: cms.contact.description
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Messages_Error__WEBPACK_IMPORTED_MODULE_2__["default"], {
                   err: error
@@ -587,8 +598,8 @@ var Contact = /*#__PURE__*/function (_Component) {
                     })
                   })]
                 })]
-              })
-            })]
+              })]
+            })
           })
         })]
       });
@@ -822,7 +833,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".Frontend .Contact section {\n  background-color: var(--blue-10);\n}\n.Frontend .Contact section .container p {\n  text-align: center;\n}\n.Frontend .Contact section .container form .submit {\n  margin-top: 20px;\n  text-align: center;\n}\n\n@media (min-width: 800px) {\n  .Frontend .Contact section .container form .submit {\n    margin-top: 30px;\n  }\n}\n@media (min-width: 1280px) {\n  .Frontend .Contact section .container form .submit {\n    margin-top: 40px;\n  }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".Frontend .Contact section {\n  background-color: var(--blue-10);\n}\n.Frontend .Contact section .container p {\n  text-align: center;\n}\n.Frontend .Contact section .container form .submit {\n  margin-top: 20px;\n  text-align: center;\n}\n.Frontend .Contact section .container iframe {\n  width: 100%;\n  height: 100%;\n  border-radius: var(--border-radius);\n  background-color: var(--app-primary-color);\n}\n\n@media (min-width: 800px) {\n  .Frontend .Contact section .container form .submit {\n    margin-top: 30px;\n  }\n}\n@media (min-width: 1280px) {\n  .Frontend .Contact section .container form .submit {\n    margin-top: 40px;\n  }\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

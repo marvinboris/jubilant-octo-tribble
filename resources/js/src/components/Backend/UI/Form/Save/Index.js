@@ -6,7 +6,7 @@ import './Save.scss';
 class Save extends Component {
     render() {
         const {
-            content: { cms: { pages: { components: { form: { save, save_add } } } } },
+            content: { cms: { pages: { backend: { components: { form: { save, save_add } } } } } },
             saveAddHandler, edit
         } = this.props;
 

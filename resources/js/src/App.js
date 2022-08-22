@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense, lazy } from 'react';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { init } from 'aos';
 
-import asyncComponent from './hoc/asyncComponent/asyncComponent';
+import ErrorBoundary from './hoc/ErrorBoundary';
 
 import AuthUserLayout from './containers/Auth/User/Layout';
 import AuthAdminLayout from './containers/Auth/Admin/Layout';
@@ -11,97 +11,93 @@ import FrontendLayout from './containers/Frontend/Layout';
 import BackendManagerLayout from './containers/Backend/Manager/Layout';
 
 import Spinner from './components/UI/Preloaders/Spinner';
+import Loading from './components/UI/Preloaders/Loading';
 
 import { authCheckState } from './store/actions/auth';
-import { getContent } from './store/actions/content';
 
 import 'aos/dist/aos.css';
 
 // Manager routes
-const asyncManagerCmsGlobal = asyncComponent(() => import('./containers/Backend/Manager/Cms/Global'));
-const asyncManagerCmsGeneral = asyncComponent(() => import('./containers/Backend/Manager/Cms/General'));
-const asyncManagerCmsMessages = asyncComponent(() => import('./containers/Backend/Manager/Cms/Messages'));
-const asyncManagerCmsComponents = asyncComponent(() => import('./containers/Backend/Manager/Cms/Components'));
-const asyncManagerCmsAuth = asyncComponent(() => import('./containers/Backend/Manager/Cms/Auth'));
-const asyncManagerCmsBackend = asyncComponent(() => import('./containers/Backend/Manager/Cms/Backend'));
-const asyncManagerCmsFrontend = asyncComponent(() => import('./containers/Backend/Manager/Cms/Frontend'));
+const asyncManagerCmsGlobal = lazy(() => import('./containers/Backend/Manager/Cms/Global'));
+const asyncManagerCmsGeneral = lazy(() => import('./containers/Backend/Manager/Cms/General'));
+const asyncManagerCmsAuth = lazy(() => import('./containers/Backend/Manager/Cms/Auth'));
+const asyncManagerCmsBackend = lazy(() => import('./containers/Backend/Manager/Cms/Backend'));
+const asyncManagerCmsFrontend = lazy(() => import('./containers/Backend/Manager/Cms/Frontend'));
 
-const asyncManagerDashboard = asyncComponent(() => import('./containers/Backend/Manager/Dashboard'));
+const asyncManagerDashboard = lazy(() => import('./containers/Backend/Manager/Dashboard'));
 
-const asyncManagerFeatures = asyncComponent(() => import('./containers/Backend/Manager/Features'));
-const asyncManagerFeaturesAdd = asyncComponent(() => import('./containers/Backend/Manager/Features/Add'));
-const asyncManagerFeaturesEdit = asyncComponent(() => import('./containers/Backend/Manager/Features/Edit'));
+const asyncManagerFeatures = lazy(() => import('./containers/Backend/Manager/Features'));
+const asyncManagerFeaturesAdd = lazy(() => import('./containers/Backend/Manager/Features/Add'));
+const asyncManagerFeaturesEdit = lazy(() => import('./containers/Backend/Manager/Features/Edit'));
 
-const asyncManagerLanguages = asyncComponent(() => import('./containers/Backend/Manager/Languages'));
-const asyncManagerLanguagesAdd = asyncComponent(() => import('./containers/Backend/Manager/Languages/Add'));
-const asyncManagerLanguagesEdit = asyncComponent(() => import('./containers/Backend/Manager/Languages/Edit'));
+const asyncManagerLanguages = lazy(() => import('./containers/Backend/Manager/Languages'));
+const asyncManagerLanguagesAdd = lazy(() => import('./containers/Backend/Manager/Languages/Add'));
+const asyncManagerLanguagesEdit = lazy(() => import('./containers/Backend/Manager/Languages/Edit'));
 
-const asyncManagerRoles = asyncComponent(() => import('./containers/Backend/Manager/Roles'));
-const asyncManagerRolesAdd = asyncComponent(() => import('./containers/Backend/Manager/Roles/Add'));
-const asyncManagerRolesEdit = asyncComponent(() => import('./containers/Backend/Manager/Roles/Edit'));
+const asyncManagerRoles = lazy(() => import('./containers/Backend/Manager/Roles'));
+const asyncManagerRolesAdd = lazy(() => import('./containers/Backend/Manager/Roles/Add'));
+const asyncManagerRolesEdit = lazy(() => import('./containers/Backend/Manager/Roles/Edit'));
 
-const asyncManagerSettingsLanguage = asyncComponent(() => import('./containers/Backend/Manager/Settings/Language'));
+const asyncManagerSettingsLanguage = lazy(() => import('./containers/Backend/Manager/Settings/Language'));
 
-const asyncManagerPublications = asyncComponent(() => import('./containers/Backend/Manager/Publications'));
-const asyncManagerPublicationsAdd = asyncComponent(() => import('./containers/Backend/Manager/Publications/Add'));
-const asyncManagerPublicationsEdit = asyncComponent(() => import('./containers/Backend/Manager/Publications/Edit'));
+const asyncManagerPublications = lazy(() => import('./containers/Backend/Manager/Publications'));
+const asyncManagerPublicationsAdd = lazy(() => import('./containers/Backend/Manager/Publications/Add'));
+const asyncManagerPublicationsEdit = lazy(() => import('./containers/Backend/Manager/Publications/Edit'));
 
-const asyncManagerSubscribers = asyncComponent(() => import('./containers/Backend/Manager/Subscribers'));
-const asyncManagerSubscribersAdd = asyncComponent(() => import('./containers/Backend/Manager/Subscribers/Add'));
-const asyncManagerSubscribersEdit = asyncComponent(() => import('./containers/Backend/Manager/Subscribers/Edit'));
+const asyncManagerSubscribers = lazy(() => import('./containers/Backend/Manager/Subscribers'));
+const asyncManagerSubscribersAdd = lazy(() => import('./containers/Backend/Manager/Subscribers/Add'));
+const asyncManagerSubscribersEdit = lazy(() => import('./containers/Backend/Manager/Subscribers/Edit'));
 
-const asyncManagerServices = asyncComponent(() => import('./containers/Backend/Manager/Services'));
-const asyncManagerServicesAdd = asyncComponent(() => import('./containers/Backend/Manager/Services/Add'));
-const asyncManagerServicesEdit = asyncComponent(() => import('./containers/Backend/Manager/Services/Edit'));
+const asyncManagerServices = lazy(() => import('./containers/Backend/Manager/Services'));
+const asyncManagerServicesAdd = lazy(() => import('./containers/Backend/Manager/Services/Add'));
+const asyncManagerServicesEdit = lazy(() => import('./containers/Backend/Manager/Services/Edit'));
 
-const asyncManagerTestimonies = asyncComponent(() => import('./containers/Backend/Manager/Testimonies'));
-const asyncManagerTestimoniesAdd = asyncComponent(() => import('./containers/Backend/Manager/Testimonies/Add'));
-const asyncManagerTestimoniesEdit = asyncComponent(() => import('./containers/Backend/Manager/Testimonies/Edit'));
+const asyncManagerTestimonies = lazy(() => import('./containers/Backend/Manager/Testimonies'));
+const asyncManagerTestimoniesAdd = lazy(() => import('./containers/Backend/Manager/Testimonies/Add'));
+const asyncManagerTestimoniesEdit = lazy(() => import('./containers/Backend/Manager/Testimonies/Edit'));
 
-const asyncManagerTeamMembers = asyncComponent(() => import('./containers/Backend/Manager/TeamMembers'));
-const asyncManagerTeamMembersAdd = asyncComponent(() => import('./containers/Backend/Manager/TeamMembers/Add'));
-const asyncManagerTeamMembersEdit = asyncComponent(() => import('./containers/Backend/Manager/TeamMembers/Edit'));
+const asyncManagerTeamMembers = lazy(() => import('./containers/Backend/Manager/TeamMembers'));
+const asyncManagerTeamMembersAdd = lazy(() => import('./containers/Backend/Manager/TeamMembers/Add'));
+const asyncManagerTeamMembersEdit = lazy(() => import('./containers/Backend/Manager/TeamMembers/Edit'));
 
-const asyncManagerPartners = asyncComponent(() => import('./containers/Backend/Manager/Partners'));
-const asyncManagerPartnersAdd = asyncComponent(() => import('./containers/Backend/Manager/Partners/Add'));
-const asyncManagerPartnersEdit = asyncComponent(() => import('./containers/Backend/Manager/Partners/Edit'));
+const asyncManagerPartners = lazy(() => import('./containers/Backend/Manager/Partners'));
+const asyncManagerPartnersAdd = lazy(() => import('./containers/Backend/Manager/Partners/Add'));
+const asyncManagerPartnersEdit = lazy(() => import('./containers/Backend/Manager/Partners/Edit'));
 
-const asyncManagerUsers = asyncComponent(() => import('./containers/Backend/Manager/Users'));
-const asyncManagerUsersAdd = asyncComponent(() => import('./containers/Backend/Manager/Users/Add'));
-const asyncManagerUsersEdit = asyncComponent(() => import('./containers/Backend/Manager/Users/Edit'));
+const asyncManagerUsers = lazy(() => import('./containers/Backend/Manager/Users'));
+const asyncManagerUsersAdd = lazy(() => import('./containers/Backend/Manager/Users/Add'));
+const asyncManagerUsersEdit = lazy(() => import('./containers/Backend/Manager/Users/Edit'));
 
 // Admin routes
-const asyncAdminAdmins = asyncComponent(() => import('./containers/Backend/Admin/Admins'));
-const asyncAdminAdminsAdd = asyncComponent(() => import('./containers/Backend/Admin/Admins/Add'));
-const asyncAdminAdminsEdit = asyncComponent(() => import('./containers/Backend/Admin/Admins/Edit'));
+const asyncAdminAdmins = lazy(() => import('./containers/Backend/Admin/Admins'));
+const asyncAdminAdminsAdd = lazy(() => import('./containers/Backend/Admin/Admins/Add'));
+const asyncAdminAdminsEdit = lazy(() => import('./containers/Backend/Admin/Admins/Edit'));
 
 // Auth routes
-const asyncAuthUserLogin = asyncComponent(() => import('./containers/Auth/User/Login'));
+const asyncAuthUserLogin = lazy(() => import('./containers/Auth/User/Login'));
 
-const asyncAuthAdminLogin = asyncComponent(() => import('./containers/Auth/Admin/Login'));
-const asyncAuthAdminVerify = asyncComponent(() => import('./containers/Auth/Admin/Verify'));
+const asyncAuthAdminLogin = lazy(() => import('./containers/Auth/Admin/Login'));
+const asyncAuthAdminVerify = lazy(() => import('./containers/Auth/Admin/Verify'));
 
 // Frontend routes
-const asyncHome = asyncComponent(() => import('./containers/Frontend/Home'));
-const asyncAbout = asyncComponent(() => import('./containers/Frontend/About'));
-const asyncContact = asyncComponent(() => import('./containers/Frontend/Contact'));
+const asyncHome = lazy(() => import('./containers/Frontend/Home'));
+const asyncAbout = lazy(() => import('./containers/Frontend/About'));
+const asyncContact = lazy(() => import('./containers/Frontend/Contact'));
 
-const asyncPublications = asyncComponent(() => import('./containers/Frontend/Publications'));
-const asyncPublicationsShow = asyncComponent(() => import('./containers/Frontend/Publications/Show'));
+const asyncPublications = lazy(() => import('./containers/Frontend/Publications'));
+const asyncPublicationsShow = lazy(() => import('./containers/Frontend/Publications/Show'));
 
-const asyncServices = asyncComponent(() => import('./containers/Frontend/Services'));
-const asyncServicesShow = asyncComponent(() => import('./containers/Frontend/Services/Show'));
+const asyncServices = lazy(() => import('./containers/Frontend/Services'));
+const asyncServicesShow = lazy(() => import('./containers/Frontend/Services/Show'));
 
 class App extends Component {
     componentDidMount() {
-        const { onTryAuthSignup, onGetContent } = this.props;
-        onTryAuthSignup();
-        onGetContent();
+        this.props.authCheckState();
         init();
     }
 
     render() {
-        const { content: { cms, countries }, auth: { role } } = this.props;
+        const { content: { cms, countries }, auth: { role }, location: { pathname } } = this.props;
         const isAuthenticated = localStorage.getItem('token') !== null;
 
         const frontendRoutes = <Route path="/">
@@ -178,10 +174,8 @@ class App extends Component {
 
                             <Route path="/:manager/cms/global" component={asyncManagerCmsGlobal} />
                             <Route path="/:manager/cms/general" component={asyncManagerCmsGeneral} />
-                            <Route path="/:manager/cms/messages" component={asyncManagerCmsMessages} />
-                            <Route path="/:manager/cms/components" component={asyncManagerCmsComponents} />
-                            {/* <Route path="/:manager/cms/auth" component={asyncManagerCmsAuth} /> */}
-                            {/* <Route path="/:manager/cms/backend" component={asyncManagerCmsBackend} /> */}
+                            <Route path="/:manager/cms/auth" component={asyncManagerCmsAuth} />
+                            <Route path="/:manager/cms/backend" component={asyncManagerCmsBackend} />
                             <Route path="/:manager/cms/frontend" component={asyncManagerCmsFrontend} />
 
                             <Route path="/:manager/dashboard" component={asyncManagerDashboard} />
@@ -219,6 +213,12 @@ class App extends Component {
             </Switch>;
         }
 
+        routes = <ErrorBoundary>
+            <Suspense fallback={<Loading waiting isAuthenticated={isAuthenticated && (pathname.includes('/user/') || pathname.includes('/admin/'))} />}>
+                {routes}
+            </Suspense>
+        </ErrorBoundary>;
+
         const dataReady = cms !== undefined && countries !== undefined && ((isAuthenticated && role !== undefined) || !isAuthenticated);
 
         return <div className='App'>{dataReady ? routes : <Spinner />}</div>;
@@ -228,8 +228,7 @@ class App extends Component {
 const mapStateToProps = state => ({ ...state });
 
 const mapDispatchToProps = dispatch => ({
-    onTryAuthSignup: () => dispatch(authCheckState()),
-    onGetContent: () => dispatch(getContent()),
+    authCheckState: () => dispatch(authCheckState()),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
+import Loading from '../../../components/UI/Preloaders/Loading';
+
 import PageTitle from '../../../components/Frontend/UI/Title/PageTitle';
 import SectionTitle from '../../../components/Frontend/UI/Title/SectionTitle';
 import PublicationBlock from '../../../components/Frontend/UI/Blocks/PublicationBlock';
@@ -11,9 +13,14 @@ import { getPublications, resetPublications } from '../../../store/actions/front
 import './Publications.scss';
 
 class Publications extends Component {
+    state = { isMounted: false }
+
+
+
     // Lifecycle methods
     componentDidMount() {
         this.props.get();
+        this.setState({ isMounted: true });
     }
 
     componentWillUnmount() {
@@ -30,19 +37,21 @@ class Publications extends Component {
 
         const publicationsContent = publications.map(publication => <div className='col-lg-4' key={JSON.stringify(publication)}><PublicationBlock {...publication} /></div>);
 
-        return <div className="Publications">
-            <PageTitle {...cms} />
+        return <Loading loading={this.state.isMounted && loading}>
+            <div className="Publications">
+                <PageTitle {...cms} />
 
-            <section className='publications'>
-                <div className='container'>
-                    <SectionTitle {...cms.publications} />
+                <section className='publications'>
+                    <div className='container'>
+                        <SectionTitle {...cms.publications} />
 
-                    <p>{cms.publications.description}</p>
+                        <p>{cms.publications.description}</p>
 
-                    <div className='row'>{publicationsContent}</div>
-                </div>
-            </section>
-        </div>;
+                        <div className='row'>{publicationsContent}</div>
+                    </div>
+                </section>
+            </div>
+        </Loading>;
     }
 }
 

@@ -24,7 +24,7 @@ const initialState = {
 }
 
 class Add extends Component {
-    state = { ...initialState }
+    state = { ...initialState, isMounted: false }
 
     // Component methods
     resetState = () => this.setState({ ...initialState, title: {}, body: {} })
@@ -33,7 +33,7 @@ class Add extends Component {
     fileUpload = id => utility.add.component.fileUpload(id)
 
     // Lifecycle methods
-    componentDidMount() { utility.add.lifecycle.componentDidMount(this.props) }
+    componentDidMount() { utility.add.lifecycle.componentDidMount(this.props, this.setState.bind(this)) }
     componentDidUpdate(prevProps) { utility.add.lifecycle.componentDidUpdate('services', 'service')(prevProps, this.props, this.state, this.setState.bind(this), this.resetState) }
     componentWillUnmount() { this.props.reset() }
     render() {

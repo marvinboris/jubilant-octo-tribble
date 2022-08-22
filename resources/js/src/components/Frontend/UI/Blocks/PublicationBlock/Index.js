@@ -11,7 +11,7 @@ class PublicationBlock extends Component {
         const {
             photo, title, created_at, link = '/'
         } = this.props;
-        const lang = localStorage.getItem('lang');
+        const lang = localStorage.getItem('frontend_lang');
 
         return <div className='UI PublicationBlock shadow-sm'>
             <div className='embed-responsive embed-responsive-16by9 bg-img' style={{ backgroundImage: 'url("' + photo + '")' }}>

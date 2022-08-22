@@ -14,14 +14,9 @@ class Layout extends Component {
         selectedItem: '',
     }
 
-    componentDidMount() {
-        this.setState({ language: this.props.content.languages.find(l => l.abbr === localStorage.getItem('lang')) });
-    }
 
-    componentDidUpdate(prevProps) {
-        if (JSON.stringify(prevProps.content.cms) !== JSON.stringify(this.props.content.cms)) this.setState({ language: this.props.content.languages.find(l => l.abbr === localStorage.getItem('lang')) });
-    }
 
+    // Component methods
     selectItem = item => this.setState({ selectedItem: item })
 
     sideDrawerToggle = () => {
@@ -36,6 +31,9 @@ class Layout extends Component {
         }
     }
 
+
+
+    // Lifecycle methods
     render() {
         let {
             content: {
@@ -60,11 +58,11 @@ class Layout extends Component {
 
                         <div className='user-info'>
                             <div>
-                                <div className='name'>{data.name}</div>
+                                <div className='title name'>{data.name}</div>
                             </div>
 
                             <div>
-                                <div className='profile-pic bg-img' style={{ backgroundImage: 'url("' + data.photo + '")' }} />
+                                <div className='profile-pic bg-img' style={{ backgroundImage: `url("${data.photo}")` }} />
                             </div>
                         </div>
                     </div>
@@ -80,6 +78,8 @@ const mapStateToProps = state => ({ ...state });
 
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(authLogout()),
+    backendLanguage: id => dispatch(backendLanguage(id)),
+    frontendLanguage: lang => dispatch(frontendLanguage(lang)),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Layout));

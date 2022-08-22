@@ -18,7 +18,7 @@ class Layout extends Component {
                 }, services
             }
         } = this.props;
-        const lang = localStorage.getItem('lang');
+        const lang = localStorage.getItem('frontend_lang');
 
         return <div className="Frontend">
             <Toolbar />

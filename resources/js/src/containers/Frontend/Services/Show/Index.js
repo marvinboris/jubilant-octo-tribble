@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
+import Loading from '../../../../components/UI/Preloaders/Loading';
+
 import PageTitle from '../../../../components/Frontend/UI/Title/PageTitle';
 
 import { getService, resetServices } from '../../../../store/actions/frontend/services';
@@ -9,9 +11,14 @@ import { getService, resetServices } from '../../../../store/actions/frontend/se
 import './Show.scss';
 
 class Services extends Component {
+    state = { isMounted: false }
+
+
+
     // Lifecycle methods
     componentDidMount() {
         this.props.get(this.props.match.params.slug);
+        this.setState({ isMounted: true });
     }
 
     componentWillUnmount() {
@@ -26,7 +33,7 @@ class Services extends Component {
             frontend: { services: { loading, service } }
         } = this.props;
         let content;
-        const lang = localStorage.getItem('lang');
+        const lang = localStorage.getItem('frontend_lang');
 
         if (loading) content = <>
             <PageTitle title={cms.title} subtitle={cms.loading} />
@@ -47,9 +54,11 @@ class Services extends Component {
             </>;
         }
 
-        return <div className="Services Show">
-            {content}
-        </div>;
+        return <Loading loading={this.state.isMounted && loading}>
+            <div className="Services Show">
+                {content}
+            </div>
+        </Loading>;
     }
 }
 

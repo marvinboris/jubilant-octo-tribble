@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-dom';
 import Save from '../../../../components/Backend/UI/Form/Save';
 
 import Input from '../../../../components/UI/Input';
-import Preloader from '../../../../components/UI/Preloaders/Preloader';
 
 import actions from '../../../../store/actions/backend/features';
 import * as utility from '../utility';
@@ -19,16 +18,15 @@ const initialState = {
 }
 
 class Add extends Component {
-    state = { ...initialState }
+    state = { ...initialState, isMounted: false }
 
     // Component methods
     resetState = () => this.setState({ ...initialState })
     saveAddHandler = () => utility.add.component.saveAddHandler(this.setState.bind(this), this.props)
     inputChangeHandler = e => utility.add.component.inputChangeHandler(this.state, this.setState.bind(this))(e)
-    fileUpload = id => utility.add.component.fileUpload(id)
 
     // Lifecycle methods
-    componentDidMount() { utility.add.lifecycle.componentDidMount(this.props) }
+    componentDidMount() { utility.add.lifecycle.componentDidMount(this.props, this.setState.bind(this)) }
     componentDidUpdate(prevProps) { utility.add.lifecycle.componentDidUpdate('features', 'feature')(prevProps, this.props, this.state, this.setState.bind(this), this.resetState) }
     componentWillUnmount() { this.props.reset() }
     render() {
@@ -38,15 +36,10 @@ class Add extends Component {
                     pages: { backend: { pages: { features: { form } } } }
                 }
             },
-            backend: { features: { loading } },
         } = this.props;
         const { name, prefix } = this.state;
-        let content;
 
-        if (loading) content = <div className='col-12'>
-            <Preloader />
-        </div>;
-        else content = <>
+        const content = <>
             {this.props.edit && <input type="hidden" name="_method" defaultValue="PATCH" />}
 
             <div className='row'>
@@ -61,7 +54,7 @@ class Add extends Component {
             </div>
         </>;
 
-        return <utility.add.lifecycle.render className='Features' props={this.props} resource={'features'}>
+        return <utility.add.lifecycle.render className='Features' props={this.props} state={this.state} resource={'features'}>
             {content}
         </utility.add.lifecycle.render>;
     }

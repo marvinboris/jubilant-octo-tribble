@@ -124,7 +124,7 @@ var Publications = /*#__PURE__*/function (_Component) {
           loading = _this$props$frontend$.loading,
           publication = _this$props$frontend$.publication;
       var content;
-      var lang = localStorage.getItem('lang');
+      var lang = localStorage.getItem('frontend_lang');
       if (loading) content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Frontend_UI_Title_PageTitle__WEBPACK_IMPORTED_MODULE_2__["default"], {
           title: cms.title,

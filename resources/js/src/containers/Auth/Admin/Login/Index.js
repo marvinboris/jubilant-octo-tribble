@@ -40,7 +40,7 @@ export class Login extends Component {
         const {
             content: {
                 cms: {
-                    pages: { auth: { admin: { login } } }
+                    pages: { auth: { pages: { admin: { login } } } }
                 }
             },
             auth: { loading, error, message },
@@ -78,9 +78,9 @@ export class Login extends Component {
         </Form>;
 
         return <>
-        <div className="mb-5 pb-1">
-            {titleContent}
-        </div>
+            <div className="mb-5 pb-1">
+                {titleContent}
+            </div>
             {errors}
             {feedback}
             {content}

@@ -25,7 +25,7 @@ class FrontendController extends Controller
                 'author' => $publication->author->name,
             ]);
         }
-        $partners = Partner::orderBy('id', 'ASC')->whereIsActive(1)->get();
+        $partners = Partner::orderBy('name', 'ASC')->whereIsActive(1)->get();
         $team = TeamMember::orderBy('id', 'DESC')->whereIsActive(1)->get();
         $all_services = Service::all();
 

@@ -66,7 +66,7 @@ class Quote extends Component {
         } = this.props;
         const { first_name, last_name, email, phone, company, address, message, services } = this.state;
         let content;
-        const lang = localStorage.getItem('lang');
+        const lang = localStorage.getItem('frontend_lang');
 
         const servicesItems = all_services.map(service => ({ ...service, title: service.title[lang] })).sort((a, b) => a.title.localeCompare(b.title)).map(service => {
             const checked = services.find(i => +i === +service.id) !== undefined;

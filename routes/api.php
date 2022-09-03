@@ -129,6 +129,14 @@ Route::middleware('auth:admin,api')->group(function () {
             Route::get('{service}', 'ServiceController@show')->name('show');
         });
 
+        Route::prefix('testimonies')->name('testimonies.')->group(function () {
+            Route::get('{testimoy}', 'TestimonyController@show')->name('show');
+        });
+
+        Route::prefix('team-members')->name('team_members.')->group(function () {
+            Route::get('{team_member}', 'TeamMemberController@show')->name('show');
+        });
+
 
 
         Route::apiResources([
@@ -139,6 +147,8 @@ Route::middleware('auth:admin,api')->group(function () {
             'publications' => 'PublicationController',
             'subscribers' => 'SubscriberController',
             'services' => 'ServiceController',
+            'testimonies' => 'TestimonyController',
+            'team-members' => 'TeamMemberController',
         ]);
     });
 });

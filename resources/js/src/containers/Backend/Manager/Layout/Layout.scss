@@ -19,7 +19,7 @@
 
         .sticky-top {
             display: flex;
-            height: var(--app-header-height);
+            height: var(--app-header-height-sm);
             background-color: var(--app-bg-color);
 
             &>.d-flex {

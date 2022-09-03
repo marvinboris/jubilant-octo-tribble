@@ -19,7 +19,7 @@ export default class ErrorBoundary extends Component {
         if (this.state.errorInfo) {
             // Error path
             return (
-                <div className='text-white p-3 p-md-4'>
+                <div className='p-3 p-md-4'>
                     <h2>Something went wrong.</h2>
                     <details style={{ whiteSpace: 'pre-wrap' }}>
                         {this.state.error && this.state.error.toString()}

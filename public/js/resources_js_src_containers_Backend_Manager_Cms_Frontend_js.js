@@ -969,11 +969,6 @@ var recursiveDeepness = function recursiveDeepness(paramItem, paramName, paramId
     var mainItem = paramItem[item];
     var mainName = "".concat(paramName, "[").concat(item, "]");
     var mainId = "".concat(paramId, "-").concat(item);
-    if (mainId.includes('admin')) console.log({
-      mainItem: mainItem,
-      mainId: mainId,
-      paramValue: paramValue
-    });
     var mainValue = paramValue[item];
     var mainDeepness = paramDeepness.concat(item);
     var prepend;

@@ -93,7 +93,7 @@ class Add extends Component {
             <Save edit={this.props.edit} saveAddHandler={this.saveAddHandler} />
         </>;
 
-        return <utility.add.lifecycle.render className='TeamMembers' props={this.props} resource={'team_members'}>
+        return <utility.add.lifecycle.render className='TeamMembers' props={this.props} state={this.state} resource={'team_members'}>
             <input type="file" id="photo" name="photo" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
             {content}
         </utility.add.lifecycle.render>;

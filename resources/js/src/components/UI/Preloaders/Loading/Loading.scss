@@ -50,7 +50,6 @@
     }
 
     &.is-auth {
-        width: calc(100vw - var(--app-sidebar-width));
         height: calc(100vh - var(--app-header-height-sm) - var(--app-title-height-sm));
     }
 }
@@ -59,6 +58,7 @@
     .UI.Loading {
         &.is-auth {
             left: var(--app-sidebar-width);
+            width: calc(100vw - var(--app-sidebar-width));
             height: calc(100vh - var(--app-header-height) - var(--app-title-height-md));
         }
     }

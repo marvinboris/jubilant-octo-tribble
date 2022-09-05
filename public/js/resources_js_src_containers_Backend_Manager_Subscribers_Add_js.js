@@ -1499,6 +1499,7 @@ var Add = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_utility__WEBPACK_IMPORTED_MODULE_6__.add.lifecycle.render, {
         className: "Subscribers",
         props: this.props,
+        state: this.state,
         resource: 'subscribers',
         children: content
       });

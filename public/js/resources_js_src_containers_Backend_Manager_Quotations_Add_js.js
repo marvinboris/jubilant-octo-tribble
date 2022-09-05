@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_src_containers_Backend_Manager_TeamMembers_Edit_js"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_src_containers_Backend_Manager_Quotations_Add_js"],{
 
 /***/ "./resources/js/src/components/Backend/UI/Form/Save/index.js":
 /*!*******************************************************************!*\
@@ -1303,10 +1303,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 /***/ }),
 
-/***/ "./resources/js/src/containers/Backend/Manager/TeamMembers/Add.js":
-/*!************************************************************************!*\
-  !*** ./resources/js/src/containers/Backend/Manager/TeamMembers/Add.js ***!
-  \************************************************************************/
+/***/ "./resources/js/src/containers/Backend/Manager/Quotations/Add.js":
+/*!***********************************************************************!*\
+  !*** ./resources/js/src/containers/Backend/Manager/Quotations/Add.js ***!
+  \***********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -1319,7 +1319,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Backend_UI_Form_Save__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../components/Backend/UI/Form/Save */ "./resources/js/src/components/Backend/UI/Form/Save/index.js");
 /* harmony import */ var _components_UI_Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../components/UI/Input */ "./resources/js/src/components/UI/Input/index.js");
 /* harmony import */ var _components_UI_Preloaders_Preloader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../components/UI/Preloaders/Preloader */ "./resources/js/src/components/UI/Preloaders/Preloader/index.js");
-/* harmony import */ var _store_actions_backend_team_members__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../store/actions/backend/team-members */ "./resources/js/src/store/actions/backend/team-members.js");
+/* harmony import */ var _store_actions_backend_quotations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../store/actions/backend/quotations */ "./resources/js/src/store/actions/backend/quotations.js");
 /* harmony import */ var _utility__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utility */ "./resources/js/src/containers/Backend/Manager/utility.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
@@ -1363,9 +1363,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 var initialState = {
-  name: '',
-  job: {},
-  photo: null,
+  name: {},
+  link: '',
   is_active: '1',
   translate: "fr",
   add: false
@@ -1393,7 +1392,8 @@ var Add = /*#__PURE__*/function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "resetState", function () {
       return _this.setState(_objectSpread(_objectSpread({}, initialState), {}, {
-        job: {}
+        name: {},
+        body: {}
       }));
     });
 
@@ -1421,7 +1421,7 @@ var Add = /*#__PURE__*/function (_Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
-      _utility__WEBPACK_IMPORTED_MODULE_6__.add.lifecycle.componentDidUpdate('team_members', 'team_member')(prevProps, this.props, this.state, this.setState.bind(this), this.resetState);
+      _utility__WEBPACK_IMPORTED_MODULE_6__.add.lifecycle.componentDidUpdate('quotations', 'quotation')(prevProps, this.props, this.state, this.setState.bind(this), this.resetState);
     }
   }, {
     key: "componentWillUnmount",
@@ -1439,16 +1439,12 @@ var Add = /*#__PURE__*/function (_Component) {
           _this$props$content$c2 = _this$props$content$c.components.form,
           active = _this$props$content$c2.active,
           inactive = _this$props$content$c2.inactive,
-          form = _this$props$content$c.pages.team_members.form,
+          form = _this$props$content$c.pages.quotations.form,
           languages = _this$props$content.languages,
-          _this$props$backend$t = _this$props.backend.team_members,
-          loading = _this$props$backend$t.loading,
-          _this$props$backend$t2 = _this$props$backend$t.team_member,
-          team_member = _this$props$backend$t2 === void 0 ? {} : _this$props$backend$t2;
+          loading = _this$props.backend.quotations.loading;
       var _this$state = this.state,
           name = _this$state.name,
-          job = _this$state.job,
-          photo = _this$state.photo,
+          link = _this$state.link,
           is_active = _this$state.is_active,
           translate = _this$state.translate;
       var content;
@@ -1476,13 +1472,13 @@ var Add = /*#__PURE__*/function (_Component) {
                 return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
                     type: "text",
-                    id: "job-" + l.abbr,
+                    id: "name-" + l.abbr,
                     className: "col-lg-12" + (l.abbr === translate ? "" : " d-none"),
                     onChange: _this2.inputChangeHandler,
-                    value: job[l.abbr],
-                    name: "job[" + l.abbr + "]",
+                    value: name[l.abbr],
+                    name: "name[" + l.abbr + "]",
                     required: true,
-                    label: form.job
+                    label: form.name
                   })
                 }, 'language-' + l.abbr);
               })
@@ -1502,21 +1498,17 @@ var Add = /*#__PURE__*/function (_Component) {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("hr", {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "col-lg-9",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-              className: "row",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                type: "text",
-                className: "col-md-6",
-                onChange: this.inputChangeHandler,
-                value: name,
-                name: "name",
-                required: true,
-                label: form.name
-              })
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              type: "url",
+              name: "link",
+              label: form.link,
+              onChange: this.inputChangeHandler,
+              value: link,
+              required: true
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "col-lg-3",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
               type: "select",
               label: form.is_active,
               onChange: this.inputChangeHandler,
@@ -1532,36 +1524,19 @@ var Add = /*#__PURE__*/function (_Component) {
                 value: 0,
                 children: inactive
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_UI_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-              type: "image",
-              name: "photo",
-              label: form.photo,
-              onClick: function onClick() {
-                return _this2.fileUpload('photo');
-              },
-              cms: form,
-              defaultValue: team_member.photo,
-              value: photo
-            })]
+            })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Backend_UI_Form_Save__WEBPACK_IMPORTED_MODULE_2__["default"], {
           edit: this.props.edit,
           saveAddHandler: this.saveAddHandler
         })]
       });
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_utility__WEBPACK_IMPORTED_MODULE_6__.add.lifecycle.render, {
-        className: "TeamMembers",
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_utility__WEBPACK_IMPORTED_MODULE_6__.add.lifecycle.render, {
+        className: "Services",
         props: this.props,
         state: this.state,
-        resource: 'team_members',
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-          type: "file",
-          id: "photo",
-          name: "photo",
-          className: "d-none",
-          onChange: this.inputChangeHandler,
-          accept: ".png,.jpg,.jpeg"
-        }), content]
+        resource: 'quotations',
+        children: content
       });
     }
   }]);
@@ -1576,45 +1551,21 @@ var mapStateToProps = function mapStateToProps(state) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     get: function get(id) {
-      return dispatch(_store_actions_backend_team_members__WEBPACK_IMPORTED_MODULE_5__["default"].show(id));
+      return dispatch(_store_actions_backend_quotations__WEBPACK_IMPORTED_MODULE_5__["default"].show(id));
     },
     post: function post(data) {
-      return dispatch(_store_actions_backend_team_members__WEBPACK_IMPORTED_MODULE_5__["default"].post(data));
+      return dispatch(_store_actions_backend_quotations__WEBPACK_IMPORTED_MODULE_5__["default"].post(data));
     },
     patch: function patch(id, data) {
-      return dispatch(_store_actions_backend_team_members__WEBPACK_IMPORTED_MODULE_5__["default"].patch(id, data));
+      return dispatch(_store_actions_backend_quotations__WEBPACK_IMPORTED_MODULE_5__["default"].patch(id, data));
     },
     reset: function reset() {
-      return dispatch(_store_actions_backend_team_members__WEBPACK_IMPORTED_MODULE_5__["default"].reset());
+      return dispatch(_store_actions_backend_quotations__WEBPACK_IMPORTED_MODULE_5__["default"].reset());
     }
   };
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.withRouter)((0,react_redux__WEBPACK_IMPORTED_MODULE_1__.connect)(mapStateToProps, mapDispatchToProps)(Add)));
-
-/***/ }),
-
-/***/ "./resources/js/src/containers/Backend/Manager/TeamMembers/Edit.js":
-/*!*************************************************************************!*\
-  !*** ./resources/js/src/containers/Backend/Manager/TeamMembers/Edit.js ***!
-  \*************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _Add__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Add */ "./resources/js/src/containers/Backend/Manager/TeamMembers/Add.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Add__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    edit: true
-  });
-});
 
 /***/ }),
 
@@ -1871,10 +1822,10 @@ var index = {
 
 /***/ }),
 
-/***/ "./resources/js/src/store/actions/backend/team-members.js":
-/*!****************************************************************!*\
-  !*** ./resources/js/src/store/actions/backend/team-members.js ***!
-  \****************************************************************/
+/***/ "./resources/js/src/store/actions/backend/quotations.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/src/store/actions/backend/quotations.js ***!
+  \**************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -1897,20 +1848,20 @@ var resource = function resource(type) {
     params[_key - 1] = arguments[_key];
   }
 
-  return _shared_utility__WEBPACK_IMPORTED_MODULE_0__.manageResource.apply(void 0, ['team-members', {
+  return _shared_utility__WEBPACK_IMPORTED_MODULE_0__.manageResource.apply(void 0, ['quotations', {
     start: function start() {
       return {
-        type: _actionTypes__WEBPACK_IMPORTED_MODULE_1__.TEAM_MEMBERS_START
+        type: _actionTypes__WEBPACK_IMPORTED_MODULE_1__.QUOTATIONS_START
       };
     },
     success: function success(data) {
       return _objectSpread({
-        type: _actionTypes__WEBPACK_IMPORTED_MODULE_1__.TEAM_MEMBERS_SUCCESS
+        type: _actionTypes__WEBPACK_IMPORTED_MODULE_1__.QUOTATIONS_SUCCESS
       }, data);
     },
     fail: function fail(error) {
       return {
-        type: _actionTypes__WEBPACK_IMPORTED_MODULE_1__.TEAM_MEMBERS_FAIL,
+        type: _actionTypes__WEBPACK_IMPORTED_MODULE_1__.QUOTATIONS_FAIL,
         error: error
       };
     }
@@ -1920,7 +1871,7 @@ var resource = function resource(type) {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   reset: function reset() {
     return {
-      type: _actionTypes__WEBPACK_IMPORTED_MODULE_1__.TEAM_MEMBERS_RESET
+      type: _actionTypes__WEBPACK_IMPORTED_MODULE_1__.QUOTATIONS_RESET
     };
   },
   get: function get(page, show, search) {

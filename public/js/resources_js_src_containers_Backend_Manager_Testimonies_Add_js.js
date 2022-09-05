@@ -1656,6 +1656,7 @@ var Add = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_utility__WEBPACK_IMPORTED_MODULE_7__.add.lifecycle.render, {
         className: "Testimonies",
         props: this.props,
+        state: this.state,
         resource: 'testimonies',
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
           type: "file",

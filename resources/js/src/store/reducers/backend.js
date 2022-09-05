@@ -5,7 +5,7 @@ const initialState = {};
 
 const resources = {
     admins: 'ADMINS', cms: 'CMS', notifications: 'NOTIFICATIONS', dashboard: 'DASHBOARD', features: 'FEATURES', languages: 'LANGUAGES', roles: 'ROLES', users: 'USERS', settings: 'SETTINGS',
-    publications: 'PUBLICATIONS', subscribers: 'SUBSCRIBERS', services: 'SERVICES', testimonies: 'TESTIMONIES', team_members: 'TEAM_MEMBERS', partners: 'PARTNERS',
+    publications: 'PUBLICATIONS', subscribers: 'SUBSCRIBERS', services: 'SERVICES', testimonies: 'TESTIMONIES', team_members: 'TEAM_MEMBERS', partners: 'PARTNERS', quotations: 'QUOTATIONS'
 };
 
 Object.keys(resources).forEach(resource => {

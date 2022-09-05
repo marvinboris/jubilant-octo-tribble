@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UtilController;
 use App\Models\Language;
+use App\Models\Quotation;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -137,6 +138,10 @@ Route::middleware('auth:admin,api')->group(function () {
             Route::get('{team_member}', 'TeamMemberController@show')->name('show');
         });
 
+        Route::prefix('quotations')->name('quotations.')->group(function () {
+            Route::get('{quotation}', 'QuotationController@show')->name('show');
+        });
+
 
 
         Route::apiResources([
@@ -149,6 +154,7 @@ Route::middleware('auth:admin,api')->group(function () {
             'services' => 'ServiceController',
             'testimonies' => 'TestimonyController',
             'team-members' => 'TeamMemberController',
+            'quotations' => 'QuotationController',
         ]);
     });
 });
@@ -169,11 +175,13 @@ Route::prefix('content')->name('content.')->group(function () {
 
         $languages = Language::all();
         $services = Service::all();
+        $quotations = Quotation::all();
 
         return response()->json([
             'cms' => $cms,
             'languages' => $languages,
             'services' => $services,
+            'quotations' => $quotations,
         ]);
     })->name('cms');
 });

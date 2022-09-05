@@ -70,7 +70,7 @@ class Add extends Component {
             </div>
         </>;
 
-        return <utility.add.lifecycle.render className='Subscribers' props={this.props} resource={'subscribers'}>
+        return <utility.add.lifecycle.render className='Subscribers' props={this.props} state={this.state} resource={'subscribers'}>
             {content}
         </utility.add.lifecycle.render>;
     }

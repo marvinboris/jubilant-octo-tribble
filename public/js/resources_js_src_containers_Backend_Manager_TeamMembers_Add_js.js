@@ -1552,6 +1552,7 @@ var Add = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_utility__WEBPACK_IMPORTED_MODULE_6__.add.lifecycle.render, {
         className: "TeamMembers",
         props: this.props,
+        state: this.state,
         resource: 'team_members',
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
           type: "file",

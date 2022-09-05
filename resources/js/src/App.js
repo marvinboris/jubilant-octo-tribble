@@ -64,6 +64,10 @@ const asyncManagerPartners = lazy(() => import('./containers/Backend/Manager/Par
 const asyncManagerPartnersAdd = lazy(() => import('./containers/Backend/Manager/Partners/Add'));
 const asyncManagerPartnersEdit = lazy(() => import('./containers/Backend/Manager/Partners/Edit'));
 
+const asyncManagerQuotations = lazy(() => import('./containers/Backend/Manager/Quotations'));
+const asyncManagerQuotationsAdd = lazy(() => import('./containers/Backend/Manager/Quotations/Add'));
+const asyncManagerQuotationsEdit = lazy(() => import('./containers/Backend/Manager/Quotations/Edit'));
+
 const asyncManagerUsers = lazy(() => import('./containers/Backend/Manager/Users'));
 const asyncManagerUsersAdd = lazy(() => import('./containers/Backend/Manager/Users/Add'));
 const asyncManagerUsersEdit = lazy(() => import('./containers/Backend/Manager/Users/Edit'));
@@ -147,6 +151,10 @@ class App extends Component {
                             <Route path="/admin/admins/:id/edit" component={asyncAdminAdminsEdit} />
                             <Route path="/admin/admins/add" component={asyncAdminAdminsAdd} />
                             <Route path="/admin/admins" component={asyncAdminAdmins} />
+
+                            <Route path="/:manager/quotations/:id/edit" component={asyncManagerQuotationsEdit} />
+                            <Route path="/:manager/quotations/add" component={asyncManagerQuotationsAdd} />
+                            <Route path="/:manager/quotations" component={asyncManagerQuotations} />
 
                             <Route path="/:manager/partners/:id/edit" component={asyncManagerPartnersEdit} />
                             <Route path="/:manager/partners/add" component={asyncManagerPartnersAdd} />

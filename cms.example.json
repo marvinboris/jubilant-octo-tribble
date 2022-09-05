@@ -204,6 +204,12 @@
                             "title": "Partenaires",
                             "add": "Ajouter un partenaire",
                             "index": "Liste des partenaires"
+                        },
+                        "quotations": {
+                            "icon": "dollar-sign",
+                            "title": "Cotations",
+                            "add": "Ajouter une cotation",
+                            "index": "Liste des cotations"
                         }
                     }
                 },
@@ -316,6 +322,12 @@
                         "created": "Partenaire cr\u00e9\u00e9 avec succ\u00e8s.",
                         "updated": "Partenaire modifi\u00e9 avec succ\u00e8s.",
                         "deleted": "Partenaire supprim\u00e9 avec succ\u00e8s."
+                    },
+                    "quotations": {
+                        "not_found": "Cotation introuvable.",
+                        "created": "Cotation cr\u00e9\u00e9e avec succ\u00e8s.",
+                        "updated": "Cotation modifi\u00e9e avec succ\u00e8s.",
+                        "deleted": "Cotation supprim\u00e9e avec succ\u00e8s."
                     }
                 },
                 "pages": {
@@ -570,6 +582,21 @@
                             "is_active": "Statut",
                             "created_at": "Cr\u00e9\u00e9 le"
                         }
+                    },
+                    "quotations": {
+                        "icon": "dollar-sign",
+                        "title": "Cotations",
+                        "add": "Ajouter une cotation",
+                        "edit": "Modifier une cotation",
+                        "index": "Liste des cotations",
+                        "form": {
+                            "name": "Nom",
+                            "link": "Lien",
+                            "language": "Langue",
+                            "is_active": "Statut",
+                            "select_status": "S\u00e9lectionner le statut",
+                            "created_at": "Cr\u00e9\u00e9 le"
+                        }
                     }
                 }
             },
@@ -708,16 +735,7 @@
                             "get": "Obtenir un devis gratuit",
                             "form": {
                                 "title": "Tarification des risques",
-                                "subtitle": "Veuillez remplir le formulaire.",
-                                "services_title": "De quel(s) service(s) aimeriez-vous bénéficier?",
-                                "submit": "Soumettre",
-                                "first_name": "Prénom(s)",
-                                "last_name": "Nom(s)",
-                                "email": "Adresse mail",
-                                "phone": "Numéro de téléphone",
-                                "location": "Localisation",
-                                "address": "Adresse",
-                                "message": "Précisez votre besoin, la période (date limite), votre emplacement et toute autre information nécessaire à la compréhension de la tâche"
+                                "description": "Veuillez sélectionner l'assurance que vous désirez et remplir le formulaire obtenu."
                             }
                         },
                         "publications": {
@@ -991,6 +1009,12 @@
                             "title": "Partners",
                             "add": "Add partner",
                             "index": "Partner list"
+                        },
+                        "quotations": {
+                            "icon": "dollar-sign",
+                            "title": "Quotations",
+                            "add": "Add quotation",
+                            "index": "Quotation list"
                         }
                     }
                 },
@@ -1103,6 +1127,12 @@
                         "created": "Partner successfully created.",
                         "updated": "Partner successfully updated.",
                         "deleted": "Partner succesfully deleted."
+                    },
+                    "quotations": {
+                        "not_found": "Quotation not found.",
+                        "created": "Quotation successfully created.",
+                        "updated": "Quotation successfully updated.",
+                        "deleted": "Quotation succesfully deleted."
                     }
                 },
                 "pages": {
@@ -1357,6 +1387,21 @@
                             "is_active": "Status",
                             "created_at": "Created at"
                         }
+                    },
+                    "quotations": {
+                        "icon": "dollar-sign",
+                        "title": "Quotations",
+                        "add": "Add quotation",
+                        "edit": "Edit quotation",
+                        "index": "Quotation list",
+                        "form": {
+                            "name": "Name",
+                            "link": "Link",
+                            "language": "Language",
+                            "is_active": "Status",
+                            "select_status": "Select status",
+                            "created_at": "Created at"
+                        }
                     }
                 }
             },
@@ -1495,16 +1540,7 @@
                             "get": "Get a free quote",
                             "form": {
                                 "title": "Risk pricing",
-                                "subtitle": "Please complete the form.",
-                                "services_title": "De quel(s) service(s) aimeriez-vous bénéficier?",
-                                "submit": "Submit",
-                                "first_name": "First name",
-                                "last_name": "Last name",
-                                "email": "E-mail address",
-                                "phone": "Phone number",
-                                "location": "Location",
-                                "address": "Address",
-                                "message": "Specify your need, the period (deadline), your location and any other information necessary to understand the task"
+                                "description": "Please select which insurance you need and fill the obtained form."
                             }
                         },
                         "publications": {

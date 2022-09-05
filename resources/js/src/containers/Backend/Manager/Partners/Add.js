@@ -70,7 +70,7 @@ class Add extends Component {
             </div>
         </>;
 
-        return <utility.add.lifecycle.render className='Partners' props={this.props} resource={'partners'}>
+        return <utility.add.lifecycle.render className='Partners' props={this.props} state={this.state} resource={'partners'}>
             <input type="file" id="photo" name="photo" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
             {content}
         </utility.add.lifecycle.render>;

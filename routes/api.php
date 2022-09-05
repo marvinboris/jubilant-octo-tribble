@@ -130,6 +130,10 @@ Route::middleware('auth:admin,api')->group(function () {
             Route::get('{service}', 'ServiceController@show')->name('show');
         });
 
+        Route::prefix('partners')->name('partners.')->group(function () {
+            Route::get('{partner}', 'PartnerController@show')->name('show');
+        });
+
         Route::prefix('testimonies')->name('testimonies.')->group(function () {
             Route::get('{testimoy}', 'TestimonyController@show')->name('show');
         });
@@ -152,6 +156,7 @@ Route::middleware('auth:admin,api')->group(function () {
             'publications' => 'PublicationController',
             'subscribers' => 'SubscriberController',
             'services' => 'ServiceController',
+            'partners' => 'PartnerController',
             'testimonies' => 'TestimonyController',
             'team-members' => 'TeamMemberController',
             'quotations' => 'QuotationController',
